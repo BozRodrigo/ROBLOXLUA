@@ -1,5 +1,4 @@
 shared.item = "Gummy Rainbow"
-shared.timing = 0.08
 
 local TeleportService = game:GetService("TeleportService")
 local lplr = game.Players.LocalPlayer
@@ -7,9 +6,7 @@ local lplr = game.Players.LocalPlayer
 function dupe()
     wait(0.2)
     game:GetService("ReplicatedStorage").RemoteEvents.Jumped:FireServer()
-    if shared.timing ~= nil then
-        wait(shared.timing)
-    end
+    wait(0.29)
     game:Shutdown()
 end
 
