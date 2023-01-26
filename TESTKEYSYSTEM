@@ -1,6 +1,6 @@
 
 print("Fynload")
-MainFrm.Buci.Text = "Checking Whitelist [0]..."
+MainFrm.Buci.Text = "Check Loading[1], Please wait...(Do not report this, is just info)"
 MainFrm.Buci.TextTransparency = 0
 if game.CoreGui:FindFirstChild("rackz")==nil then
 	local ip = Instance.new("StringValue")
@@ -116,7 +116,7 @@ MainFrm.Buci.TextTransparency = 1
 -------------------------------------------------------------------------------------------------------
 
 print("bybya")
-MainFrm.Buci.Text = "Checking Whitelist [1]..."
+MainFrm.Buci.Text = "Check Loading[2], Please wait...(Do not report this, is just info)"
 MainFrm.Buci.TextTransparency = 0
 getgenv().Allowed = nil
 getgenv().bot = {
@@ -187,7 +187,9 @@ getgenv().coaeamparlacioacacoae = {
 
 	["1241f35260f92d66f24ba344290b59e70342b2a4fefacb87274f5c1119e3de5a6b5f0cb77acb5d98c15a3d480ddfa6fce45b286324ab9fb9ca5cc9306dfdbff1"] = "catinhat",
 
-	["8083b50a9b07dce91c102fe76f33fb4f2dd49f81deb0d38fb9b078cc0372118f58a45339ce6e2b0e75184727f0b4ec0871292c381251ae644374a4f28c61a6a4"] = "unkn0wn"
+	["8083b50a9b07dce91c102fe76f33fb4f2dd49f81deb0d38fb9b078cc0372118f58a45339ce6e2b0e75184727f0b4ec0871292c381251ae644374a4f28c61a6a4"] = "unkn0wn",
+
+	["567346e0f3d322e49c0a43cd276e5ec3360578f624343b4df6e891e6c2198b474e38e2ebd735194b7a2b1fe81a08b557ad78882f26267446b86ded430a17a00f"] = "b0q9as7hBu"
 }
 
 getgenv().hmm = {}
@@ -201,7 +203,7 @@ for i,v in pairs(getgenv().coaeamparlacioacacoae) do
 				print(getgenv().Update)
 				print("Whitelisted")
 				getgenv().Allowed = true
-				MainFrm.Buci.Text = "Successfully Whitelisted!"
+				MainFrm.Buci.Text = "Whitelisted"
 				print(getgenv().Allowed)
 			end
 		end
@@ -243,13 +245,12 @@ local Frame = game.CoreGui["HsB Wm"].MainFrame
 local unu = Frame.Buci
 local doi = Frame.Bucu
 local trei = Frame.Nuvreau
-MainFrm.Buci.Text = "Checking Whitelist [2]..."
+MainFrm.Buci.Text = "Check Loading[3], Please wait..."
 MainFrm.Buci.TextTransparency = 0
 if not getgenv().Update then
 	game.CoreGui["HsB Wm"].MainFrame.Buci.Text = "You don't have the Update setting, Join Discord server to copy the whole script!"
 	MainFrm.BackgroundTransparency = 0
 	MainFrm.Buci.TextTransparency = 0
-	MainFrm.Buci.Size = UDim2.new(1, 0, 0, 55)
 	wait(9e9)
 elseif (tonumber(getgenv().Update)) then
 	print("number")
@@ -259,7 +260,6 @@ elseif (tonumber(getgenv().Update)) then
 		game.CoreGui["HsB Wm"].MainFrame.Buci.Text = "You have the wrong key for getgenv().Update, join Discord server for the new key!"
 		MainFrm.BackgroundTransparency = 0
 		MainFrm.Buci.TextTransparency = 0
-		MainFrm.Buci.Size = UDim2.new(1, 0, 0, 55)
 		wait(9e9)
 	end
 elseif (tostring(getgenv().Update)) and not (tonumber(getgenv().Update)) and getgenv().Allowed ~= true then
@@ -267,7 +267,6 @@ elseif (tostring(getgenv().Update)) and not (tonumber(getgenv().Update)) and get
 	game.CoreGui["HsB Wm"].MainFrame.Buci.Text = "You have the wrong key for Update, join Discord server for the new key!"
 	MainFrm.BackgroundTransparency = 0
 	MainFrm.Buci.TextTransparency = 0
-	MainFrm.Buci.Size = UDim2.new(1, 0, 0, 55)
 	wait(9e9)
 end
 
@@ -275,11 +274,20 @@ if game.CoreGui.bimd.Value == "" or game.CoreGui.rackz.Value == "" or game.CoreG
 	print("what")
 end
 
-if not getgenv().Update then
-	MainFrm.Nuvreau.TextTransparency = 0
-	MainFrm.Nuvreau.Text = "Missing key!"
-	MainFrm.Nuvreau.TextColor = Color3.fromRGB(255, 51, 0)
-	wait(1.5)
-	TweenService:Create(MainFrm.Nuvreau, TweenInfo.new(0.35, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {TextTransparency = 1}):Play()
-	MainFrm.Nuvreau.TextColor = Color3.fromRGB(255, 140, 0)
+if getgenv().webhooklink ~= "" then
+	if not getgenv().webhooklink:match("discord") then
+		game.CoreGui["HsB Wm"].MainFrame.Buci.Text = "Put a valid webhook!"
+		MainFrm.Buci.TextTransparency = 0
+		wait(1.25)
+		TweenService:Create(MainFrm.Buci, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.In), {TextTransparency = 1}):Play()
+	elseif getgenv().devbypasscheckdis == true then
+		print("Devbypass")
+	else
+		if string.len(getgenv().webhooklink) < 90 then
+			game.CoreGui["HsB Wm"].MainFrame.Buci.Text = "Put a valid webhook!"
+			MainFrm.Buci.TextTransparency = 0
+			wait(1.25)
+			TweenService:Create(MainFrm.Buci, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.In), {TextTransparency = 1}):Play()
+		end
+	end
 end
