@@ -1,4 +1,3 @@
-
 print("Fynload")
 MainFrm.Buci.Text = "Check Loading[1], Please wait...(Do not report this, is just info)"
 MainFrm.Buci.TextTransparency = 0
