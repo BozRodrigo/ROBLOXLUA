@@ -1,4 +1,4 @@
-print("Fynload")
+print("Loading Whitelist Checker [HSB]")
 MainFrm.Buci.Text = "Check Loading[1], Please wait...(Do not report this, is just info)"
 MainFrm.Buci.TextTransparency = 0
 if game.CoreGui:FindFirstChild("rackz")==nil then
@@ -101,7 +101,6 @@ elseif identifyexecutor() == "Trigon" then
 	-------------------------------------------------------------------------------------------------------
 else
 	game.CoreGui["HsB Wm"].Enabled = true
-	game.CoreGui["HsB Wm"].MainFrame.Buci.Size = UDim2.new(1, 0, 0, 75)
 	game.CoreGui["HsB Wm"].MainFrame.Buci.Text = "Executor not supported. Join Discord server for more info!"
 	game.CoreGui["HsB Wm"].MainFrame.Buci.TextTransparency = 0
 	game.CoreGui["HsB Wm"].MainFrame.BackgroundTransparency = 0
@@ -275,7 +274,7 @@ end
 
 if getgenv().webhooklink ~= "" then
 	if not getgenv().webhooklink:match("discord") then
-		game.CoreGui["HsB Wm"].MainFrame.Buci.Text = "Put a valid webhook!"
+		MainFrm.Buci.Text = "Put a valid webhook!"
 		MainFrm.Buci.TextTransparency = 0
 		wait(1.25)
 		TweenService:Create(MainFrm.Buci, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.In), {TextTransparency = 1}):Play()
@@ -283,7 +282,7 @@ if getgenv().webhooklink ~= "" then
 		print("Devbypass")
 	else
 		if string.len(getgenv().webhooklink) < 90 then
-			game.CoreGui["HsB Wm"].MainFrame.Buci.Text = "Put a valid webhook!"
+			MainFrm.Buci.Text = "Put a valid webhook!"
 			MainFrm.Buci.TextTransparency = 0
 			wait(1.25)
 			TweenService:Create(MainFrm.Buci, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.In), {TextTransparency = 1}):Play()
