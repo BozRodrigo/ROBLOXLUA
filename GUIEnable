@@ -16,56 +16,50 @@ local ItEmFaRm = Instance.new("Frame")
 local UICorner_3 = Instance.new("UICorner")
 local TextLabel_4 = Instance.new("TextLabel")
 local TextLabel_5 = Instance.new("TextLabel")
-local ToggledFrame = Instance.new("Frame")
-local UICorner_4 = Instance.new("UICorner")
 local ToggleButton = Instance.new("ImageButton")
+local UICorner_4 = Instance.new("UICorner")
 local LuCKyFarm = Instance.new("Frame")
 local UICorner_5 = Instance.new("UICorner")
 local TextLabel_6 = Instance.new("TextLabel")
 local TextLabel_7 = Instance.new("TextLabel")
-local ToggledFrame_2 = Instance.new("Frame")
-local UICorner_6 = Instance.new("UICorner")
 local ToggleButton_2 = Instance.new("ImageButton")
+local UICorner_6 = Instance.new("UICorner")
 local MIHfaRM = Instance.new("Frame")
 local UICorner_7 = Instance.new("UICorner")
 local TextLabel_8 = Instance.new("TextLabel")
 local TextLabel_9 = Instance.new("TextLabel")
-local ToggledFrame_3 = Instance.new("Frame")
-local UICorner_8 = Instance.new("UICorner")
 local ToggleButton_3 = Instance.new("ImageButton")
+local UICorner_8 = Instance.new("UICorner")
 local _1v1AuTo = Instance.new("Frame")
 local UICorner_9 = Instance.new("UICorner")
 local TextLabel_10 = Instance.new("TextLabel")
 local TextLabel_11 = Instance.new("TextLabel")
-local ToggledFrame_4 = Instance.new("Frame")
-local UICorner_10 = Instance.new("UICorner")
 local ToggleButton_4 = Instance.new("ImageButton")
+local UICorner_10 = Instance.new("UICorner")
 local AuToTwOh = Instance.new("Frame")
 local UICorner_11 = Instance.new("UICorner")
 local TextLabel_12 = Instance.new("TextLabel")
 local TextLabel_13 = Instance.new("TextLabel")
-local ToggledFrame_5 = Instance.new("Frame")
-local UICorner_12 = Instance.new("UICorner")
-local ToggleButton_5 = Instance.new("ImageButton")
 local InfoTWOH = Instance.new("Frame")
-local UICorner_13 = Instance.new("UICorner")
+local UICorner_12 = Instance.new("UICorner")
 local TextLabel_14 = Instance.new("TextLabel")
 local ImageLabel = Instance.new("ImageLabel")
+local ToggleButton_5 = Instance.new("ImageButton")
+local UICorner_13 = Instance.new("UICorner")
 local sTanDFarm = Instance.new("Frame")
 local UICorner_14 = Instance.new("UICorner")
 local standfarmautO = Instance.new("Frame")
 local UICorner_15 = Instance.new("UICorner")
 local TextLabel_15 = Instance.new("TextLabel")
 local TextLabel_16 = Instance.new("TextLabel")
-local ToggledFrame_6 = Instance.new("Frame")
-local UICorner_16 = Instance.new("UICorner")
 local ToggleButton_6 = Instance.new("ImageButton")
+local UICorner_16 = Instance.new("UICorner")
 local SettingsTab = Instance.new("ScrollingFrame")
 local LukyAruPing = Instance.new("Frame")
 local UICorner_17 = Instance.new("UICorner")
 local TextLabel_17 = Instance.new("TextLabel")
 local TextLabel_18 = Instance.new("TextLabel")
-local ToggledFrame_7 = Instance.new("Frame")
+local ToggledFrame = Instance.new("Frame")
 local UICorner_18 = Instance.new("UICorner")
 local ToggleButton_7 = Instance.new("ImageButton")
 local WebhookLink = Instance.new("TextBox")
@@ -74,21 +68,21 @@ local StAnDuPingU = Instance.new("Frame")
 local UICorner_20 = Instance.new("UICorner")
 local TextLabel_19 = Instance.new("TextLabel")
 local TextLabel_20 = Instance.new("TextLabel")
-local ToggledFrame_8 = Instance.new("Frame")
+local ToggledFrame_2 = Instance.new("Frame")
 local UICorner_21 = Instance.new("UICorner")
 local ToggleButton_8 = Instance.new("ImageButton")
 local lowWMode = Instance.new("Frame")
 local UICorner_22 = Instance.new("UICorner")
 local TextLabel_21 = Instance.new("TextLabel")
 local TextLabel_22 = Instance.new("TextLabel")
-local ToggledFrame_9 = Instance.new("Frame")
+local ToggledFrame_3 = Instance.new("Frame")
 local UICorner_23 = Instance.new("UICorner")
 local ToggleButton_9 = Instance.new("ImageButton")
 local EarlyYplAy = Instance.new("Frame")
 local UICorner_24 = Instance.new("UICorner")
 local TextLabel_23 = Instance.new("TextLabel")
 local TextLabel_24 = Instance.new("TextLabel")
-local ToggledFrame_10 = Instance.new("Frame")
+local ToggledFrame_4 = Instance.new("Frame")
 local UICorner_25 = Instance.new("UICorner")
 local ToggleButton_10 = Instance.new("ImageButton")
 local TestWebhook = Instance.new("TextButton")
@@ -247,6 +241,7 @@ MainTab.BackgroundTransparency = 1.000
 MainTab.BorderSizePixel = 0
 MainTab.Position = UDim2.new(0.0234192032, 0, 0.0275229365, 0)
 MainTab.Size = UDim2.new(0.955503523, 0, 0.944954157, 0)
+MainTab.CanvasPosition = Vector2.new(0, 150)
 MainTab.ScrollBarThickness = 2
 
 ItEmFaRm.Name = "ItEmFaRm"
@@ -285,21 +280,16 @@ TextLabel_5.TextSize = 14.000
 TextLabel_5.TextWrapped = true
 TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
 
-ToggledFrame.Name = "ToggledFrame"
-ToggledFrame.Parent = ItEmFaRm
-ToggledFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-ToggledFrame.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
-ToggledFrame.Size = UDim2.new(0, 15, 0, 15)
-
-UICorner_4.CornerRadius = UDim.new(0, 5)
-UICorner_4.Parent = ToggledFrame
-
 ToggleButton.Name = "ToggleButton"
-ToggleButton.Parent = ToggledFrame
+ToggleButton.Parent = ItEmFaRm
 ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton.BackgroundTransparency = 1.000
-ToggleButton.Size = UDim2.new(0.99999994, 0, 1, 0)
+ToggleButton.Position = UDim2.new(0.939092517, 0, 0.346938789, 0)
+ToggleButton.Size = UDim2.new(0.0271607507, 0, 0.306122452, 0)
 ToggleButton.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+UICorner_4.CornerRadius = UDim.new(0, 5)
+UICorner_4.Parent = ToggleButton
 
 LuCKyFarm.Name = "LuCKyFarm"
 LuCKyFarm.Parent = MainTab
@@ -337,21 +327,16 @@ TextLabel_7.TextSize = 14.000
 TextLabel_7.TextWrapped = true
 TextLabel_7.TextXAlignment = Enum.TextXAlignment.Left
 
-ToggledFrame_2.Name = "ToggledFrame"
-ToggledFrame_2.Parent = LuCKyFarm
-ToggledFrame_2.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-ToggledFrame_2.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
-ToggledFrame_2.Size = UDim2.new(0, 15, 0, 15)
-
-UICorner_6.CornerRadius = UDim.new(0, 5)
-UICorner_6.Parent = ToggledFrame_2
-
 ToggleButton_2.Name = "ToggleButton"
-ToggleButton_2.Parent = ToggledFrame_2
+ToggleButton_2.Parent = LuCKyFarm
 ToggleButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton_2.BackgroundTransparency = 1.000
-ToggleButton_2.Size = UDim2.new(0.99999994, 0, 1, 0)
+ToggleButton_2.Position = UDim2.new(0.939092517, 0, 0.346938789, 0)
+ToggleButton_2.Size = UDim2.new(0.0271607507, 0, 0.306122452, 0)
 ToggleButton_2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+UICorner_6.CornerRadius = UDim.new(0, 5)
+UICorner_6.Parent = ToggleButton_2
 
 MIHfaRM.Name = "MIHfaRM"
 MIHfaRM.Parent = MainTab
@@ -389,21 +374,16 @@ TextLabel_9.TextSize = 14.000
 TextLabel_9.TextWrapped = true
 TextLabel_9.TextXAlignment = Enum.TextXAlignment.Left
 
-ToggledFrame_3.Name = "ToggledFrame"
-ToggledFrame_3.Parent = MIHfaRM
-ToggledFrame_3.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-ToggledFrame_3.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
-ToggledFrame_3.Size = UDim2.new(0, 15, 0, 15)
-
-UICorner_8.CornerRadius = UDim.new(0, 5)
-UICorner_8.Parent = ToggledFrame_3
-
 ToggleButton_3.Name = "ToggleButton"
-ToggleButton_3.Parent = ToggledFrame_3
+ToggleButton_3.Parent = MIHfaRM
 ToggleButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton_3.BackgroundTransparency = 1.000
-ToggleButton_3.Size = UDim2.new(0.99999994, 0, 1, 0)
+ToggleButton_3.Position = UDim2.new(0.939092517, 0, 0.346938789, 0)
+ToggleButton_3.Size = UDim2.new(0.0271607507, 0, 0.306122452, 0)
 ToggleButton_3.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+UICorner_8.CornerRadius = UDim.new(0, 5)
+UICorner_8.Parent = ToggleButton_3
 
 _1v1AuTo.Name = "1v1AuTo"
 _1v1AuTo.Parent = MainTab
@@ -441,21 +421,16 @@ TextLabel_11.TextSize = 14.000
 TextLabel_11.TextWrapped = true
 TextLabel_11.TextXAlignment = Enum.TextXAlignment.Left
 
-ToggledFrame_4.Name = "ToggledFrame"
-ToggledFrame_4.Parent = _1v1AuTo
-ToggledFrame_4.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-ToggledFrame_4.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
-ToggledFrame_4.Size = UDim2.new(0, 15, 0, 15)
-
-UICorner_10.CornerRadius = UDim.new(0, 5)
-UICorner_10.Parent = ToggledFrame_4
-
 ToggleButton_4.Name = "ToggleButton"
-ToggleButton_4.Parent = ToggledFrame_4
+ToggleButton_4.Parent = _1v1AuTo
 ToggleButton_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton_4.BackgroundTransparency = 1.000
-ToggleButton_4.Size = UDim2.new(0.99999994, 0, 1, 0)
+ToggleButton_4.Position = UDim2.new(0.939092517, 0, 0.346938789, 0)
+ToggleButton_4.Size = UDim2.new(0.0271607507, 0, 0.306122452, 0)
 ToggleButton_4.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+UICorner_10.CornerRadius = UDim.new(0, 5)
+UICorner_10.Parent = ToggleButton_4
 
 AuToTwOh.Name = "AuToTwOh"
 AuToTwOh.Parent = MainTab
@@ -493,22 +468,6 @@ TextLabel_13.TextSize = 14.000
 TextLabel_13.TextWrapped = true
 TextLabel_13.TextXAlignment = Enum.TextXAlignment.Left
 
-ToggledFrame_5.Name = "ToggledFrame"
-ToggledFrame_5.Parent = AuToTwOh
-ToggledFrame_5.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-ToggledFrame_5.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
-ToggledFrame_5.Size = UDim2.new(0, 15, 0, 15)
-
-UICorner_12.CornerRadius = UDim.new(0, 5)
-UICorner_12.Parent = ToggledFrame_5
-
-ToggleButton_5.Name = "ToggleButton"
-ToggleButton_5.Parent = ToggledFrame_5
-ToggleButton_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ToggleButton_5.BackgroundTransparency = 1.000
-ToggleButton_5.Size = UDim2.new(0.99999994, 0, 1, 0)
-ToggleButton_5.ImageColor3 = Color3.fromRGB(0, 0, 0)
-
 InfoTWOH.Name = "InfoTWOH"
 InfoTWOH.Parent = AuToTwOh
 InfoTWOH.BackgroundColor3 = Color3.fromRGB(42, 69, 104)
@@ -516,8 +475,8 @@ InfoTWOH.BorderSizePixel = 0
 InfoTWOH.Position = UDim2.new(-0.00023944561, 0, 1.13835919, 0)
 InfoTWOH.Size = UDim2.new(0, 559, 0, 25)
 
-UICorner_13.CornerRadius = UDim.new(0, 4)
-UICorner_13.Parent = InfoTWOH
+UICorner_12.CornerRadius = UDim.new(0, 4)
+UICorner_12.Parent = InfoTWOH
 
 TextLabel_14.Parent = InfoTWOH
 TextLabel_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -538,6 +497,17 @@ ImageLabel.BackgroundTransparency = 1.000
 ImageLabel.Position = UDim2.new(0.0145366322, 0, 0.119999997, 0)
 ImageLabel.Size = UDim2.new(0, 22, 0, 19)
 ImageLabel.Image = "rbxassetid://12273260999"
+
+ToggleButton_5.Name = "ToggleButton"
+ToggleButton_5.Parent = AuToTwOh
+ToggleButton_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton_5.BackgroundTransparency = 1.000
+ToggleButton_5.Position = UDim2.new(0.939092517, 0, 0.346938789, 0)
+ToggleButton_5.Size = UDim2.new(0.0271607507, 0, 0.306122452, 0)
+ToggleButton_5.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+UICorner_13.CornerRadius = UDim.new(0, 5)
+UICorner_13.Parent = ToggleButton_5
 
 sTanDFarm.Name = "sTanDFarm"
 sTanDFarm.Parent = MainTab
@@ -583,22 +553,16 @@ TextLabel_16.TextSize = 14.000
 TextLabel_16.TextWrapped = true
 TextLabel_16.TextXAlignment = Enum.TextXAlignment.Left
 
-ToggledFrame_6.Name = "ToggledFrame"
-ToggledFrame_6.Parent = standfarmautO
-ToggledFrame_6.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-ToggledFrame_6.BackgroundTransparency = 1.000
-ToggledFrame_6.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
-ToggledFrame_6.Size = UDim2.new(0, 15, 0, 15)
-
-UICorner_16.CornerRadius = UDim.new(0, 5)
-UICorner_16.Parent = ToggledFrame_6
-
 ToggleButton_6.Name = "ToggleButton"
-ToggleButton_6.Parent = ToggledFrame_6
+ToggleButton_6.Parent = standfarmautO
 ToggleButton_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton_6.BackgroundTransparency = 1.000
-ToggleButton_6.Size = UDim2.new(0.99999994, 0, 1, 0)
+ToggleButton_6.Position = UDim2.new(0.939092517, 0, 0.346938789, 0)
+ToggleButton_6.Size = UDim2.new(0.0271607507, 0, 0.306122452, 0)
 ToggleButton_6.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+UICorner_16.CornerRadius = UDim.new(0, 5)
+UICorner_16.Parent = ToggleButton_6
 
 SettingsTab.Name = "Settings Tab"
 SettingsTab.Parent = TABFRAMES
@@ -651,18 +615,18 @@ TextLabel_18.TextTransparency = 1.000
 TextLabel_18.TextWrapped = true
 TextLabel_18.TextXAlignment = Enum.TextXAlignment.Left
 
-ToggledFrame_7.Name = "ToggledFrame"
-ToggledFrame_7.Parent = LukyAruPing
-ToggledFrame_7.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-ToggledFrame_7.BackgroundTransparency = 1.000
-ToggledFrame_7.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
-ToggledFrame_7.Size = UDim2.new(0, 15, 0, 15)
+ToggledFrame.Name = "ToggledFrame"
+ToggledFrame.Parent = LukyAruPing
+ToggledFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame.BackgroundTransparency = 1.000
+ToggledFrame.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame.Size = UDim2.new(0, 15, 0, 15)
 
 UICorner_18.CornerRadius = UDim.new(0, 5)
-UICorner_18.Parent = ToggledFrame_7
+UICorner_18.Parent = ToggledFrame
 
 ToggleButton_7.Name = "ToggleButton"
-ToggleButton_7.Parent = ToggledFrame_7
+ToggleButton_7.Parent = ToggledFrame
 ToggleButton_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton_7.BackgroundTransparency = 1.000
 ToggleButton_7.Size = UDim2.new(0, 13, 0, 15)
@@ -726,18 +690,18 @@ TextLabel_20.TextTransparency = 1.000
 TextLabel_20.TextWrapped = true
 TextLabel_20.TextXAlignment = Enum.TextXAlignment.Left
 
-ToggledFrame_8.Name = "ToggledFrame"
-ToggledFrame_8.Parent = StAnDuPingU
-ToggledFrame_8.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-ToggledFrame_8.BackgroundTransparency = 1.000
-ToggledFrame_8.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
-ToggledFrame_8.Size = UDim2.new(0, 15, 0, 15)
+ToggledFrame_2.Name = "ToggledFrame"
+ToggledFrame_2.Parent = StAnDuPingU
+ToggledFrame_2.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_2.BackgroundTransparency = 1.000
+ToggledFrame_2.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_2.Size = UDim2.new(0, 15, 0, 15)
 
 UICorner_21.CornerRadius = UDim.new(0, 5)
-UICorner_21.Parent = ToggledFrame_8
+UICorner_21.Parent = ToggledFrame_2
 
 ToggleButton_8.Name = "ToggleButton"
-ToggleButton_8.Parent = ToggledFrame_8
+ToggleButton_8.Parent = ToggledFrame_2
 ToggleButton_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton_8.BackgroundTransparency = 1.000
 ToggleButton_8.Size = UDim2.new(0, 13, 0, 15)
@@ -783,18 +747,18 @@ TextLabel_22.TextTransparency = 1.000
 TextLabel_22.TextWrapped = true
 TextLabel_22.TextXAlignment = Enum.TextXAlignment.Left
 
-ToggledFrame_9.Name = "ToggledFrame"
-ToggledFrame_9.Parent = lowWMode
-ToggledFrame_9.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-ToggledFrame_9.BackgroundTransparency = 1.000
-ToggledFrame_9.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
-ToggledFrame_9.Size = UDim2.new(0, 15, 0, 15)
+ToggledFrame_3.Name = "ToggledFrame"
+ToggledFrame_3.Parent = lowWMode
+ToggledFrame_3.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_3.BackgroundTransparency = 1.000
+ToggledFrame_3.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_3.Size = UDim2.new(0, 15, 0, 15)
 
 UICorner_23.CornerRadius = UDim.new(0, 5)
-UICorner_23.Parent = ToggledFrame_9
+UICorner_23.Parent = ToggledFrame_3
 
 ToggleButton_9.Name = "ToggleButton"
-ToggleButton_9.Parent = ToggledFrame_9
+ToggleButton_9.Parent = ToggledFrame_3
 ToggleButton_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton_9.BackgroundTransparency = 1.000
 ToggleButton_9.Size = UDim2.new(0, 13, 0, 15)
@@ -840,18 +804,18 @@ TextLabel_24.TextTransparency = 1.000
 TextLabel_24.TextWrapped = true
 TextLabel_24.TextXAlignment = Enum.TextXAlignment.Left
 
-ToggledFrame_10.Name = "ToggledFrame"
-ToggledFrame_10.Parent = EarlyYplAy
-ToggledFrame_10.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
-ToggledFrame_10.BackgroundTransparency = 1.000
-ToggledFrame_10.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
-ToggledFrame_10.Size = UDim2.new(0, 15, 0, 15)
+ToggledFrame_4.Name = "ToggledFrame"
+ToggledFrame_4.Parent = EarlyYplAy
+ToggledFrame_4.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_4.BackgroundTransparency = 1.000
+ToggledFrame_4.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_4.Size = UDim2.new(0, 15, 0, 15)
 
 UICorner_25.CornerRadius = UDim.new(0, 5)
-UICorner_25.Parent = ToggledFrame_10
+UICorner_25.Parent = ToggledFrame_4
 
 ToggleButton_10.Name = "ToggleButton"
-ToggleButton_10.Parent = ToggledFrame_10
+ToggleButton_10.Parent = ToggledFrame_4
 ToggleButton_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ToggleButton_10.BackgroundTransparency = 1.000
 ToggleButton_10.Size = UDim2.new(0, 13, 0, 15)
@@ -1093,13 +1057,13 @@ UICorner_33.Parent = Minimize_2
 
 -- Scripts:
 
-local function RWMIO_fake_script() -- TextLabel.LocalScript 
+local function GOBSB_fake_script() -- TextLabel.LocalScript 
 	local script = Instance.new('LocalScript', TextLabel)
 
 	script.Parent.Text = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
 end
-coroutine.wrap(RWMIO_fake_script)()
-local function MYQQDEK_fake_script() -- Main.eaeaEAEa 
+coroutine.wrap(GOBSB_fake_script)()
+local function GOHJ_fake_script() -- Main.eaeaEAEa 
 	local script = Instance.new('LocalScript', Main)
 
 	local button = script.Parent
@@ -1181,8 +1145,8 @@ local function MYQQDEK_fake_script() -- Main.eaeaEAEa
 	-- {0.03, 0},{0.661, 0}
 	-- {0.968, 0},{0.661, 0}
 end
-coroutine.wrap(MYQQDEK_fake_script)()
-local function KKDT_fake_script() -- Settings.eaeaEAEa 
+coroutine.wrap(GOHJ_fake_script)()
+local function VXLIZOL_fake_script() -- Settings.eaeaEAEa 
 	local script = Instance.new('LocalScript', Settings)
 
 	local button = script.Parent
@@ -1264,79 +1228,62 @@ local function KKDT_fake_script() -- Settings.eaeaEAEa
 	-- {0.03, 0},{0.661, 0}
 	-- {0.968, 0},{0.661, 0}
 end
-coroutine.wrap(KKDT_fake_script)()
-local function MCFQYN_fake_script() -- ItEmFaRm.itemfarmmmmmm 
+coroutine.wrap(VXLIZOL_fake_script)()
+local function VTNV_fake_script() -- ItEmFaRm.itemfarmmmmmm 
 	local script = Instance.new('LocalScript', ItEmFaRm)
 
-	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
+	script.Parent.ToggleButton.MouseButton1Click:Connect(function()
 		if getgenv().ToggledITEMFARM == false then
 			getgenv().ToggledITEMFARM = true
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/BozRodrigo/ROBLOXLUA/main/ITEMFARMTESTING"))()
-			script.Parent.ToggledFrame.ToggleButton.Image = "rbxassetid://12273073882"
+			script.Parent.ToggleButton.Image = "rbxassetid://12273073882"
 			print("Enabled Item Farm")
 		elseif getgenv().ToggledITEMFARM == true then
 			getgenv().ToggledITEMFARM = false
-			script.Parent.ToggledFrame.ToggleButton.Image = ""
+			script.Parent.ToggleButton.Image = ""
 			print("Disabled Item Farm")
 		end
 	end)
 	
 end
-coroutine.wrap(MCFQYN_fake_script)()
-local function XIZB_fake_script() -- LuCKyFarm.itemfarmmmmmmlukky 
-	local script = Instance.new('LocalScript', LuCKyFarm)
-
-	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
-		if getgenv().ToggledLUCKYITEMFARM == false then
-			getgenv().ToggledLUCKYITEMFARM = true
-			script.Parent.ToggledFrame.ToggleButton.Image = "rbxassetid://12273073882"
-			print("Enabled Item Farm")
-		elseif getgenv().ToggledLUCKYITEMFARM == true then
-			getgenv().ToggledLUCKYITEMFARM = false
-			script.Parent.ToggledFrame.ToggleButton.Image = ""
-			print("Disabled Item Farm")
-		end
-	end)
-	
-end
-coroutine.wrap(XIZB_fake_script)()
-local function KQMJB_fake_script() -- MIHfaRM.stafnrfarm 
+coroutine.wrap(VTNV_fake_script)()
+local function OMABL_fake_script() -- MIHfaRM.stafnrfarm 
 	local script = Instance.new('LocalScript', MIHfaRM)
 
-	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
+	script.Parent.ToggleButton.MouseButton1Click:Connect(function()
 		if getgenv().ToggledMIHFarm == false then
 			getgenv().ToggledMIHFarm = true
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/BozRodrigo/ROBLOXLUA/main/AUTOMIHTESTING"))()
-			script.Parent.ToggledFrame.ToggleButton.Image = "rbxassetid://12273073882"
+			script.Parent.ToggleButton.Image = "rbxassetid://12273073882"
 			print("Enabled MIH Farm")
 		elseif getgenv().ToggledMIHFarm == true then
 			getgenv().ToggledMIHFarm = false
-			script.Parent.ToggledFrame.ToggleButton.Image = ""
+			script.Parent.ToggleButton.Image = ""
 			print("Disabled MIH Farm")
 		end
 	end)
 	
 end
-coroutine.wrap(KQMJB_fake_script)()
-local function PYOS_fake_script() -- standfarmautO.stafnrfarm 
+coroutine.wrap(OMABL_fake_script)()
+local function EIFBYI_fake_script() -- standfarmautO.stafnrfarm 
 	local script = Instance.new('LocalScript', standfarmautO)
 
-	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
+	script.Parent.ToggleButton.MouseButton1Click:Connect(function()
 		if getgenv().ToggledSTANDFARM == false then
 			getgenv().ToggledSTANDFARM = true
 			loadstring(game:HttpGet("https://raw.githubusercontent.com/BozRodrigo/ROBLOXLUA/main/STANDFARMTESTING"))()
-			script.Parent.ToggledFrame.ToggleButton.Image = "rbxassetid://12273073882"
+			script.Parent.ToggleButton.Image = "rbxassetid://12273073882"
 			print("Enabled Stand Farm")
 		elseif getgenv().ToggledSTANDFARM == true then
 			getgenv().ToggledSTANDFARM = false
-			script.Parent.ToggledFrame.ToggleButton.Image = ""
+			script.Parent.ToggleButton.Image = ""
 			print("Disabled Stand Farm")
 		end
 	end)
 	
 end
-coroutine.wrap(PYOS_fake_script)()
-local function UNYUQCQ_fake_script() -- WebhookLink.LocalScript 
+coroutine.wrap(EIFBYI_fake_script)()
+local function JSJUQE_fake_script() -- WebhookLink.LocalScript 
 	local script = Instance.new('LocalScript', WebhookLink)
 
 	script.Parent:GetPropertyChangedSignal("Text"):Connect(function(webhook)
@@ -1344,8 +1291,8 @@ local function UNYUQCQ_fake_script() -- WebhookLink.LocalScript
 		print("changed webhook to "..webhook)
 	end)
 end
-coroutine.wrap(UNYUQCQ_fake_script)()
-local function CDZS_fake_script() -- lowWMode.;loawmeode 
+coroutine.wrap(JSJUQE_fake_script)()
+local function DMCG_fake_script() -- lowWMode.;loawmeode 
 	local script = Instance.new('LocalScript', lowWMode)
 
 	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
@@ -1362,8 +1309,8 @@ local function CDZS_fake_script() -- lowWMode.;loawmeode
 	
 	
 end
-coroutine.wrap(CDZS_fake_script)()
-local function ZNPSFV_fake_script() -- EarlyYplAy.e4r1y 
+coroutine.wrap(DMCG_fake_script)()
+local function TVJF_fake_script() -- EarlyYplAy.e4r1y 
 	local script = Instance.new('LocalScript', EarlyYplAy)
 
 	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
@@ -1380,8 +1327,8 @@ local function ZNPSFV_fake_script() -- EarlyYplAy.e4r1y
 	
 	
 end
-coroutine.wrap(ZNPSFV_fake_script)()
-local function KYYG_fake_script() -- TestWebhook.LocalScript 
+coroutine.wrap(TVJF_fake_script)()
+local function QDSO_fake_script() -- TestWebhook.LocalScript 
 	local script = Instance.new('LocalScript', TestWebhook)
 
 	script.Parent.MouseButton1Click:Connect(function()	
@@ -1414,8 +1361,8 @@ local function KYYG_fake_script() -- TestWebhook.LocalScript
 		request(abcdef)
 	end)
 end
-coroutine.wrap(KYYG_fake_script)()
-local function EFKN_fake_script() -- pingthingy.LocalScript 
+coroutine.wrap(QDSO_fake_script)()
+local function CJQWJUR_fake_script() -- pingthingy.LocalScript 
 	local script = Instance.new('LocalScript', pingthingy)
 
 	script.Parent:GetPropertyChangedSignal("Text"):Connect(function(webhook)
@@ -1423,9 +1370,9 @@ local function EFKN_fake_script() -- pingthingy.LocalScript
 		print("changed webhook to "..webhook)
 	end)
 end
-coroutine.wrap(EFKN_fake_script)()
+coroutine.wrap(CJQWJUR_fake_script)()
 -- MAINFRAME.draggebla is disabled.
-local function SHUHHD_fake_script() -- Minimize.miniiizmimziiize 
+local function UKERSL_fake_script() -- Minimize.miniiizmimziiize 
 	local script = Instance.new('LocalScript', Minimize)
 
 	local tweenservice = game:GetService("TweenService")
@@ -1473,8 +1420,8 @@ local function SHUHHD_fake_script() -- Minimize.miniiizmimziiize
 		print("CLOSED HUB")
 	end)
 end
-coroutine.wrap(SHUHHD_fake_script)()
-local function UDSJS_fake_script() -- MAINFRAME.SmoothDrag 
+coroutine.wrap(UKERSL_fake_script)()
+local function FQTLYR_fake_script() -- MAINFRAME.SmoothDrag 
 	local script = Instance.new('LocalScript', MAINFRAME)
 
 	local Drag = script.Parent
@@ -1521,8 +1468,8 @@ local function UDSJS_fake_script() -- MAINFRAME.SmoothDrag
 	end)
 	
 end
-coroutine.wrap(UDSJS_fake_script)()
-local function OKYVUBF_fake_script() -- discordcopy.eEAeaeaae 
+coroutine.wrap(FQTLYR_fake_script)()
+local function JXLZKHR_fake_script() -- discordcopy.eEAeaeaae 
 	local script = Instance.new('LocalScript', discordcopy)
 
 	local button = script.Parent
@@ -1532,8 +1479,8 @@ local function OKYVUBF_fake_script() -- discordcopy.eEAeaeaae
 		print("copied link to clipboard")
 	end)
 end
-coroutine.wrap(OKYVUBF_fake_script)()
-local function QXNTD_fake_script() -- Minimize_2.miniiizmimziiize 
+coroutine.wrap(JXLZKHR_fake_script)()
+local function DYDDRQR_fake_script() -- Minimize_2.miniiizmimziiize 
 	local script = Instance.new('LocalScript', Minimize_2)
 
 	local tweenservice = game:GetService("TweenService")
@@ -1567,8 +1514,8 @@ local function QXNTD_fake_script() -- Minimize_2.miniiizmimziiize
 		print("CLOSED HUB")
 	end)
 end
-coroutine.wrap(QXNTD_fake_script)()
-local function BDLULZK_fake_script() -- Creds.SmoothDrag 
+coroutine.wrap(DYDDRQR_fake_script)()
+local function QEATKES_fake_script() -- Creds.SmoothDrag 
 	local script = Instance.new('LocalScript', Creds)
 
 	local Drag = script.Parent
@@ -1611,8 +1558,8 @@ local function BDLULZK_fake_script() -- Creds.SmoothDrag
 		end)
 	
 end
-coroutine.wrap(BDLULZK_fake_script)()
-local function OHQQAD_fake_script() -- HsBGui2.gbloals 
+coroutine.wrap(QEATKES_fake_script)()
+local function GETDQ_fake_script() -- HsBGui2.gbloals 
 	local script = Instance.new('LocalScript', HsBGui2)
 
 	-- ALL ITEM FARM
@@ -1664,4 +1611,4 @@ local function OHQQAD_fake_script() -- HsBGui2.gbloals
 	getgenv().UseKeyX = true
 	
 end
-coroutine.wrap(OHQQAD_fake_script)()
+coroutine.wrap(GETDQ_fake_script)()
