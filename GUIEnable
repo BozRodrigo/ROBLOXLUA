@@ -1,0 +1,1667 @@
+local HsBGui2 = Instance.new("ScreenGui")
+local MAINFRAME = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local MAINTABS = Instance.new("Frame")
+local Main = Instance.new("TextButton")
+local TextLabel_2 = Instance.new("TextLabel")
+local SelectedorNot = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Settings = Instance.new("TextButton")
+local TextLabel_3 = Instance.new("TextLabel")
+local SelectedorNot_2 = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local TABFRAMES = Instance.new("Frame")
+local MainTab = Instance.new("ScrollingFrame")
+local ItEmFaRm = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local TextLabel_4 = Instance.new("TextLabel")
+local TextLabel_5 = Instance.new("TextLabel")
+local ToggledFrame = Instance.new("Frame")
+local UICorner_4 = Instance.new("UICorner")
+local ToggleButton = Instance.new("ImageButton")
+local LuCKyFarm = Instance.new("Frame")
+local UICorner_5 = Instance.new("UICorner")
+local TextLabel_6 = Instance.new("TextLabel")
+local TextLabel_7 = Instance.new("TextLabel")
+local ToggledFrame_2 = Instance.new("Frame")
+local UICorner_6 = Instance.new("UICorner")
+local ToggleButton_2 = Instance.new("ImageButton")
+local MIHfaRM = Instance.new("Frame")
+local UICorner_7 = Instance.new("UICorner")
+local TextLabel_8 = Instance.new("TextLabel")
+local TextLabel_9 = Instance.new("TextLabel")
+local ToggledFrame_3 = Instance.new("Frame")
+local UICorner_8 = Instance.new("UICorner")
+local ToggleButton_3 = Instance.new("ImageButton")
+local _1v1AuTo = Instance.new("Frame")
+local UICorner_9 = Instance.new("UICorner")
+local TextLabel_10 = Instance.new("TextLabel")
+local TextLabel_11 = Instance.new("TextLabel")
+local ToggledFrame_4 = Instance.new("Frame")
+local UICorner_10 = Instance.new("UICorner")
+local ToggleButton_4 = Instance.new("ImageButton")
+local AuToTwOh = Instance.new("Frame")
+local UICorner_11 = Instance.new("UICorner")
+local TextLabel_12 = Instance.new("TextLabel")
+local TextLabel_13 = Instance.new("TextLabel")
+local ToggledFrame_5 = Instance.new("Frame")
+local UICorner_12 = Instance.new("UICorner")
+local ToggleButton_5 = Instance.new("ImageButton")
+local InfoTWOH = Instance.new("Frame")
+local UICorner_13 = Instance.new("UICorner")
+local TextLabel_14 = Instance.new("TextLabel")
+local ImageLabel = Instance.new("ImageLabel")
+local sTanDFarm = Instance.new("Frame")
+local UICorner_14 = Instance.new("UICorner")
+local standfarmautO = Instance.new("Frame")
+local UICorner_15 = Instance.new("UICorner")
+local TextLabel_15 = Instance.new("TextLabel")
+local TextLabel_16 = Instance.new("TextLabel")
+local ToggledFrame_6 = Instance.new("Frame")
+local UICorner_16 = Instance.new("UICorner")
+local ToggleButton_6 = Instance.new("ImageButton")
+local SettingsTab = Instance.new("ScrollingFrame")
+local LukyAruPing = Instance.new("Frame")
+local UICorner_17 = Instance.new("UICorner")
+local TextLabel_17 = Instance.new("TextLabel")
+local TextLabel_18 = Instance.new("TextLabel")
+local ToggledFrame_7 = Instance.new("Frame")
+local UICorner_18 = Instance.new("UICorner")
+local ToggleButton_7 = Instance.new("ImageButton")
+local WebhookLink = Instance.new("TextBox")
+local UICorner_19 = Instance.new("UICorner")
+local StAnDuPingU = Instance.new("Frame")
+local UICorner_20 = Instance.new("UICorner")
+local TextLabel_19 = Instance.new("TextLabel")
+local TextLabel_20 = Instance.new("TextLabel")
+local ToggledFrame_8 = Instance.new("Frame")
+local UICorner_21 = Instance.new("UICorner")
+local ToggleButton_8 = Instance.new("ImageButton")
+local lowWMode = Instance.new("Frame")
+local UICorner_22 = Instance.new("UICorner")
+local TextLabel_21 = Instance.new("TextLabel")
+local TextLabel_22 = Instance.new("TextLabel")
+local ToggledFrame_9 = Instance.new("Frame")
+local UICorner_23 = Instance.new("UICorner")
+local ToggleButton_9 = Instance.new("ImageButton")
+local EarlyYplAy = Instance.new("Frame")
+local UICorner_24 = Instance.new("UICorner")
+local TextLabel_23 = Instance.new("TextLabel")
+local TextLabel_24 = Instance.new("TextLabel")
+local ToggledFrame_10 = Instance.new("Frame")
+local UICorner_25 = Instance.new("UICorner")
+local ToggleButton_10 = Instance.new("ImageButton")
+local TestWebhook = Instance.new("TextButton")
+local UICorner_26 = Instance.new("UICorner")
+local pingthingy = Instance.new("TextBox")
+local UICorner_27 = Instance.new("UICorner")
+local i9nfop1ntg = Instance.new("Frame")
+local UICorner_28 = Instance.new("UICorner")
+local TextLabel_25 = Instance.new("TextLabel")
+local ImageLabel_2 = Instance.new("ImageLabel")
+local UICorner_29 = Instance.new("UICorner")
+local Frame = Instance.new("Frame")
+local Minimize = Instance.new("TextButton")
+local UICorner_30 = Instance.new("UICorner")
+local Frame_2 = Instance.new("Frame")
+local Frame_3 = Instance.new("Frame")
+local Frame_4 = Instance.new("Frame")
+local ImageLabel_3 = Instance.new("ImageLabel")
+local Creds = Instance.new("Frame")
+local UICorner_31 = Instance.new("UICorner")
+local Title = Instance.new("TextLabel")
+local dev = Instance.new("TextLabel")
+local mess = Instance.new("TextLabel")
+local dev_2 = Instance.new("TextLabel")
+local Thing = Instance.new("Frame")
+local discordcopy = Instance.new("TextButton")
+local UICorner_32 = Instance.new("UICorner")
+local dev_3 = Instance.new("TextLabel")
+local Minimize_2 = Instance.new("TextButton")
+local UICorner_33 = Instance.new("UICorner")
+
+--Properties:
+
+HsBGui2.Name = "HsB Gui 2"
+HsBGui2.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+HsBGui2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MAINFRAME.Name = "MAINFRAME"
+MAINFRAME.Parent = HsBGui2
+MAINFRAME.Active = true
+MAINFRAME.BackgroundColor3 = Color3.fromRGB(52, 48, 39)
+MAINFRAME.BorderSizePixel = 0
+MAINFRAME.ClipsDescendants = true
+MAINFRAME.Position = UDim2.new(0.180437237, 0, 0.456074476, 0)
+MAINFRAME.Selectable = true
+MAINFRAME.Size = UDim2.new(0.398502022, 0, 0.410989016, 0)
+
+TextLabel.Parent = MAINFRAME
+TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.Position = UDim2.new(0.0596750528, 0, 0.0294117648, 0)
+TextLabel.Size = UDim2.new(0.348555893, 0, 0.0481283404, 0)
+TextLabel.Font = Enum.Font.GothamBold
+TextLabel.Text = "HsB Hub"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextScaled = true
+TextLabel.TextSize = 14.000
+TextLabel.TextWrapped = true
+TextLabel.TextXAlignment = Enum.TextXAlignment.Left
+
+MAINTABS.Name = "MAINTABS"
+MAINTABS.Parent = MAINFRAME
+MAINTABS.BackgroundColor3 = Color3.fromRGB(80, 74, 60)
+MAINTABS.BorderSizePixel = 0
+MAINTABS.Position = UDim2.new(0, 0, 0.10695187, 0)
+MAINTABS.Size = UDim2.new(0.999999881, 0, 0.085561499, 0)
+
+Main.Name = "Main"
+Main.Parent = MAINTABS
+Main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Main.BackgroundTransparency = 1.000
+Main.Position = UDim2.new(0.010104957, 0, 0.0292186737, 0)
+Main.Size = UDim2.new(0.139686108, 0, 0.986000001, 0)
+Main.Font = Enum.Font.GothamBold
+Main.Text = ""
+Main.TextColor3 = Color3.fromRGB(255, 255, 255)
+Main.TextScaled = true
+Main.TextSize = 14.000
+Main.TextWrapped = true
+
+TextLabel_2.Parent = Main
+TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.BackgroundTransparency = 1.000
+TextLabel_2.Position = UDim2.new(0.0930813923, 0, -0.0316937119, 0)
+TextLabel_2.Size = UDim2.new(0.786948442, 0, 1, 0)
+TextLabel_2.Font = Enum.Font.GothamBold
+TextLabel_2.Text = "Main Tab"
+TextLabel_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_2.TextScaled = true
+TextLabel_2.TextSize = 14.000
+TextLabel_2.TextWrapped = true
+TextLabel_2.TextXAlignment = Enum.TextXAlignment.Left
+
+SelectedorNot.Name = "SelectedorNot"
+SelectedorNot.Parent = Main
+SelectedorNot.BackgroundColor3 = Color3.fromRGB(255, 189, 109)
+SelectedorNot.BackgroundTransparency = 1.000
+SelectedorNot.BorderSizePixel = 0
+SelectedorNot.Position = UDim2.new(0.0321055688, 0, 0.118514828, 0)
+SelectedorNot.Size = UDim2.new(0.0299999993, 0, 0.661000013, 0)
+SelectedorNot.ZIndex = -1
+
+UICorner.CornerRadius = UDim.new(0, 20)
+UICorner.Parent = SelectedorNot
+
+Settings.Name = "Settings"
+Settings.Parent = MAINTABS
+Settings.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Settings.BackgroundTransparency = 1.000
+Settings.Position = UDim2.new(0.163363472, 0, 0.0292186737, 0)
+Settings.Size = UDim2.new(0.139686108, 0, 0.986000001, 0)
+Settings.Font = Enum.Font.GothamBold
+Settings.Text = ""
+Settings.TextColor3 = Color3.fromRGB(255, 255, 255)
+Settings.TextScaled = true
+Settings.TextSize = 14.000
+Settings.TextWrapped = true
+
+TextLabel_3.Parent = Settings
+TextLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.BackgroundTransparency = 1.000
+TextLabel_3.Position = UDim2.new(0.0930813923, 0, -0.0316937119, 0)
+TextLabel_3.Size = UDim2.new(0.786948442, 0, 1, 0)
+TextLabel_3.Font = Enum.Font.GothamBold
+TextLabel_3.Text = "Settings"
+TextLabel_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_3.TextScaled = true
+TextLabel_3.TextSize = 14.000
+TextLabel_3.TextWrapped = true
+TextLabel_3.TextXAlignment = Enum.TextXAlignment.Left
+
+SelectedorNot_2.Name = "SelectedorNot"
+SelectedorNot_2.Parent = Settings
+SelectedorNot_2.BackgroundColor3 = Color3.fromRGB(255, 189, 109)
+SelectedorNot_2.BackgroundTransparency = 1.000
+SelectedorNot_2.BorderSizePixel = 0
+SelectedorNot_2.Position = UDim2.new(0.0321055688, 0, 0.118514828, 0)
+SelectedorNot_2.Size = UDim2.new(0.0299999993, 0, 0.661000013, 0)
+SelectedorNot_2.ZIndex = -1
+
+UICorner_2.CornerRadius = UDim.new(0, 20)
+UICorner_2.Parent = SelectedorNot_2
+
+TABFRAMES.Name = "TABFRAMES"
+TABFRAMES.Parent = MAINFRAME
+TABFRAMES.BackgroundColor3 = Color3.fromRGB(33, 30, 20)
+TABFRAMES.BorderSizePixel = 0
+TABFRAMES.Position = UDim2.new(0, 0, 0.19114171, 0)
+TABFRAMES.Size = UDim2.new(1, 0, 0.808858275, 0)
+
+MainTab.Name = "Main Tab"
+MainTab.Parent = TABFRAMES
+MainTab.Active = true
+MainTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+MainTab.BackgroundTransparency = 1.000
+MainTab.BorderSizePixel = 0
+MainTab.Position = UDim2.new(0.0234192032, 0, 0.0275229365, 0)
+MainTab.Size = UDim2.new(0.955503523, 0, 0.944954157, 0)
+MainTab.ScrollBarThickness = 2
+
+ItEmFaRm.Name = "ItEmFaRm"
+ItEmFaRm.Parent = MainTab
+ItEmFaRm.BackgroundColor3 = Color3.fromRGB(52, 48, 39)
+ItEmFaRm.BorderSizePixel = 0
+ItEmFaRm.Position = UDim2.new(0, 2, 0, 2)
+ItEmFaRm.Size = UDim2.new(0, 557, 0, 49)
+
+UICorner_3.CornerRadius = UDim.new(0, 4)
+UICorner_3.Parent = ItEmFaRm
+
+TextLabel_4.Parent = ItEmFaRm
+TextLabel_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.BackgroundTransparency = 1.000
+TextLabel_4.Position = UDim2.new(0.0257069413, 0, -0.0204081628, 0)
+TextLabel_4.Size = UDim2.new(0, 117, 0, 25)
+TextLabel_4.Font = Enum.Font.GothamBlack
+TextLabel_4.Text = "Item Autofarm"
+TextLabel_4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_4.TextScaled = true
+TextLabel_4.TextSize = 14.000
+TextLabel_4.TextWrapped = true
+TextLabel_4.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_5.Parent = ItEmFaRm
+TextLabel_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.BackgroundTransparency = 1.000
+TextLabel_5.Position = UDim2.new(0.0257069413, 0, 0.367346942, 0)
+TextLabel_5.Size = UDim2.new(0, 324, 0, 25)
+TextLabel_5.Font = Enum.Font.GothamMedium
+TextLabel_5.Text = "will automatically farm ROKAS, LUCKY ARROWS, ARROWS, RIBS, PURE ROKAS, AND DIARY for you."
+TextLabel_5.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_5.TextScaled = true
+TextLabel_5.TextSize = 14.000
+TextLabel_5.TextWrapped = true
+TextLabel_5.TextXAlignment = Enum.TextXAlignment.Left
+
+ToggledFrame.Name = "ToggledFrame"
+ToggledFrame.Parent = ItEmFaRm
+ToggledFrame.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_4.CornerRadius = UDim.new(0, 5)
+UICorner_4.Parent = ToggledFrame
+
+ToggleButton.Name = "ToggleButton"
+ToggleButton.Parent = ToggledFrame
+ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton.BackgroundTransparency = 1.000
+ToggleButton.Size = UDim2.new(0.99999994, 0, 1, 0)
+ToggleButton.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+LuCKyFarm.Name = "LuCKyFarm"
+LuCKyFarm.Parent = MainTab
+LuCKyFarm.BackgroundColor3 = Color3.fromRGB(52, 48, 39)
+LuCKyFarm.BorderSizePixel = 0
+LuCKyFarm.Position = UDim2.new(0, 4, 0, 59)
+LuCKyFarm.Size = UDim2.new(0, 557, 0, 49)
+
+UICorner_5.CornerRadius = UDim.new(0, 4)
+UICorner_5.Parent = LuCKyFarm
+
+TextLabel_6.Parent = LuCKyFarm
+TextLabel_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.BackgroundTransparency = 1.000
+TextLabel_6.Position = UDim2.new(0.0257069413, 0, -0.0204081628, 0)
+TextLabel_6.Size = UDim2.new(0, 151, 0, 25)
+TextLabel_6.Font = Enum.Font.GothamBlack
+TextLabel_6.Text = "Lucky Arrow Autofarm"
+TextLabel_6.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_6.TextScaled = true
+TextLabel_6.TextSize = 14.000
+TextLabel_6.TextWrapped = true
+TextLabel_6.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_7.Parent = LuCKyFarm
+TextLabel_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.BackgroundTransparency = 1.000
+TextLabel_7.Position = UDim2.new(0.0257069413, 0, 0.367346942, 0)
+TextLabel_7.Size = UDim2.new(0, 324, 0, 25)
+TextLabel_7.Font = Enum.Font.GothamMedium
+TextLabel_7.Text = "will only autofarm LUCKY ARROWS for you."
+TextLabel_7.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_7.TextScaled = true
+TextLabel_7.TextSize = 14.000
+TextLabel_7.TextWrapped = true
+TextLabel_7.TextXAlignment = Enum.TextXAlignment.Left
+
+ToggledFrame_2.Name = "ToggledFrame"
+ToggledFrame_2.Parent = LuCKyFarm
+ToggledFrame_2.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_2.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_2.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_6.CornerRadius = UDim.new(0, 5)
+UICorner_6.Parent = ToggledFrame_2
+
+ToggleButton_2.Name = "ToggleButton"
+ToggleButton_2.Parent = ToggledFrame_2
+ToggleButton_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton_2.BackgroundTransparency = 1.000
+ToggleButton_2.Size = UDim2.new(0.99999994, 0, 1, 0)
+ToggleButton_2.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+MIHfaRM.Name = "MIHfaRM"
+MIHfaRM.Parent = MainTab
+MIHfaRM.BackgroundColor3 = Color3.fromRGB(52, 48, 39)
+MIHfaRM.BorderSizePixel = 0
+MIHfaRM.Position = UDim2.new(0, 3, 0, 174)
+MIHfaRM.Size = UDim2.new(0, 558, 0, 49)
+
+UICorner_7.CornerRadius = UDim.new(0, 4)
+UICorner_7.Parent = MIHfaRM
+
+TextLabel_8.Parent = MIHfaRM
+TextLabel_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.BackgroundTransparency = 1.000
+TextLabel_8.Position = UDim2.new(0.0257069413, 0, -0.0204081628, 0)
+TextLabel_8.Size = UDim2.new(0, 140, 0, 25)
+TextLabel_8.Font = Enum.Font.GothamBlack
+TextLabel_8.Text = "Auto Made In Heaven"
+TextLabel_8.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_8.TextScaled = true
+TextLabel_8.TextSize = 14.000
+TextLabel_8.TextWrapped = true
+TextLabel_8.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_9.Parent = MIHfaRM
+TextLabel_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_9.BackgroundTransparency = 1.000
+TextLabel_9.Position = UDim2.new(0.0257069413, 0, 0.367346942, 0)
+TextLabel_9.Size = UDim2.new(0, 324, 0, 25)
+TextLabel_9.Font = Enum.Font.GothamMedium
+TextLabel_9.Text = "will automatically achieve MIH for you."
+TextLabel_9.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_9.TextScaled = true
+TextLabel_9.TextSize = 14.000
+TextLabel_9.TextWrapped = true
+TextLabel_9.TextXAlignment = Enum.TextXAlignment.Left
+
+ToggledFrame_3.Name = "ToggledFrame"
+ToggledFrame_3.Parent = MIHfaRM
+ToggledFrame_3.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_3.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_3.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_8.CornerRadius = UDim.new(0, 5)
+UICorner_8.Parent = ToggledFrame_3
+
+ToggleButton_3.Name = "ToggleButton"
+ToggleButton_3.Parent = ToggledFrame_3
+ToggleButton_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton_3.BackgroundTransparency = 1.000
+ToggleButton_3.Size = UDim2.new(0.99999994, 0, 1, 0)
+ToggleButton_3.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+_1v1AuTo.Name = "1v1AuTo"
+_1v1AuTo.Parent = MainTab
+_1v1AuTo.BackgroundColor3 = Color3.fromRGB(52, 48, 39)
+_1v1AuTo.BorderSizePixel = 0
+_1v1AuTo.Position = UDim2.new(0, 2, 0, 116)
+_1v1AuTo.Size = UDim2.new(0, 559, 0, 49)
+
+UICorner_9.CornerRadius = UDim.new(0, 4)
+UICorner_9.Parent = _1v1AuTo
+
+TextLabel_10.Parent = _1v1AuTo
+TextLabel_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_10.BackgroundTransparency = 1.000
+TextLabel_10.Position = UDim2.new(0.0257069413, 0, 0, 0)
+TextLabel_10.Size = UDim2.new(0, 64, 0, 24)
+TextLabel_10.Font = Enum.Font.GothamBlack
+TextLabel_10.Text = "Auto 1v1"
+TextLabel_10.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_10.TextScaled = true
+TextLabel_10.TextSize = 14.000
+TextLabel_10.TextWrapped = true
+TextLabel_10.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_11.Parent = _1v1AuTo
+TextLabel_11.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_11.BackgroundTransparency = 1.000
+TextLabel_11.Position = UDim2.new(0.0257069413, 0, 0.367346942, 0)
+TextLabel_11.Size = UDim2.new(0, 324, 0, 25)
+TextLabel_11.Font = Enum.Font.GothamMedium
+TextLabel_11.Text = "will automatically win 1v1s for you."
+TextLabel_11.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_11.TextScaled = true
+TextLabel_11.TextSize = 14.000
+TextLabel_11.TextWrapped = true
+TextLabel_11.TextXAlignment = Enum.TextXAlignment.Left
+
+ToggledFrame_4.Name = "ToggledFrame"
+ToggledFrame_4.Parent = _1v1AuTo
+ToggledFrame_4.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_4.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_4.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_10.CornerRadius = UDim.new(0, 5)
+UICorner_10.Parent = ToggledFrame_4
+
+ToggleButton_4.Name = "ToggleButton"
+ToggleButton_4.Parent = ToggledFrame_4
+ToggleButton_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton_4.BackgroundTransparency = 1.000
+ToggleButton_4.Size = UDim2.new(0.99999994, 0, 1, 0)
+ToggleButton_4.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+AuToTwOh.Name = "AuToTwOh"
+AuToTwOh.Parent = MainTab
+AuToTwOh.BackgroundColor3 = Color3.fromRGB(52, 48, 39)
+AuToTwOh.BorderSizePixel = 0
+AuToTwOh.Position = UDim2.new(0, 2, 0, 235)
+AuToTwOh.Size = UDim2.new(0, 559, 0, 49)
+
+UICorner_11.CornerRadius = UDim.new(0, 4)
+UICorner_11.Parent = AuToTwOh
+
+TextLabel_12.Parent = AuToTwOh
+TextLabel_12.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_12.BackgroundTransparency = 1.000
+TextLabel_12.Position = UDim2.new(0.0257069413, 0, -0.0204081628, 0)
+TextLabel_12.Size = UDim2.new(0, 197, 0, 25)
+TextLabel_12.Font = Enum.Font.GothamBlack
+TextLabel_12.Text = "Auto The World: Over Heaven"
+TextLabel_12.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_12.TextScaled = true
+TextLabel_12.TextSize = 14.000
+TextLabel_12.TextWrapped = true
+TextLabel_12.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_13.Parent = AuToTwOh
+TextLabel_13.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_13.BackgroundTransparency = 1.000
+TextLabel_13.Position = UDim2.new(0.0257069413, 0, 0.367346942, 0)
+TextLabel_13.Size = UDim2.new(0, 324, 0, 25)
+TextLabel_13.Font = Enum.Font.GothamMedium
+TextLabel_13.Text = "will automatically achieve TWOH for you."
+TextLabel_13.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_13.TextScaled = true
+TextLabel_13.TextSize = 14.000
+TextLabel_13.TextWrapped = true
+TextLabel_13.TextXAlignment = Enum.TextXAlignment.Left
+
+ToggledFrame_5.Name = "ToggledFrame"
+ToggledFrame_5.Parent = AuToTwOh
+ToggledFrame_5.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_5.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_5.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_12.CornerRadius = UDim.new(0, 5)
+UICorner_12.Parent = ToggledFrame_5
+
+ToggleButton_5.Name = "ToggleButton"
+ToggleButton_5.Parent = ToggledFrame_5
+ToggleButton_5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton_5.BackgroundTransparency = 1.000
+ToggleButton_5.Size = UDim2.new(0.99999994, 0, 1, 0)
+ToggleButton_5.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+InfoTWOH.Name = "InfoTWOH"
+InfoTWOH.Parent = AuToTwOh
+InfoTWOH.BackgroundColor3 = Color3.fromRGB(42, 69, 104)
+InfoTWOH.BorderSizePixel = 0
+InfoTWOH.Position = UDim2.new(-0.00023944561, 0, 1.13835919, 0)
+InfoTWOH.Size = UDim2.new(0, 559, 0, 25)
+
+UICorner_13.CornerRadius = UDim.new(0, 4)
+UICorner_13.Parent = InfoTWOH
+
+TextLabel_14.Parent = InfoTWOH
+TextLabel_14.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_14.BackgroundTransparency = 1.000
+TextLabel_14.Position = UDim2.new(0.0774518698, 0, 0.159999996, 0)
+TextLabel_14.Size = UDim2.new(0, 426, 0, 16)
+TextLabel_14.Font = Enum.Font.GothamBlack
+TextLabel_14.Text = "requires The World, Dio's Diary & Aerosmith on Stand Storage 1"
+TextLabel_14.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_14.TextScaled = true
+TextLabel_14.TextSize = 14.000
+TextLabel_14.TextWrapped = true
+TextLabel_14.TextXAlignment = Enum.TextXAlignment.Left
+
+ImageLabel.Parent = InfoTWOH
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Position = UDim2.new(0.0145366322, 0, 0.119999997, 0)
+ImageLabel.Size = UDim2.new(0, 22, 0, 19)
+ImageLabel.Image = "rbxassetid://12273260999"
+
+sTanDFarm.Name = "sTanDFarm"
+sTanDFarm.Parent = MainTab
+sTanDFarm.BackgroundColor3 = Color3.fromRGB(52, 48, 39)
+sTanDFarm.BorderSizePixel = 0
+sTanDFarm.Position = UDim2.new(0, 3, 0, 327)
+sTanDFarm.Size = UDim2.new(0, 559, 0, 245)
+
+UICorner_14.CornerRadius = UDim.new(0, 4)
+UICorner_14.Parent = sTanDFarm
+
+standfarmautO.Name = "standfarmautO"
+standfarmautO.Parent = sTanDFarm
+standfarmautO.BackgroundColor3 = Color3.fromRGB(33, 30, 20)
+standfarmautO.BorderSizePixel = 0
+standfarmautO.Position = UDim2.new(0.0126140229, 0, 0.0291932393, 0)
+standfarmautO.Size = UDim2.new(0, 548, 0, 49)
+
+UICorner_15.CornerRadius = UDim.new(0, 4)
+UICorner_15.Parent = standfarmautO
+
+TextLabel_15.Parent = standfarmautO
+TextLabel_15.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_15.BackgroundTransparency = 1.000
+TextLabel_15.Position = UDim2.new(0.0257069394, 0, -0.0204081628, 0)
+TextLabel_15.Size = UDim2.new(0, 179, 0, 25)
+TextLabel_15.Font = Enum.Font.GothamBlack
+TextLabel_15.Text = "Auto Stand Farm"
+TextLabel_15.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_15.TextSize = 14.000
+TextLabel_15.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_16.Parent = standfarmautO
+TextLabel_16.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_16.BackgroundTransparency = 1.000
+TextLabel_16.Position = UDim2.new(0.0257069413, 0, 0.367346942, 0)
+TextLabel_16.Size = UDim2.new(0, 324, 0, 25)
+TextLabel_16.Font = Enum.Font.GothamMedium
+TextLabel_16.Text = "will automatically use Arrows, Rokas, to try and get your desired stand."
+TextLabel_16.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_16.TextScaled = true
+TextLabel_16.TextSize = 14.000
+TextLabel_16.TextWrapped = true
+TextLabel_16.TextXAlignment = Enum.TextXAlignment.Left
+
+ToggledFrame_6.Name = "ToggledFrame"
+ToggledFrame_6.Parent = standfarmautO
+ToggledFrame_6.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_6.BackgroundTransparency = 1.000
+ToggledFrame_6.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_6.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_16.CornerRadius = UDim.new(0, 5)
+UICorner_16.Parent = ToggledFrame_6
+
+ToggleButton_6.Name = "ToggleButton"
+ToggleButton_6.Parent = ToggledFrame_6
+ToggleButton_6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton_6.BackgroundTransparency = 1.000
+ToggleButton_6.Size = UDim2.new(0.99999994, 0, 1, 0)
+ToggleButton_6.ImageColor3 = Color3.fromRGB(0, 0, 0)
+
+SettingsTab.Name = "Settings Tab"
+SettingsTab.Parent = TABFRAMES
+SettingsTab.Active = true
+SettingsTab.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SettingsTab.BackgroundTransparency = 1.000
+SettingsTab.BorderSizePixel = 0
+SettingsTab.Position = UDim2.new(0.0163934417, 0, 0.0183486231, 0)
+SettingsTab.Size = UDim2.new(0.964871168, 0, 0.960244656, 0)
+SettingsTab.Visible = false
+SettingsTab.CanvasSize = UDim2.new(0, 0, 1.5, 0)
+SettingsTab.ScrollBarThickness = 2
+
+LukyAruPing.Name = "LukyAruPing"
+LukyAruPing.Parent = SettingsTab
+LukyAruPing.BackgroundColor3 = Color3.fromRGB(39, 36, 29)
+LukyAruPing.BackgroundTransparency = 1.000
+LukyAruPing.BorderSizePixel = 0
+LukyAruPing.Position = UDim2.new(0, 6, 0, 204)
+LukyAruPing.Size = UDim2.new(0, 556, 0, 50)
+
+UICorner_17.CornerRadius = UDim.new(0, 4)
+UICorner_17.Parent = LukyAruPing
+
+TextLabel_17.Parent = LukyAruPing
+TextLabel_17.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_17.BackgroundTransparency = 1.000
+TextLabel_17.Position = UDim2.new(0.0257069394, 0, -0.0204081628, 0)
+TextLabel_17.Size = UDim2.new(0, 179, 0, 25)
+TextLabel_17.Font = Enum.Font.GothamBlack
+TextLabel_17.Text = "Ping when got lucky arrow"
+TextLabel_17.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_17.TextScaled = true
+TextLabel_17.TextSize = 14.000
+TextLabel_17.TextTransparency = 1.000
+TextLabel_17.TextWrapped = true
+TextLabel_17.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_18.Parent = LukyAruPing
+TextLabel_18.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_18.BackgroundTransparency = 1.000
+TextLabel_18.Position = UDim2.new(0.0257069413, 0, 0.367346942, 0)
+TextLabel_18.Size = UDim2.new(0, 324, 0, 25)
+TextLabel_18.Font = Enum.Font.GothamMedium
+TextLabel_18.Text = "pings on your webhook when you get a lucky arrow"
+TextLabel_18.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_18.TextScaled = true
+TextLabel_18.TextSize = 14.000
+TextLabel_18.TextTransparency = 1.000
+TextLabel_18.TextWrapped = true
+TextLabel_18.TextXAlignment = Enum.TextXAlignment.Left
+
+ToggledFrame_7.Name = "ToggledFrame"
+ToggledFrame_7.Parent = LukyAruPing
+ToggledFrame_7.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_7.BackgroundTransparency = 1.000
+ToggledFrame_7.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_7.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_18.CornerRadius = UDim.new(0, 5)
+UICorner_18.Parent = ToggledFrame_7
+
+ToggleButton_7.Name = "ToggleButton"
+ToggleButton_7.Parent = ToggledFrame_7
+ToggleButton_7.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton_7.BackgroundTransparency = 1.000
+ToggleButton_7.Size = UDim2.new(0, 13, 0, 15)
+ToggleButton_7.ImageColor3 = Color3.fromRGB(0, 0, 0)
+ToggleButton_7.ImageTransparency = 1.000
+
+WebhookLink.Name = "WebhookLink"
+WebhookLink.Parent = SettingsTab
+WebhookLink.BackgroundColor3 = Color3.fromRGB(77, 74, 56)
+WebhookLink.BackgroundTransparency = 1.000
+WebhookLink.BorderSizePixel = 0
+WebhookLink.Position = UDim2.new(0, 7, 0, 73)
+WebhookLink.Size = UDim2.new(0, 556, 0, 31)
+WebhookLink.Font = Enum.Font.GothamMedium
+WebhookLink.PlaceholderText = "Enter Webhook Link"
+WebhookLink.Text = ""
+WebhookLink.TextColor3 = Color3.fromRGB(193, 193, 193)
+WebhookLink.TextSize = 14.000
+WebhookLink.TextTransparency = 1.000
+WebhookLink.TextWrapped = true
+
+UICorner_19.CornerRadius = UDim.new(0, 4)
+UICorner_19.Parent = WebhookLink
+
+StAnDuPingU.Name = "StAnDuPingU"
+StAnDuPingU.Parent = SettingsTab
+StAnDuPingU.BackgroundColor3 = Color3.fromRGB(45, 42, 34)
+StAnDuPingU.BackgroundTransparency = 1.000
+StAnDuPingU.BorderSizePixel = 0
+StAnDuPingU.Position = UDim2.new(0, 6, 0, 144)
+StAnDuPingU.Size = UDim2.new(0, 557, 0, 50)
+
+UICorner_20.CornerRadius = UDim.new(0, 4)
+UICorner_20.Parent = StAnDuPingU
+
+TextLabel_19.Parent = StAnDuPingU
+TextLabel_19.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_19.BackgroundTransparency = 1.000
+TextLabel_19.Position = UDim2.new(0.0257069394, 0, -0.0204081628, 0)
+TextLabel_19.Size = UDim2.new(0, 179, 0, 25)
+TextLabel_19.Font = Enum.Font.GothamBlack
+TextLabel_19.Text = "Ping when got TWOH/MIH"
+TextLabel_19.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_19.TextScaled = true
+TextLabel_19.TextSize = 14.000
+TextLabel_19.TextTransparency = 1.000
+TextLabel_19.TextWrapped = true
+TextLabel_19.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_20.Parent = StAnDuPingU
+TextLabel_20.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_20.BackgroundTransparency = 1.000
+TextLabel_20.Position = UDim2.new(0.0257069413, 0, 0.367346942, 0)
+TextLabel_20.Size = UDim2.new(0, 324, 0, 25)
+TextLabel_20.Font = Enum.Font.GothamMedium
+TextLabel_20.Text = "pings on your webhook when you get TWOH or MIH"
+TextLabel_20.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_20.TextScaled = true
+TextLabel_20.TextSize = 14.000
+TextLabel_20.TextTransparency = 1.000
+TextLabel_20.TextWrapped = true
+TextLabel_20.TextXAlignment = Enum.TextXAlignment.Left
+
+ToggledFrame_8.Name = "ToggledFrame"
+ToggledFrame_8.Parent = StAnDuPingU
+ToggledFrame_8.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_8.BackgroundTransparency = 1.000
+ToggledFrame_8.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_8.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_21.CornerRadius = UDim.new(0, 5)
+UICorner_21.Parent = ToggledFrame_8
+
+ToggleButton_8.Name = "ToggleButton"
+ToggleButton_8.Parent = ToggledFrame_8
+ToggleButton_8.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton_8.BackgroundTransparency = 1.000
+ToggleButton_8.Size = UDim2.new(0, 13, 0, 15)
+ToggleButton_8.ImageColor3 = Color3.fromRGB(0, 0, 0)
+ToggleButton_8.ImageTransparency = 1.000
+
+lowWMode.Name = "lowWMode"
+lowWMode.Parent = SettingsTab
+lowWMode.BackgroundColor3 = Color3.fromRGB(39, 36, 29)
+lowWMode.BackgroundTransparency = 1.000
+lowWMode.BorderSizePixel = 0
+lowWMode.Position = UDim2.new(0, 6, 0, 323)
+lowWMode.Size = UDim2.new(0, 557, 0, 50)
+
+UICorner_22.CornerRadius = UDim.new(0, 4)
+UICorner_22.Parent = lowWMode
+
+TextLabel_21.Parent = lowWMode
+TextLabel_21.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_21.BackgroundTransparency = 1.000
+TextLabel_21.Position = UDim2.new(0.025706999, 0, 0.119999997, 0)
+TextLabel_21.Size = UDim2.new(0, 129, 0, 17)
+TextLabel_21.Font = Enum.Font.GothamBlack
+TextLabel_21.Text = "Low Graphics Mode"
+TextLabel_21.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_21.TextScaled = true
+TextLabel_21.TextSize = 14.000
+TextLabel_21.TextTransparency = 1.000
+TextLabel_21.TextWrapped = true
+TextLabel_21.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_22.Parent = lowWMode
+TextLabel_22.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_22.BackgroundTransparency = 1.000
+TextLabel_22.Position = UDim2.new(0.0257069413, 0, 0.367346942, 0)
+TextLabel_22.Size = UDim2.new(0, 324, 0, 25)
+TextLabel_22.Font = Enum.Font.GothamMedium
+TextLabel_22.Text = "removes all textures turning them to white (cum)"
+TextLabel_22.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_22.TextScaled = true
+TextLabel_22.TextSize = 14.000
+TextLabel_22.TextTransparency = 1.000
+TextLabel_22.TextWrapped = true
+TextLabel_22.TextXAlignment = Enum.TextXAlignment.Left
+
+ToggledFrame_9.Name = "ToggledFrame"
+ToggledFrame_9.Parent = lowWMode
+ToggledFrame_9.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_9.BackgroundTransparency = 1.000
+ToggledFrame_9.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_9.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_23.CornerRadius = UDim.new(0, 5)
+UICorner_23.Parent = ToggledFrame_9
+
+ToggleButton_9.Name = "ToggleButton"
+ToggleButton_9.Parent = ToggledFrame_9
+ToggleButton_9.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton_9.BackgroundTransparency = 1.000
+ToggleButton_9.Size = UDim2.new(0, 13, 0, 15)
+ToggleButton_9.ImageColor3 = Color3.fromRGB(0, 0, 0)
+ToggleButton_9.ImageTransparency = 1.000
+
+EarlyYplAy.Name = "EarlyYplAy"
+EarlyYplAy.Parent = SettingsTab
+EarlyYplAy.BackgroundColor3 = Color3.fromRGB(39, 36, 29)
+EarlyYplAy.BackgroundTransparency = 1.000
+EarlyYplAy.BorderSizePixel = 0
+EarlyYplAy.Position = UDim2.new(0, 6, 0, 263)
+EarlyYplAy.Size = UDim2.new(0, 557, 0, 50)
+
+UICorner_24.CornerRadius = UDim.new(0, 4)
+UICorner_24.Parent = EarlyYplAy
+
+TextLabel_23.Parent = EarlyYplAy
+TextLabel_23.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_23.BackgroundTransparency = 1.000
+TextLabel_23.Position = UDim2.new(0.025706999, 0, 0.0395922884, 0)
+TextLabel_23.Size = UDim2.new(0, 149, 0, 16)
+TextLabel_23.Font = Enum.Font.GothamBlack
+TextLabel_23.Text = "Early Activation"
+TextLabel_23.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_23.TextScaled = true
+TextLabel_23.TextSize = 14.000
+TextLabel_23.TextTransparency = 1.000
+TextLabel_23.TextWrapped = true
+TextLabel_23.TextXAlignment = Enum.TextXAlignment.Left
+
+TextLabel_24.Parent = EarlyYplAy
+TextLabel_24.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_24.BackgroundTransparency = 1.000
+TextLabel_24.Position = UDim2.new(0.0257069413, 0, 0.367346942, 0)
+TextLabel_24.Size = UDim2.new(0, 324, 0, 25)
+TextLabel_24.Font = Enum.Font.GothamMedium
+TextLabel_24.Text = "deletes the loading screen while still being loaded main game, in short: loads you faster ingame"
+TextLabel_24.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_24.TextScaled = true
+TextLabel_24.TextSize = 14.000
+TextLabel_24.TextTransparency = 1.000
+TextLabel_24.TextWrapped = true
+TextLabel_24.TextXAlignment = Enum.TextXAlignment.Left
+
+ToggledFrame_10.Name = "ToggledFrame"
+ToggledFrame_10.Parent = EarlyYplAy
+ToggledFrame_10.BackgroundColor3 = Color3.fromRGB(43, 43, 43)
+ToggledFrame_10.BackgroundTransparency = 1.000
+ToggledFrame_10.Position = UDim2.new(0.935732603, 0, 0.346938789, 0)
+ToggledFrame_10.Size = UDim2.new(0, 15, 0, 15)
+
+UICorner_25.CornerRadius = UDim.new(0, 5)
+UICorner_25.Parent = ToggledFrame_10
+
+ToggleButton_10.Name = "ToggleButton"
+ToggleButton_10.Parent = ToggledFrame_10
+ToggleButton_10.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton_10.BackgroundTransparency = 1.000
+ToggleButton_10.Size = UDim2.new(0, 13, 0, 15)
+ToggleButton_10.ImageColor3 = Color3.fromRGB(0, 0, 0)
+ToggleButton_10.ImageTransparency = 1.000
+
+TestWebhook.Name = "TestWebhook"
+TestWebhook.Parent = SettingsTab
+TestWebhook.BackgroundColor3 = Color3.fromRGB(81, 116, 162)
+TestWebhook.BackgroundTransparency = 1.000
+TestWebhook.Position = UDim2.new(0.0112771988, 0, 0.383810401, 0)
+TestWebhook.Size = UDim2.new(0, 556, 0, 26)
+TestWebhook.Font = Enum.Font.GothamBlack
+TestWebhook.Text = "Test Webhook"
+TestWebhook.TextColor3 = Color3.fromRGB(255, 255, 255)
+TestWebhook.TextSize = 14.000
+TestWebhook.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+TestWebhook.TextTransparency = 1.000
+TestWebhook.TextWrapped = true
+
+UICorner_26.CornerRadius = UDim.new(0, 4)
+UICorner_26.Parent = TestWebhook
+
+pingthingy.Name = "pingthingy"
+pingthingy.Parent = SettingsTab
+pingthingy.BackgroundColor3 = Color3.fromRGB(77, 74, 56)
+pingthingy.BackgroundTransparency = 1.000
+pingthingy.BorderSizePixel = 0
+pingthingy.Position = UDim2.new(0, 6, 0, 3)
+pingthingy.Size = UDim2.new(0, 557, 0, 31)
+pingthingy.Font = Enum.Font.GothamMedium
+pingthingy.PlaceholderText = "Enter User ID"
+pingthingy.Text = ""
+pingthingy.TextColor3 = Color3.fromRGB(193, 193, 193)
+pingthingy.TextSize = 14.000
+pingthingy.TextTransparency = 1.000
+pingthingy.TextWrapped = true
+
+UICorner_27.CornerRadius = UDim.new(0, 4)
+UICorner_27.Parent = pingthingy
+
+i9nfop1ntg.Name = "i9nfop1ntg"
+i9nfop1ntg.Parent = pingthingy
+i9nfop1ntg.BackgroundColor3 = Color3.fromRGB(42, 69, 104)
+i9nfop1ntg.BackgroundTransparency = 1.000
+i9nfop1ntg.BorderSizePixel = 0
+i9nfop1ntg.Position = UDim2.new(0.00179533218, 0, 1.2028749, 0)
+i9nfop1ntg.Size = UDim2.new(0.997965217, 0, 0.847532511, 0)
+
+UICorner_28.CornerRadius = UDim.new(0, 4)
+UICorner_28.Parent = i9nfop1ntg
+
+TextLabel_25.Parent = i9nfop1ntg
+TextLabel_25.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_25.BackgroundTransparency = 1.000
+TextLabel_25.Position = UDim2.new(0.0899742916, 0, 0.24000001, 0)
+TextLabel_25.Size = UDim2.new(0.910025716, 0, 0.519999981, 0)
+TextLabel_25.Font = Enum.Font.GothamBlack
+TextLabel_25.Text = "This id will be pinged instead of @everyone"
+TextLabel_25.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel_25.TextScaled = true
+TextLabel_25.TextSize = 14.000
+TextLabel_25.TextTransparency = 1.000
+TextLabel_25.TextWrapped = true
+TextLabel_25.TextXAlignment = Enum.TextXAlignment.Left
+
+ImageLabel_2.Parent = i9nfop1ntg
+ImageLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_2.BackgroundTransparency = 1.000
+ImageLabel_2.Position = UDim2.new(0.0259463843, 0, 0.120000422, 0)
+ImageLabel_2.Size = UDim2.new(0.0424189158, 0, 0.759999931, 0)
+ImageLabel_2.Image = "rbxassetid://12273260999"
+ImageLabel_2.ImageTransparency = 1.000
+
+UICorner_29.CornerRadius = UDim.new(0, 4)
+UICorner_29.Parent = MAINFRAME
+
+Frame.Parent = MAINFRAME
+Frame.BackgroundColor3 = Color3.fromRGB(236, 142, 1)
+Frame.BorderSizePixel = 0
+Frame.Position = UDim2.new(0, 0, 0.10695187, 0)
+Frame.Size = UDim2.new(0, 611, 0.00249999994, 0)
+Frame.Visible = false
+
+Minimize.Name = "Minimize"
+Minimize.Parent = MAINFRAME
+Minimize.BackgroundColor3 = Color3.fromRGB(175, 72, 72)
+Minimize.BorderSizePixel = 0
+Minimize.Position = UDim2.new(0.965023339, 0, 0.0401069522, 0)
+Minimize.Size = UDim2.new(0, 10, 0, 10)
+Minimize.Font = Enum.Font.SourceSans
+Minimize.Text = ""
+Minimize.TextColor3 = Color3.fromRGB(0, 0, 0)
+Minimize.TextSize = 14.000
+
+UICorner_30.CornerRadius = UDim.new(0, 16)
+UICorner_30.Parent = Minimize
+
+Frame_2.Parent = MAINFRAME
+Frame_2.BackgroundColor3 = Color3.fromRGB(236, 142, 1)
+Frame_2.BorderSizePixel = 0
+Frame_2.Position = UDim2.new(0, 0, 0.192513376, 0)
+Frame_2.Size = UDim2.new(0, 611, 0.00249999994, 0)
+Frame_2.Visible = false
+
+Frame_3.Parent = MAINFRAME
+Frame_3.BackgroundColor3 = Color3.fromRGB(236, 142, 1)
+Frame_3.BorderSizePixel = 0
+Frame_3.Position = UDim2.new(0, 0, 0.109451868, 0)
+Frame_3.Size = UDim2.new(0.00200000009, 0, 0.0857355222, 0)
+Frame_3.Visible = false
+
+Frame_4.Parent = MAINFRAME
+Frame_4.BackgroundColor3 = Color3.fromRGB(236, 142, 1)
+Frame_4.BorderSizePixel = 0
+Frame_4.Position = UDim2.new(0.998706579, 0, 0.109451868, 0)
+Frame_4.Size = UDim2.new(0.00200000009, 0, 0.0857355222, 0)
+Frame_4.Visible = false
+
+ImageLabel_3.Parent = MAINFRAME
+ImageLabel_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel_3.BackgroundTransparency = 1.000
+ImageLabel_3.Position = UDim2.new(0.0114379087, 0, 0.0187165774, 0)
+ImageLabel_3.Size = UDim2.new(0.0490196086, 0, 0.0721925125, 0)
+ImageLabel_3.Image = "rbxassetid://12266397102"
+
+Creds.Name = "Creds"
+Creds.Parent = HsBGui2
+Creds.BackgroundColor3 = Color3.fromRGB(52, 48, 39)
+Creds.BorderSizePixel = 0
+Creds.Position = UDim2.new(0.587382555, 0, 0.454901069, 0)
+Creds.Size = UDim2.new(0.135570467, 0, 0.410989016, 0)
+
+UICorner_31.CornerRadius = UDim.new(0, 4)
+UICorner_31.Parent = Creds
+
+Title.Name = "Title"
+Title.Parent = Creds
+Title.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Title.BackgroundTransparency = 1.000
+Title.Position = UDim2.new(0.0853801221, 0, 0.0214822739, 0)
+Title.Size = UDim2.new(0.562982023, 0, 0.0639097765, 0)
+Title.Font = Enum.Font.GothamBlack
+Title.Text = "CREDITS"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextScaled = true
+Title.TextSize = 14.000
+Title.TextWrapped = true
+
+dev.Name = "dev"
+dev.Parent = Creds
+dev.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+dev.BackgroundTransparency = 1.000
+dev.Position = UDim2.new(0.0561734885, 0, 0.217574, 0)
+dev.Size = UDim2.new(0.87947017, 0, 0.0799526051, 0)
+dev.Font = Enum.Font.GothamBlack
+dev.Text = "scripting: senS (mostly) & shinazo (misc)"
+dev.TextColor3 = Color3.fromRGB(255, 255, 255)
+dev.TextScaled = true
+dev.TextSize = 14.000
+dev.TextWrapped = true
+dev.TextXAlignment = Enum.TextXAlignment.Left
+
+mess.Name = "mess"
+mess.Parent = Creds
+mess.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+mess.BackgroundTransparency = 1.000
+mess.Position = UDim2.new(0.123393312, 0, 0.535534859, 0)
+mess.Size = UDim2.new(0.750642657, 0, 0.116541356, 0)
+mess.Font = Enum.Font.GothamBlack
+mess.Text = "thank you for supporting our hub by using it! if you're a buyer, thank you aswell!"
+mess.TextColor3 = Color3.fromRGB(255, 255, 255)
+mess.TextScaled = true
+mess.TextSize = 14.000
+mess.TextWrapped = true
+
+dev_2.Name = "dev"
+dev_2.Parent = Creds
+dev_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+dev_2.BackgroundTransparency = 1.000
+dev_2.Position = UDim2.new(0.165084377, 0, 0.901804805, 0)
+dev_2.Size = UDim2.new(0.663239062, 0, 0.0639097765, 0)
+dev_2.Font = Enum.Font.GothamBlack
+dev_2.Text = "UI inspired by Sea Hub <3 (go buy sea hub)"
+dev_2.TextColor3 = Color3.fromRGB(255, 255, 255)
+dev_2.TextScaled = true
+dev_2.TextSize = 14.000
+dev_2.TextWrapped = true
+dev_2.TextXAlignment = Enum.TextXAlignment.Left
+
+Thing.Name = "Thing"
+Thing.Parent = Creds
+Thing.BackgroundColor3 = Color3.fromRGB(80, 74, 60)
+Thing.BorderSizePixel = 0
+Thing.Position = UDim2.new(0, 0, 0.10695187, 0)
+Thing.Size = UDim2.new(0.999999881, 0, 0.085561499, 0)
+
+discordcopy.Name = "discordcopy"
+discordcopy.Parent = Thing
+discordcopy.BackgroundColor3 = Color3.fromRGB(111, 103, 83)
+discordcopy.Position = UDim2.new(0.0594186485, 0, 0.157239914, 0)
+discordcopy.Size = UDim2.new(0.866323948, 0, 0.632604301, 0)
+discordcopy.Font = Enum.Font.GothamBold
+discordcopy.Text = "COPY DISCORD INVITE"
+discordcopy.TextColor3 = Color3.fromRGB(255, 255, 255)
+discordcopy.TextSize = 14.000
+discordcopy.TextWrapped = true
+
+UICorner_32.CornerRadius = UDim.new(0, 16)
+UICorner_32.Parent = discordcopy
+
+dev_3.Name = "dev"
+dev_3.Parent = Creds
+dev_3.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+dev_3.BackgroundTransparency = 1.000
+dev_3.Position = UDim2.new(0.0561734885, 0, 0.2951141, 0)
+dev_3.Size = UDim2.new(0.87947017, 0, 0.0799526051, 0)
+dev_3.Font = Enum.Font.GothamBlack
+dev_3.Text = "user interface: shinazo"
+dev_3.TextColor3 = Color3.fromRGB(255, 255, 255)
+dev_3.TextScaled = true
+dev_3.TextSize = 14.000
+dev_3.TextWrapped = true
+dev_3.TextXAlignment = Enum.TextXAlignment.Left
+
+Minimize_2.Name = "Minimize"
+Minimize_2.Parent = Creds
+Minimize_2.BackgroundColor3 = Color3.fromRGB(175, 72, 72)
+Minimize_2.BorderSizePixel = 0
+Minimize_2.Position = UDim2.new(0.88524735, 0, 0.0401069522, 0)
+Minimize_2.Size = UDim2.new(0, 10, 0, 10)
+Minimize_2.Font = Enum.Font.SourceSans
+Minimize_2.Text = ""
+Minimize_2.TextColor3 = Color3.fromRGB(0, 0, 0)
+Minimize_2.TextSize = 14.000
+
+UICorner_33.CornerRadius = UDim.new(0, 16)
+UICorner_33.Parent = Minimize_2
+
+-- Scripts:
+
+local function RWMIO_fake_script() -- TextLabel.LocalScript 
+	local script = Instance.new('LocalScript', TextLabel)
+
+	script.Parent.Text = game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
+end
+coroutine.wrap(RWMIO_fake_script)()
+local function MYQQDEK_fake_script() -- Main.eaeaEAEa 
+	local script = Instance.new('LocalScript', Main)
+
+	local button = script.Parent
+	local tab = script.Parent.Parent.Parent.TABFRAMES
+	
+	local tabframemain = tab["Main Tab"]
+	local setts = tab["Settings Tab"]
+	
+	local ts = game:GetService("TweenService")
+	
+	local selected = script.Parent.SelectedorNot
+	local selectedother2 = script.Parent.Parent.Settings.SelectedorNot
+	
+	button.MouseButton1Click:Connect(function()
+		if setts.Visible == true and tabframemain.Visible == false then
+			for i, c in pairs(setts:GetDescendants()) do
+				if c:IsA("Frame") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+				elseif c:IsA("TextLabel") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {TextTransparency = 1}):Play()
+				elseif c:IsA("TextButton") or c:IsA("TextBox")  then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {BackgroundTransparency = 1, TextTransparency = 1}):Play()
+				elseif c:IsA("ImageLabel") or c:IsA("ImageButton") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {ImageTransparency = 1}):Play()
+				elseif c:IsA("UIStroke") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+					c.Enabled = false
+				end
+			end
+			setts.Visible = false
+			ts:Create(selectedother2, TweenInfo.new(0.75, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0.03, 0,0.661, 0), Transparency = 1}):Play()
+			selectedother2.Visible = false
+			print("Disabled setts/credds")
+			task.wait(0.1)
+			selected.Visible = true
+			ts:Create(selected, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0, Size = UDim2.new(0.968, 0,0.661, 0)}):Play()
+			tabframemain.Visible = true
+			for i, c in pairs(tabframemain:GetDescendants()) do
+				if c:IsA("Frame") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0}):Play()
+				elseif c:IsA("TextLabel") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {TextTransparency = 0}):Play()
+				elseif c:IsA("TextButton") or c:IsA("TextBox")  then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {BackgroundTransparency = 0, TextTransparency = 0}):Play()
+				elseif c:IsA("ImageLabel") or c:IsA("ImageButton") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {ImageTransparency = 0}):Play()
+				elseif c:IsA("UIStroke") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0}):Play()
+					c.Enabled = true
+				end
+			end
+			print("Now in tab creds")
+		elseif setts.Visible == false and tabframemain.Visible == false then
+			tabframemain.Visible = true
+			for i, c in pairs(tabframemain:GetDescendants()) do
+				if c:IsA("Frame") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0}):Play()
+				elseif c:IsA("TextLabel") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {TextTransparency = 0}):Play()
+				elseif c:IsA("TextButton") or c:IsA("TextBox")  then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {BackgroundTransparency = 0, TextTransparency = 0}):Play()
+				elseif c:IsA("ImageLabel") or c:IsA("ImageButton") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {ImageTransparency = 0}):Play()
+				elseif c:IsA("UIStroke") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0}):Play()
+					c.Enabled = true
+				end
+			end
+			ts:Create(selectedother2, TweenInfo.new(0.75, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0.03, 0,0.661, 0), Transparency = 1}):Play()
+			selectedother2.Visible = false
+			selected.Visible = true
+			ts:Create(selected, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0, Size = UDim2.new(0.968, 0,0.661, 0)}):Play()
+			print("Now in tab creds")
+		elseif setts.Visible == true then
+			return print("Setts is Visible");
+		end
+	end)
+	
+	-- {0.03, 0},{0.661, 0}
+	-- {0.968, 0},{0.661, 0}
+end
+coroutine.wrap(MYQQDEK_fake_script)()
+local function KKDT_fake_script() -- Settings.eaeaEAEa 
+	local script = Instance.new('LocalScript', Settings)
+
+	local button = script.Parent
+	local tab = script.Parent.Parent.Parent.TABFRAMES
+	
+	local tabframemain = tab["Main Tab"]
+	local setts = tab["Settings Tab"]
+	
+	local ts = game:GetService("TweenService")
+	
+	local selected = script.Parent.SelectedorNot
+	local selectedother2 = script.Parent.Parent.Main.SelectedorNot
+	
+	button.MouseButton1Click:Connect(function()
+		if tabframemain.Visible == true and setts.Visible == false then
+			for i, c in pairs(tabframemain:GetDescendants()) do
+				if c:IsA("Frame") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+				elseif c:IsA("TextLabel") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {TextTransparency = 1}):Play()
+				elseif c:IsA("TextButton") or c:IsA("TextBox")  then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {BackgroundTransparency = 1, TextTransparency = 1}):Play()
+				elseif c:IsA("ImageLabel") or c:IsA("ImageButton") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {ImageTransparency = 1}):Play()
+				elseif c:IsA("UIStroke") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+					c.Enabled = false
+				end
+			end
+			tabframemain.Visible = false
+			ts:Create(selectedother2, TweenInfo.new(0.75, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0.03, 0,0.661, 0), Transparency = 1}):Play()
+			selectedother2.Visible = false
+			print("Disabled setts/credds")
+			task.wait(0.1)
+			selected.Visible = true
+			ts:Create(selected, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0, Size = UDim2.new(0.968, 0,0.661, 0)}):Play()
+			setts.Visible = true
+			for i, c in pairs(setts:GetDescendants()) do
+				if c:IsA("Frame") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0}):Play()
+				elseif c:IsA("TextLabel") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {TextTransparency = 0}):Play()
+				elseif c:IsA("TextButton") or c:IsA("TextBox")  then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {BackgroundTransparency = 0, TextTransparency = 0}):Play()
+				elseif c:IsA("ImageLabel") or c:IsA("ImageButton") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {ImageTransparency = 0}):Play()
+				elseif c:IsA("UIStroke") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0}):Play()
+					c.Enabled = true
+				end
+			end
+			print("Now in tab creds")
+		elseif tabframemain.Visible == false and setts.Visible == false then
+			setts.Visible = true
+			for i, c in pairs(setts:GetDescendants()) do
+				if c:IsA("Frame") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0}):Play()
+				elseif c:IsA("TextLabel") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {TextTransparency = 0}):Play()
+				elseif c:IsA("TextButton") or c:IsA("TextBox")  then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {BackgroundTransparency = 0, TextTransparency = 0}):Play()
+				elseif c:IsA("ImageLabel") or c:IsA("ImageButton") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {ImageTransparency = 0}):Play()
+				elseif c:IsA("UIStroke") then
+					ts:Create(c, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0}):Play()
+					c.Enabled = true
+				end
+			end
+			ts:Create(selectedother2, TweenInfo.new(0.75, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Size = UDim2.new(0.03, 0,0.661, 0), Transparency = 1}):Play()
+			selectedother2.Visible = false
+			selected.Visible = true
+			ts:Create(selected, TweenInfo.new(0.25, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 0, Size = UDim2.new(0.968, 0,0.661, 0)}):Play()
+			print("Now in tab creds")
+		elseif setts.Visible == true then
+			return print("Setts is Visible");
+		end
+	end)
+	
+	-- {0.03, 0},{0.661, 0}
+	-- {0.968, 0},{0.661, 0}
+end
+coroutine.wrap(KKDT_fake_script)()
+local function MCFQYN_fake_script() -- ItEmFaRm.itemfarmmmmmm 
+	local script = Instance.new('LocalScript', ItEmFaRm)
+
+	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
+		if getgenv().ToggledITEMFARM == false then
+			getgenv().ToggledITEMFARM = true
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/BozRodrigo/ROBLOXLUA/main/ITEMFARMTESTING"))()
+			script.Parent.ToggledFrame.ToggleButton.Image = "rbxassetid://12273073882"
+			print("Enabled Item Farm")
+		elseif getgenv().ToggledITEMFARM == true then
+			getgenv().ToggledITEMFARM = false
+			script.Parent.ToggledFrame.ToggleButton.Image = ""
+			print("Disabled Item Farm")
+		end
+	end)
+	
+end
+coroutine.wrap(MCFQYN_fake_script)()
+local function XIZB_fake_script() -- LuCKyFarm.itemfarmmmmmmlukky 
+	local script = Instance.new('LocalScript', LuCKyFarm)
+
+	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
+		if getgenv().ToggledLUCKYITEMFARM == false then
+			getgenv().ToggledLUCKYITEMFARM = true
+			script.Parent.ToggledFrame.ToggleButton.Image = "rbxassetid://12273073882"
+			print("Enabled Item Farm")
+		elseif getgenv().ToggledLUCKYITEMFARM == true then
+			getgenv().ToggledLUCKYITEMFARM = false
+			script.Parent.ToggledFrame.ToggleButton.Image = ""
+			print("Disabled Item Farm")
+		end
+	end)
+	
+end
+coroutine.wrap(XIZB_fake_script)()
+local function KQMJB_fake_script() -- MIHfaRM.stafnrfarm 
+	local script = Instance.new('LocalScript', MIHfaRM)
+
+	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
+		if getgenv().ToggledMIHFarm == false then
+			getgenv().ToggledMIHFarm = true
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/BozRodrigo/ROBLOXLUA/main/AUTOMIHTESTING"))()
+			script.Parent.ToggledFrame.ToggleButton.Image = "rbxassetid://12273073882"
+			print("Enabled MIH Farm")
+		elseif getgenv().ToggledMIHFarm == true then
+			getgenv().ToggledMIHFarm = false
+			script.Parent.ToggledFrame.ToggleButton.Image = ""
+			print("Disabled MIH Farm")
+		end
+	end)
+	
+end
+coroutine.wrap(KQMJB_fake_script)()
+local function PYOS_fake_script() -- standfarmautO.stafnrfarm 
+	local script = Instance.new('LocalScript', standfarmautO)
+
+	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
+		if getgenv().ToggledSTANDFARM == false then
+			getgenv().ToggledSTANDFARM = true
+			loadstring(game:HttpGet("https://raw.githubusercontent.com/BozRodrigo/ROBLOXLUA/main/STANDFARMTESTING"))()
+			script.Parent.ToggledFrame.ToggleButton.Image = "rbxassetid://12273073882"
+			print("Enabled Stand Farm")
+		elseif getgenv().ToggledSTANDFARM == true then
+			getgenv().ToggledSTANDFARM = false
+			script.Parent.ToggledFrame.ToggleButton.Image = ""
+			print("Disabled Stand Farm")
+		end
+	end)
+	
+end
+coroutine.wrap(PYOS_fake_script)()
+local function UNYUQCQ_fake_script() -- WebhookLink.LocalScript 
+	local script = Instance.new('LocalScript', WebhookLink)
+
+	script.Parent:GetPropertyChangedSignal("Text"):Connect(function(webhook)
+		getgenv().webhooklink = webhook
+		print("changed webhook to "..webhook)
+	end)
+end
+coroutine.wrap(UNYUQCQ_fake_script)()
+local function CDZS_fake_script() -- lowWMode.;loawmeode 
+	local script = Instance.new('LocalScript', lowWMode)
+
+	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
+		if getgenv().LowMode == false then
+			getgenv().LowMode = true
+			script.Parent.ToggledFrame.ToggleButton.Image = "rbxassetid://12273073882"
+			print("Enabled Item Farm")
+		elseif getgenv().LowMode == true then
+			getgenv().LowMode = false
+			script.Parent.ToggledFrame.ToggleButton.Image = ""
+			print("Disabled Item Farm")
+		end
+	end)
+	
+	
+end
+coroutine.wrap(CDZS_fake_script)()
+local function ZNPSFV_fake_script() -- EarlyYplAy.e4r1y 
+	local script = Instance.new('LocalScript', EarlyYplAy)
+
+	script.Parent.ToggledFrame.ToggleButton.MouseButton1Click:Connect(function()
+		if getgenv().EarlyPlay == false then
+			getgenv().EarlyPlay = true
+			script.Parent.ToggledFrame.ToggleButton.Image = "rbxassetid://12273073882"
+			print("Enabled Item Farm")
+		elseif getgenv().EarlyPlay == true then
+			getgenv().EarlyPlay = false
+			script.Parent.ToggledFrame.ToggleButton.Image = ""
+			print("Disabled Item Farm")
+		end
+	end)
+	
+	
+end
+coroutine.wrap(ZNPSFV_fake_script)()
+local function KYYG_fake_script() -- TestWebhook.LocalScript 
+	local script = Instance.new('LocalScript', TestWebhook)
+
+	script.Parent.MouseButton1Click:Connect(function()	
+		local data = {
+			['content'] = "",
+			['username'] = "HsB CatHook",
+			["embeds"] = {{
+				['title'] = "Example Webhook",
+				['color'] = tonumber(0xff7f42),
+				["footer"] = {
+					["text"] = ("HsB Hub ("..os.date("%H:%M")..")"),
+					["icon_url"] = "https://cdn.discordapp.com/attachments/875211210486870076/1067422518413103134/hsb222.png"
+				},
+				["fields"] = {
+					{
+						["name"] = "Test", -- This is  the title of your field.
+						["value"] = "This is merely a test webhook" -- This is the value of your field.
+					}
+				}}
+			}
+		}
+	
+		local newdata = game:GetService("HttpService"):JSONEncode(data)
+	
+		local headers = {
+			["content-type"] = "application/json"
+		}
+		request = http_request or request or HttpPost or syn.request
+		local abcdef = {Url = getgenv().webhooklink, Body = newdata, Method = "POST", Headers = headers}
+		request(abcdef)
+	end)
+end
+coroutine.wrap(KYYG_fake_script)()
+local function EFKN_fake_script() -- pingthingy.LocalScript 
+	local script = Instance.new('LocalScript', pingthingy)
+
+	script.Parent:GetPropertyChangedSignal("Text"):Connect(function(webhook)
+		getgenv().webhooklink = webhook
+		print("changed webhook to "..webhook)
+	end)
+end
+coroutine.wrap(EFKN_fake_script)()
+-- MAINFRAME.draggebla is disabled.
+local function SHUHHD_fake_script() -- Minimize.miniiizmimziiize 
+	local script = Instance.new('LocalScript', Minimize)
+
+	local tweenservice = game:GetService("TweenService")
+	
+	local mainfrm = script.Parent.Parent
+	local button = script.Parent
+	
+	button.MouseEnter:Connect(function()
+		tweenservice:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(175, 72, 72)}):Play()
+	end)
+	
+	button.MouseLeave:Connect(function()
+		tweenservice:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(255, 105, 105)}):Play()
+	end)
+	
+	button.MouseButton1Click:Connect(function()
+		for i, c in pairs(mainfrm:GetDescendants()) do
+			if c:IsA("Frame") or c:IsA("ScrollingFrame") then
+				tweenservice:Create(c, TweenInfo.new(0.35, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+			elseif c:IsA("TextLabel") or c:IsA("TextButton") or c:IsA("TextBox") then
+				tweenservice:Create(c, TweenInfo.new(0.35, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+			elseif c:IsA("ImageButton") or c:IsA("ImageLabel") then
+				tweenservice:Create(c, TweenInfo.new(0.35, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1, ImageTransparency = 1}):Play()
+			elseif c:IsA("UICorner") or c:IsA("UIStroke") then
+				c.Parent = script.Parent.Parent.Parent:FindFirstChild("UIELEMENTS")
+			end
+			tweenservice:Create(mainfrm, TweenInfo.new(0.15, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency = 1, Size = UDim2.new(0.001, 0,0.004, 0)}):Play()
+		end
+		if mainfrm.Parent:FindFirstChild("Creds") then
+			for i, c in pairs(mainfrm.Parent.Creds:GetDescendants()) do
+				if c:IsA("Frame") or c:IsA("ScrollingFrame") then
+					tweenservice:Create(c, TweenInfo.new(0.35, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+				elseif c:IsA("TextLabel") or c:IsA("TextButton") or c:IsA("TextBox") then
+					tweenservice:Create(c, TweenInfo.new(0.35, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+				elseif c:IsA("ImageButton") or c:IsA("ImageLabel") then
+					tweenservice:Create(c, TweenInfo.new(0.35, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1, ImageTransparency = 1}):Play()
+				elseif c:IsA("UICorner") or c:IsA("UIStroke") then
+					c.Parent = script.Parent.Parent.Parent:FindFirstChild("UIELEMENTS")
+				end
+				tweenservice:Create(mainfrm.Parent.Creds, TweenInfo.new(0.15, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency = 1, Size = UDim2.new(0.001, 0,0.004, 0)}):Play()
+			end
+		end
+		wait(0.5)
+		script.Parent.Parent.Parent:Destroy()
+		print("CLOSED HUB")
+	end)
+end
+coroutine.wrap(SHUHHD_fake_script)()
+local function UDSJS_fake_script() -- MAINFRAME.SmoothDrag 
+	local script = Instance.new('LocalScript', MAINFRAME)
+
+	local Drag = script.Parent
+	gsCoreGui = game:GetService("CoreGui")
+	gsTween = game:GetService("TweenService")
+	local UserInputService = game:GetService("UserInputService")
+	
+	local dragging
+	local dragInput
+	local dragStart
+	local startPos
+	local function update(input)
+		local delta = input.Position - dragStart
+		local dragTime = 0.04
+		local SmoothDrag = {}
+		SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+		local dragSmoothFunction = gsTween:Create(Drag, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
+		dragSmoothFunction:Play()
+	end
+	
+	Drag.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+			dragging = true
+		    dragStart = input.Position
+			startPos = Drag.Position
+			input.Changed:Connect(function()
+				if input.UserInputState == Enum.UserInputState.End then
+					dragging = false
+				end
+			end)
+		end
+	end)
+	
+	Drag.InputChanged:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+			dragInput = input
+		end
+	end)
+	
+	UserInputService.InputChanged:Connect(function(input)
+		if input == dragInput and dragging and Drag.Size then
+			update(input)
+		end
+	end)
+	
+end
+coroutine.wrap(UDSJS_fake_script)()
+local function OKYVUBF_fake_script() -- discordcopy.eEAeaeaae 
+	local script = Instance.new('LocalScript', discordcopy)
+
+	local button = script.Parent
+	
+	script.Parent.MouseButton1Click:Connect(function()
+		setclipboard("discord.gg/hsb")
+		print("copied link to clipboard")
+	end)
+end
+coroutine.wrap(OKYVUBF_fake_script)()
+local function QXNTD_fake_script() -- Minimize_2.miniiizmimziiize 
+	local script = Instance.new('LocalScript', Minimize_2)
+
+	local tweenservice = game:GetService("TweenService")
+	
+	local mainfrm = script.Parent.Parent
+	local button = script.Parent
+	
+	button.MouseEnter:Connect(function()
+		tweenservice:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(175, 72, 72)}):Play()
+	end)
+	
+	button.MouseLeave:Connect(function()
+		tweenservice:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {BackgroundColor3 = Color3.fromRGB(255, 105, 105)}):Play()
+	end)
+	
+	button.MouseButton1Click:Connect(function()
+		for i, c in pairs(mainfrm:GetDescendants()) do
+			if c:IsA("Frame") or c:IsA("ScrollingFrame") then
+				tweenservice:Create(c, TweenInfo.new(0.35, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+			elseif c:IsA("TextLabel") or c:IsA("TextButton") or c:IsA("TextBox") then
+				tweenservice:Create(c, TweenInfo.new(0.35, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
+			elseif c:IsA("ImageButton") or c:IsA("ImageLabel") then
+				tweenservice:Create(c, TweenInfo.new(0.35, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1, ImageTransparency = 1}):Play()
+			elseif c:IsA("UICorner") or c:IsA("UIStroke") then
+				c.Parent = script.Parent.Parent.Parent:FindFirstChild("UIELEMENTS")
+			end
+			tweenservice:Create(mainfrm, TweenInfo.new(0.15, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), {Transparency = 1, Size = UDim2.new(0.001, 0,0.004, 0)}):Play()
+		end
+		wait(0.5)
+		script.Parent.Parent:Destroy()
+		print("CLOSED HUB")
+	end)
+end
+coroutine.wrap(QXNTD_fake_script)()
+local function BDLULZK_fake_script() -- Creds.SmoothDrag 
+	local script = Instance.new('LocalScript', Creds)
+
+	local Drag = script.Parent
+	gsCoreGui = game:GetService("CoreGui")
+	gsTween = game:GetService("TweenService")
+	local UserInputService = game:GetService("UserInputService")
+		local dragging
+		local dragInput
+		local dragStart
+		local startPos
+		local function update(input)
+			local delta = input.Position - dragStart
+			local dragTime = 0.04
+			local SmoothDrag = {}
+			SmoothDrag.Position = UDim2.new(startPos.X.Scale, startPos.X.Offset + delta.X, startPos.Y.Scale, startPos.Y.Offset + delta.Y)
+			local dragSmoothFunction = gsTween:Create(Drag, TweenInfo.new(dragTime, Enum.EasingStyle.Sine, Enum.EasingDirection.InOut), SmoothDrag)
+			dragSmoothFunction:Play()
+		end
+		Drag.InputBegan:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+				dragging = true
+				dragStart = input.Position
+				startPos = Drag.Position
+				input.Changed:Connect(function()
+					if input.UserInputState == Enum.UserInputState.End then
+						dragging = false
+					end
+				end)
+			end
+		end)
+		Drag.InputChanged:Connect(function(input)
+			if input.UserInputType == Enum.UserInputType.MouseMovement or input.UserInputType == Enum.UserInputType.Touch then
+				dragInput = input
+			end
+		end)
+		UserInputService.InputChanged:Connect(function(input)
+			if input == dragInput and dragging and Drag.Size then
+				update(input)
+			end
+		end)
+	
+end
+coroutine.wrap(BDLULZK_fake_script)()
+local function OHQQAD_fake_script() -- HsBGui2.gbloals 
+	local script = Instance.new('LocalScript', HsBGui2)
+
+	-- ALL ITEM FARM
+	getgenv().ToggledITEMFARM = false
+	getgenv().AllItemFarm = {
+		"Rokakaka",
+		"Pure Rokakaka",
+		"Mysterious Arrow",
+		"Lucky Arrow",
+		"Rib Cage of The SAint's Corpse",
+		"DIO's Diary",
+		"Quinton's Glove",
+		"Diamond",
+		"Gold Coin",
+		"Steel Ball",
+		"Stone Mask",
+		"Ancient Scroll",
+		"Zepellin's Headband"
+	}
+	
+	-- LUCKY ARROW ONLY FARM
+	
+	getgenv().ToggledLUCKYITEMFARM = false
+	getgenv().LuckyArrowFarm = {
+		"Lucky Arrow"
+	}
+	
+	-- GLOBAL (ALL SCRIPTS)
+	
+	getgenv().webhooklink = ""
+	getgenv().ping = ""
+	getgenv().EarlyPlay = true
+	getgenv().LowMode = false
+	
+	-- STAND FARMING!!
+	
+	getgenv().ToggledSTANDFARM = false
+	getgenv().FarmStandFromRib = false
+	getgenv().StandFarmWant = {"Sticky Fingers"}
+	
+	-- MIH FARM
+	
+	getgenv().ToggledMIHFarm = false
+	getgenv().HopOnPlayersNear = false -- For now reccomended on false
+	getgenv().DisplayHealth = true
+	getgenv().UseKeyT = true
+	getgenv().UseKeyY = true
+	getgenv().UseKeyZ = false
+	getgenv().UseKeyX = true
+	
+end
+coroutine.wrap(OHQQAD_fake_script)()
