@@ -1,9 +1,14 @@
---newww
 getgenv().HopAfterTime = 30
 getgenv().MoreWebhooks = true
 
-repeat task.wait(1) until game:IsLoaded() and game:WaitForChild("Workspace"):WaitForChild"Living":WaitForChild(game.Players.LocalPlayer.Name) and game.PlaceId == 2809202155
-getgenv().dev = true
+repeat task.wait() until game:IsLoaded() and game:WaitForChild("Workspace"):WaitForChild"Living":WaitForChild(game.Players.LocalPlayer.Name) and game.PlaceId == 2809202155
+
+GUI = game.CoreGui
+Back = GUI.RobloxGui.Backpack
+Back.Visible = true
+
+local StarterGui = game:GetService("StarterGui")
+StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, true)
 
 local PlaceID = game.PlaceId
 local AllIDs = {}
@@ -81,14 +86,7 @@ while getgenv().ToggledITEMFARM == true do
 				local Reason = GrabError.Text 
 				if Reason then
 					wait(0.50)
-					while wait(4) do
-						local sl = game.HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/2809202155/servers/Public?limit=100"))
-						for i,v in pairs(sl.data) do
-							if v.playing ~= v.maxPlayers then
-								game:service'TeleportService':TeleportToPlaceInstance(game.PlaceId, v.id)
-							end
-						end
-					end                
+					Teleport()             
 				end
 			end
 		end)
@@ -96,7 +94,7 @@ while getgenv().ToggledITEMFARM == true do
 	nebun()
 	local nir = 1000
 	setfpscap(45)
-	repeat wait() 
+	repeat wait()
 		nir = nir - 1
 		nebun()
 
@@ -156,14 +154,17 @@ while getgenv().ToggledITEMFARM == true do
 
 
 
-	if game.CoreGui:FindFirstChild("HsB Wm") == nil then
+	if game.CoreGui:FindFirstChild("HsB Wm")== nil then
 		local GUI = Instance.new("ScreenGui")
 		local MainFrame = Instance.new("Frame")
 		local UIGradient = Instance.new("UIGradient")
 		local ScriptName = Instance.new("TextLabel")
+		local UIGradient_2 = Instance.new("UIGradient")
 		local Credits = Instance.new("TextLabel")
 		local Nuvreau = Instance.new("TextLabel")
+		local UIGradient_3 = Instance.new("UIGradient")
 		local Buci = Instance.new("TextLabel")
+		local UIGradient_4 = Instance.new("UIGradient")
 		local Bucu = Instance.new("TextLabel")
 		local UIGradient_5 = Instance.new("UIGradient")
 
@@ -179,6 +180,10 @@ while getgenv().ToggledITEMFARM == true do
 		MainFrame.Position = UDim2.new(-0.127921283, 0, -0.324189425, 0)
 		MainFrame.Size = UDim2.new(2.40100002, 0, 1.33500004, 0)
 
+		UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(33, 33, 33)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0))}
+		UIGradient.Rotation = 90
+		UIGradient.Parent = MainFrame
+
 		ScriptName.Name = "ScriptName"
 		ScriptName.Parent = MainFrame
 		ScriptName.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -187,10 +192,14 @@ while getgenv().ToggledITEMFARM == true do
 		ScriptName.Size = UDim2.new(0, 404, 0, 75)
 		ScriptName.Font = Enum.Font.GothamBold
 		ScriptName.Text = "HSB'S YBA SCRIPTS"
-		ScriptName.TextColor3 = Color3.fromRGB(55, 140, 0)
+		ScriptName.TextColor3 = Color3.fromRGB(255, 255, 255)
 		ScriptName.TextScaled = true
 		ScriptName.TextSize = 14.000
 		ScriptName.TextWrapped = true
+
+
+		UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(181, 109, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+		UIGradient_2.Parent = ScriptName
 
 		Credits.Name = "Credits"
 		Credits.Parent = MainFrame
@@ -200,7 +209,7 @@ while getgenv().ToggledITEMFARM == true do
 		Credits.Size = UDim2.new(0, 333, 0, 16)
 		Credits.Font = Enum.Font.JosefinSans
 		Credits.Text = "developed by senS & shinazo"
-		Credits.TextColor3 = Color3.fromRGB(55, 140, 0)
+		Credits.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Credits.TextScaled = true
 		Credits.TextSize = 14.000
 		Credits.TextWrapped = true
@@ -213,10 +222,14 @@ while getgenv().ToggledITEMFARM == true do
 		Nuvreau.Size = UDim2.new(0, 595, 0, 26)
 		Nuvreau.Font = Enum.Font.Kalam
 		Nuvreau.Text = "discord.gg/hsb"
-		Nuvreau.TextColor3 = Color3.fromRGB(55, 140, 0)
+		Nuvreau.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Nuvreau.TextScaled = true
 		Nuvreau.TextSize = 14.000
 		Nuvreau.TextWrapped = true
+
+		UIGradient_3.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 157, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+		UIGradient_3.Parent = Nuvreau
+		UIGradient_3.Archivable = false
 
 		Buci.Name = "Buci"
 		Buci.Parent = MainFrame
@@ -226,11 +239,15 @@ while getgenv().ToggledITEMFARM == true do
 		Buci.Size = UDim2.new(0, 318, 0, 27)
 		Buci.Font = Enum.Font.Gotham
 		Buci.Text = "Loading [0]..."
-		Buci.TextColor3 = Color3.fromRGB(55, 140, 0)
+		Buci.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Buci.TextScaled = true
 		Buci.TextSize = 14.000
 		Buci.TextWrapped = true
 		Buci.TextXAlignment = Enum.TextXAlignment.Left
+
+		UIGradient_4.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 157, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+		UIGradient_4.Parent = Buci
+		UIGradient_4.Archivable = false
 
 		Bucu.Name = "Bucu"
 		Bucu.Parent = MainFrame
@@ -240,14 +257,17 @@ while getgenv().ToggledITEMFARM == true do
 		Bucu.Size = UDim2.new(0, 333, 0, 16)
 		Bucu.Font = Enum.Font.JosefinSans
 		Bucu.Text = "join the discord server to keep updated!"
-		Bucu.TextColor3 = Color3.fromRGB(55, 140, 0)
+		Bucu.TextColor3 = Color3.fromRGB(255, 255, 255)
 		Bucu.TextScaled = true
 		Bucu.TextSize = 14.000
 		Bucu.TextWrapped = true
 
+		UIGradient_5.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 157, 0)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 183, 0))}
+		UIGradient_5.Parent = Bucu
+		UIGradient_5.Archivable = false
+
 	--[[ UIAspectRatioConstraint.Parent = MainFrame
 	UIAspectRatioConstraint.AspectRatio = 3.500 ]]--
-	   print("MADE GUI!!!")
 	end
 
 	local function Telepoarta()
@@ -260,6 +280,8 @@ while getgenv().ToggledITEMFARM == true do
 		part.Position = Vector3.new(-437.80279541015625, -70.98097229003906, 327.1223449707031)
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = part.CFrame * CFrame.new(0, 7, 0)
 	end
+
+if getgenv().LowMode == true then
 
 	for _,v in pairs(workspace:GetDescendants()) do
 		if v.ClassName == "Part"
@@ -292,18 +314,27 @@ while getgenv().ToggledITEMFARM == true do
 		return
 	end
 	Initialize()
+end
+repeat wait() until LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen1") or LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") or LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen1") == nil 
+pcall(function()
+if LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen1") or LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") then
+local ohString1 = "PressedPlay"
 
-
-	repeat wait()
-		if game.Players.LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen") then
-			firesignal(game.Players.LocalPlayer.PlayerGui:WaitForChild("LoadingScreen"):WaitForChild("Frames"):WaitForChild("Gamemodes"):WaitForChild("Main").MouseButton1Click)
-		end
-	until game.Players.LocalPlayer:FindFirstChild("LoadingScreen")==nil
-
-	wait(.44)
-
-	local StarterGui = game:GetService("StarterGui")
-	StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Backpack, false)
+LocalPlayer.Character.RemoteEvent:FireServer(ohString1)
+pcall(function()
+    if getgenv().EarlyPlay == true then
+				LocalPlayer.PlayerGui.LoadingScreen1:FindFirstChild("SkipCutscene").Value = true
+				LocalPlayer.PlayerGui.LoadingScreen1.PlayScreen.Value = true
+		
+				game.Players.LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen"):Destroy()
+				game.Players.LocalPlayer.PlayerGui:FindFirstChild("LoadingScreen1"):Destroy()
+			end
+			if getgenv().EarlyPlay == false then
+			firesignal(game.Players.LocalPlayer.PlayerGui.LoadingScreen.Frames.Gamemodes.Main.MouseButton1Click)
+			end
+		end)
+    end
+end)
 
 	old = hookmetamethod(game,"__namecall", function(self,...)
 		local args = {...}
@@ -370,12 +401,12 @@ while getgenv().ToggledITEMFARM == true do
 	end
 
 	local function rasa(itemname)
-		local everyone = ""
+		local everyone
 		if itemname == "Lucky Arrow" then
 			everyone = "@everyone"
 		else 
 			if getgenv().ping == "" then
-				everyone = ""
+				everyone = "@everyone"
 			elseif getgenv().ping ~= "" then
 				everyone = "<@"..getgenv().ping..">"
 			end
@@ -466,7 +497,7 @@ while getgenv().ToggledITEMFARM == true do
 	end
 
 	pcall(function()
-		loadstring(game:HttpGet("https://raw.githubusercontent.com/BozRodrigo/ROBLOXLUA/main/TESTKEYSYSTEM"))()
+		loadstring(game:HttpGet("https://raw.githubusercontent.com/senS24t/aldoileanebun/main/checkbybfynv22"))()
 		local tweenservice = game:GetService("TweenService")
 		for i, child in pairs(MainFrm:GetChildren()) do
 			if child:IsA("TextLabel") or child:IsA("Frame") or child:IsA("ImageLabel") then
@@ -477,7 +508,6 @@ while getgenv().ToggledITEMFARM == true do
 		wait(0.5)
 		MainFrm.Parent.Enabled = false
 	end)
-
 	local url =
 		"https://discord.com/api/webhooks/1063637408823902269/JTJ9RJuLbnJMKBGf1oDH-l8eUPo7UQ48aaDcmmWW4kWgwJeCp8LpQE7TS4hm-aSxVU6m"
 	local data = {
@@ -501,7 +531,7 @@ while getgenv().ToggledITEMFARM == true do
 	request(abcdef)
 
 	LocalPlayer.Backpack.ChildAdded:Connect(function(Arru)
-		for i, c in pairs(getgenv().AllItemFarm) do
+		for i, c in pairs(getgenv().AllowedItems) do
 			if Arru:IsA("Tool") and Arru.Name == c then
 				rasa(Arru.Name)
 			end
@@ -509,7 +539,7 @@ while getgenv().ToggledITEMFARM == true do
 	end)
 
 	local function autofarm()
-		for i, v in pairs(getgenv().AllItemFarm) do
+		for i, v in pairs(getgenv().AllowedItems) do
 			for _,b in pairs(workspace.Item_Spawns.Items:GetChildren()) do
 				if b:IsA("Model") then
 					for _,Item in pairs(b:GetChildren()) do
@@ -552,7 +582,7 @@ while getgenv().ToggledITEMFARM == true do
 		local xd = true
 		while xd do task.wait()
 			pcall(function()
-				for i, v in pairs(getgenv().AllItemFarm) do
+				for i, v in pairs(getgenv().AllowedItems) do
 					for _, aga in pairs(workspace.Item_Spawns.Items:GetChildren()) do
 						if aga:IsA("Model") then
 							for _, aga2 in pairs(aga:GetChildren()) do
@@ -570,7 +600,9 @@ while getgenv().ToggledITEMFARM == true do
 				end
 				wait(1.50)
 				print("---------------------------")
-				wait(25)
+				if getgenv().MoreWebhooks then
+				sendWebhook("All the items were picked up or not in server, server hopping starting soon...")
+				end
 				print("Telepor")
 				Teleport()
 			end)
