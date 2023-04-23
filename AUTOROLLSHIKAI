@@ -1,5 +1,8 @@
-while getgenv().ShikaiFarm == true and game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Inventory.Items["The Legendary Orb"].Amount.Value > 5 do 
-    if not table.find(CLANWANTED, tostring(game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Shikai.Value)) then
+local plr = game:GetService("Players").LocalPlayer
+local username = tostring(plr)
+
+while getgenv().ShikaiFarm == true and game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Inventory.Items["The Legendary Orb"].Amount.Value > 5 do 
+    if not table.find(CLANWANTED, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Shikai.Value)) then
         game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb").Parent = game.Players.LocalPlayer.Character
         
         local args = {
@@ -10,7 +13,7 @@ while getgenv().ShikaiFarm == true and game:GetService("ReplicatedStorage").Play
         
         game:GetService("ReplicatedStorage").Remotes.Server.Initiate_Server:FireServer(unpack(args))
         task.wait(1)
-    elseif table.find(CLANWANTED, tostring(game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Shikai.Value)) then 
+    elseif table.find(CLANWANTED, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Shikai.Value)) then 
         print("SHIKAI WANTED GOTTEN")
         getgenv().ShikaiFarm = false
         
@@ -31,7 +34,7 @@ while getgenv().ShikaiFarm == true and game:GetService("ReplicatedStorage").Play
                                 },
                                 {
                                     ["name"] = "Shikai",
-                                    ["value"] = "||"..tostring(game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Shikai.Value).."||",
+                                    ["value"] = "||"..tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Shikai.Value).."||",
                                     ["inline"] = false
                                 }
                             },
