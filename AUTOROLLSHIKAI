@@ -2,7 +2,7 @@ local plr = game:GetService("Players").LocalPlayer
 local username = tostring(plr)
 
 while getgenv().ShikaiFarm == true and game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb") do 
-    if not table.find(CLANWANTED, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Shikai.Value)) then
+    if not table.find(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Shikai.Value)) then
         game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb").Parent = game.Players.LocalPlayer.Character
         
         local args = {
@@ -13,7 +13,7 @@ while getgenv().ShikaiFarm == true and game.Players.LocalPlayer.Backpack:FindFir
         
         game:GetService("ReplicatedStorage").Remotes.Server.Initiate_Server:FireServer(unpack(args))
         task.wait(1)
-    elseif table.find(CLANWANTED, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Shikai.Value)) then 
+    elseif table.find(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Shikai.Value)) then 
         print("SHIKAI WANTED GOTTEN")
         getgenv().ShikaiFarm = false
         
