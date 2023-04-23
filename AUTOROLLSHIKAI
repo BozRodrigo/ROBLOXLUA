@@ -1,7 +1,7 @@
 local plr = game:GetService("Players").LocalPlayer
 local username = tostring(plr)
 
-while getgenv().ShikaiFarm == true and game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Inventory.Items["The Legendary Orb"].Amount.Value > 5 do 
+while getgenv().ShikaiFarm == true and game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb") do 
     if not table.find(CLANWANTED, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Shikai.Value)) then
         game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb").Parent = game.Players.LocalPlayer.Character
         
