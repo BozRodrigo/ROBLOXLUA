@@ -190,16 +190,16 @@ game:GetService("ReplicatedStorage").Events.GetStats:InvokeServer(ohTable1)
         
         game:GetService("Players").LocalPlayer.PlayerGui.Gui.Ui.UiModule.Modules.Shop.RerollClan.RollClanFrame.Clan.RRLastName.LocalScript.RR:InvokeServer(unpack(args))
 		
-		if getgenv().webhooklink ~= "" then
-				if string.len(getgenv().webhooklink) > 90 and getgenv().webhooklink:match("discord") then
-				local data = {
-					["content"] = "",
-					["username"] = "muz.wtf",
-					["avatar_url"] = "https://cdn.discordapp.com/attachments/992723214696452147/1099413127373783051/ca176e25de5c24fc4f65507be37214b3.jpg",
-					["embeds"] = {
-						{
-							["description"] = "**NEW CLAN**",
-							["fields"] = {
+	if getgenv().webhooklink ~= "" then
+		if string.len(getgenv().webhooklink) > 90 and getgenv().webhooklink:match("discord") then
+			local data = {
+			["content"] = "",
+			["username"] = "muz.wtf",
+			["avatar_url"] = "https://cdn.discordapp.com/attachments/992723214696452147/1099413127373783051/ca176e25de5c24fc4f65507be37214b3.jpg",
+			["embeds"] = {
+				{
+					["description"] = "**NEW CLAN**",
+					["fields"] = {
 								{
 									["name"] = "Username",
 									["value"] = "||"..game.Players.LocalPlayer.Name.."||",
@@ -223,8 +223,8 @@ game:GetService("ReplicatedStorage").Events.GetStats:InvokeServer(ohTable1)
 				request = http_request or request or HttpPost or syn.request
 				local send = {Url = getgenv().webhooklink, Body = newdata, Method = "POST", Headers = headers}
 				request(send)
-				end
-			end
+		end
+	end
 		
         TextLabel.Text = 'You got ' .. tostring(GetClan())
         
