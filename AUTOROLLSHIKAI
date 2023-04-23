@@ -1,0 +1,53 @@
+while getgenv().ShikaiFarm == true and game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Inventory.Items["The Legendary Orb"].Amount.Value > 5 do 
+    if not table.find(CLANWANTED, tostring(game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Shikai.Value)) then
+        game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb").Parent = game.Players.LocalPlayer.Character
+        
+        local args = {
+             [1] = "The Legendary Orb",
+             [3] = 1262805659,
+             [4] = "Reset Shikai"
+        }
+        
+        game:GetService("ReplicatedStorage").Remotes.Server.Initiate_Server:FireServer(unpack(args))
+        task.wait(1)
+    elseif table.find(CLANWANTED, tostring(game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Shikai.Value)) then 
+        print("SHIKAI WANTED GOTTEN")
+        getgenv().ShikaiFarm = false
+        
+        if getgenv().webhooklink ~= "" then
+            if string.len(getgenv().webhooklink) > 90 and getgenv().webhooklink:match("discord") then
+               local data = {
+                    ["content"] = "@everyone",
+                    ["username"] = "Shin Scripts",
+                    ["avatar_url"] = "https://cdn.discordapp.com/attachments/992723214696452147/1099413127373783051/ca176e25de5c24fc4f65507be37214b3.jpg",
+                    ["embeds"] = {
+                        {
+                            ["description"] = "**YOU ROLLED SOMETHING**",
+                            ["fields"] = {
+                                {
+                                    ["name"] = "Username",
+                                    ["value"] = "||"..game.Players.LocalPlayer.Name.."||",
+                                    ["inline"] = false
+                                },
+                                {
+                                    ["name"] = "Shikai",
+                                    ["value"] = "||"..tostring(game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Shikai.Value).."||",
+                                    ["inline"] = false
+                                }
+                            },
+                            ["type"] = "rich",
+                            ["color"] = tonumber(0x5a3812)
+                        }
+                    }
+                }
+                local newdata = game:GetService("HttpService"):JSONEncode(data)
+                local headers = {
+                    ["content-type"] = "application/json"
+                }
+                request = http_request or request or HttpPost or syn.request
+                local send = {Url = getgenv().webhooklink, Body = newdata, Method = "POST", Headers = headers}
+                request(send)
+            end
+        end
+    end
+end
