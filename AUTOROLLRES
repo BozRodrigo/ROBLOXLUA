@@ -1,5 +1,8 @@
-while getgenv().RESFARM == true and game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Inventory.Items["The Legendary Orb"].Amount.Value > 5 do 
-    if not table.find(ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Res.Value)) then
+local plr = game:GetService("Players").LocalPlayer
+local username = tostring(plr)
+
+while getgenv().RESFARM == true and game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Inventory.Items["The Legendary Orb"].Amount.Value > 5 do 
+    if not table.find(ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value)) then
         game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb").Parent = game.Players.LocalPlayer.Character
 
         local args = {
@@ -10,7 +13,7 @@ while getgenv().RESFARM == true and game:GetService("ReplicatedStorage").Player_
 
         game:GetService("ReplicatedStorage").Remotes.Server.Initiate_Server:FireServer(unpack(args))
         task.wait(1)
-    elseif table.find(ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Res.Value)) then 
+    elseif table.find(ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value)) then 
         print("RESURECTION WANTED GOTTEN")
         getgenv().RESFARM= false
         
@@ -31,7 +34,7 @@ while getgenv().RESFARM == true and game:GetService("ReplicatedStorage").Player_
                                 },
                                 {
                                     ["name"] = "Resurrecion",
-                                    ["value"] = "||"..tostring(game:GetService("ReplicatedStorage").Player_Datas.SentinelTrueSkillz.Slot_1.Res.Value).."||",
+                                    ["value"] = "||"..tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value).."||",
                                     ["inline"] = false
                                 }
                             },
