@@ -2,7 +2,7 @@ local plr = game:GetService("Players").LocalPlayer
 local username = tostring(plr)
 
 while getgenv().RESFARM == true and game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb") do 
-    if not table.find(ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value)) then
+    if not table.find(getgenv().ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value)) then
         game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb").Parent = game.Players.LocalPlayer.Character
 
         local args = {
@@ -13,7 +13,7 @@ while getgenv().RESFARM == true and game.Players.LocalPlayer.Backpack:FindFirstC
 
         game:GetService("ReplicatedStorage").Remotes.Server.Initiate_Server:FireServer(unpack(args))
         task.wait(1)
-    elseif table.find(ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value)) then 
+    elseif table.find(getgenv().ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value)) then 
         print("RESURECTION WANTED GOTTEN")
         getgenv().RESFARM= false
         
