@@ -15,7 +15,7 @@ while getgenv().RESFARM == true and game.Players.LocalPlayer.Backpack:FindFirstC
         task.wait(1)
     elseif table.find(getgenv().ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value)) then 
         print("RESURECTION WANTED GOTTEN")
-        getgenv().RESFARM= false
+        getgenv().RESFARM = false
         
         if getgenv().webhooklink ~= "" then
             if string.len(getgenv().webhooklink) > 90 and getgenv().webhooklink:match("discord") then
