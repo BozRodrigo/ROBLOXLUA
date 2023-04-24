@@ -20,7 +20,7 @@ while getgenv().ShikaiFarm == true and game.Players.LocalPlayer.Backpack:FindFir
         
         table.remove(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username]["Slot_"..game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value].Shikai.Value)
         
-        for i, v in pairs(getgenv().ResWanted) do
+        for i, v in pairs(getgenv().ShikaiWanted) do
 			print("got new shi and also removed from table: "..v)
 		end
         
