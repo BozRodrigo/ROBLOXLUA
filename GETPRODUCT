@@ -11,30 +11,37 @@ if getgenv().PRODUCTWANTED ~= nil then
           end
         end
       end
-      if not plr.Character:FindFirstChildOfClass("Tool") then
-          orb.Parent = plr.Character
+      if orb.Name == "The Legendary Orb" and orb:IsA("Tool") and not plr.Character:FindFirstChildOfClass("Tool") then
           
           if getgenv().PRODUCTWANTED == "Boosts" then
+          
+            orb.Parent = plr.Character
          
             REMOTE:FireServer("The Legendary Orb",nil,1262805661,'2x Drop (45m)')
             REMOTE:FireServer("The Legendary Orb",nil,1262805660,'2x Exp(15m)')
             REMOTE:FireServer("The Legendary Orb",nil,1262805657,'2x Gold (30m)')
             REMOTE:FireServer("The Legendary Orb",nil,1262805658,'2x Mastery')
             
+            orb.Parent = plr.Backpack
+            
            elseif getgenv().PRODUCTWANTED == "Crown" then
            
+              orb.Parent = plr.Character
+           
               REMOTE:FireServer("The Legendary Orb",nil,1337293187,'Luisenbarn Crown')
+              
+              orb.Parent = plr.Backpack
            
            elseif getgenv().PRODUCTWANTED == "Easterhat" then
+           
+              orb.Parent = plr.Character
                 
               REMOTE:FireServer("The Legendary Orb",nil,1519766202,'Easter Hat')
            
+              orb.Parent = plr.Character
+
            end
-                     
-          orb.Parent = plr.Backpack
+ 
         end
       end
-    end
-  end
-end
-
+ end
