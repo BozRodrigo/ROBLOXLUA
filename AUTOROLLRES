@@ -19,7 +19,7 @@ while getgenv().RESFARM == true and game.Players.LocalPlayer.Backpack:FindFirstC
         print("RESURECTION WANTED GOTTEN")
         getgenv().RESFARM = false
         
-	 table.remove(getgenv().ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username][currentslot].Res.Value))
+        table.remove(getgenv().ShikaiWanted, table.find(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username][currentslot].Shikai.Value)))
         
         for i, v in pairs(getgenv().ResWanted) do
 		print("got new shi and also removed from table: "..v)
