@@ -20,7 +20,7 @@ while getgenv().ShikaiFarm == true and game.Players.LocalPlayer.Backpack:FindFir
         print("SHIKAI WANTED GOTTEN")
         getgenv().ShikaiFarm = false
         
-        table.remove(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username][currentslot].Shikai.Value))
+        table.remove(getgenv().ShikaiWanted, table.find(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username][currentslot].Shikai.Value)))
         
         for i, v in pairs(getgenv().ShikaiWanted) do
 			print("got new shi and also removed from table: "..v)
