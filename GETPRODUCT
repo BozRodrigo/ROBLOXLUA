@@ -10,31 +10,30 @@ if getgenv().PRODUCTWANTED ~= nil then
              fic:Destroy()
           end
         end
-        if not plr.Character:FindFirstChildOfClass("Tool") then
+      if not plr.Character:FindFirstChildOfClass("Tool") then
           orb.Parent = plr.Character
           
           if getgenv().PRODUCTWANTED == "Boosts" then
          
-            REMOTE:FireServer("The Legendary Orb",nil,1262805661,'GOOFY ANTICHEAT')
-            REMOTE:FireServer("The Legendary Orb",nil,1262805660,'GOOFY ANTICHEAT')
-            REMOTE:FireServer("The Legendary Orb",nil,1262805657,'GOOFY ANTICHEAT')
-            REMOTE:FireServer("The Legendary Orb",nil,1262805658,'GOOFY ANTICHEAT')
+            REMOTE:FireServer("The Legendary Orb",nil,1262805661,'2x Drop (45m)')
+            REMOTE:FireServer("The Legendary Orb",nil,1262805660,'2x Exp(15m)')
+            REMOTE:FireServer("The Legendary Orb",nil,1262805657,'2x Gold (30m)')
+            REMOTE:FireServer("The Legendary Orb",nil,1262805658,'2x Mastery')
             
            elseif getgenv().PRODUCTWANTED == "Crown" then
            
-              REMOTE:FireServer("The Legendary Orb",nil,1337293187,'GOOFY ANTICHEAT')
+              REMOTE:FireServer("The Legendary Orb",nil,1337293187,'Luisenbarn Crown')
            
            elseif getgenv().PRODUCTWANTED == "Easterhat" then
                 
-              REMOTE:FireServer("The Legendary Orb",nil,1519766202,'GOOFY ANTICHEAT')
+              REMOTE:FireServer("The Legendary Orb",nil,1519766202,'Easter Hat')
            
            end
-           
-          end
-          
+                     
           orb.Parent = plr.Backpack
         end
       end
+    end
   end
 end
 
