@@ -2,7 +2,7 @@ local plr = game:GetService("Players").LocalPlayer
 local username = tostring(plr)
 
 while getgenv().RESFARM == true and game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb") do 
-    if not table.find(getgenv().ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value)) then
+    if not table.find(getgenv().ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username]["Slot_"..game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value].Res.Value)) then
         game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb").Parent = game.Players.LocalPlayer.Character
 
         local args = {
@@ -13,14 +13,15 @@ while getgenv().RESFARM == true and game.Players.LocalPlayer.Backpack:FindFirstC
 
         game:GetService("ReplicatedStorage").Remotes.Server.Initiate_Server:FireServer(unpack(args))
         task.wait(1)
-    elseif table.find(getgenv().ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value)) then 
+    elseif table.find(getgenv().ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username]["Slot_"..game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value].Res.Value)) then 
         print("RESURECTION WANTED GOTTEN")
         getgenv().RESFARM = false
-        table.remove(getgenv().ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value)
+        
+	 table.remove(getgenv().ResWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username]["Slot_"..game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value].Shikai.Value)
         
         for i, v in pairs(getgenv().ResWanted) do
-			print("got new shi and also removed from table: "..v)
-		end
+		print("got new shi and also removed from table: "..v)
+	end
         
         if getgenv().webhooklink ~= "" then
             if string.len(getgenv().webhooklink) > 90 and getgenv().webhooklink:match("discord") then
@@ -39,7 +40,7 @@ while getgenv().RESFARM == true and game.Players.LocalPlayer.Backpack:FindFirstC
                                 },
                                 {
                                     ["name"] = "Resurrecion",
-                                    ["value"] = "||"..tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Slot_1.Res.Value).."||",
+                                    ["value"] = "||"..tostring(game:GetService("ReplicatedStorage").Player_Datas[username]["Slot_"..game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value].Res.Value).."||",
                                     ["inline"] = false
                                 }
                             },
