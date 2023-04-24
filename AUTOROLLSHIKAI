@@ -2,7 +2,7 @@ local plr = game:GetService("Players").LocalPlayer
 local username = tostring(plr)
 
 while getgenv().ShikaiFarm == true and game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb") do 
-    if not table.find(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username]("Slot_"..game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value).Shikai.Value)) then
+    if not table.find(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username]("Slot_"..tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value)).Shikai.Value)) then
         game.Players.LocalPlayer.Backpack:FindFirstChild("The Legendary Orb").Parent = game.Players.LocalPlayer.Character
         
         local args = {
@@ -13,12 +13,12 @@ while getgenv().ShikaiFarm == true and game.Players.LocalPlayer.Backpack:FindFir
         
         game:GetService("ReplicatedStorage").Remotes.Server.Initiate_Server:FireServer(unpack(args))
         task.wait(1)
-    elseif table.find(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username]("Slot_"..game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value).Shikai.Value)) then 
+    elseif table.find(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username]("Slot_"..tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value)).Shikai.Value)) then 
     
         print("SHIKAI WANTED GOTTEN")
         getgenv().ShikaiFarm = false
         
-        table.remove(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username]("Slot_"..game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value).Shikai.Value)
+        table.remove(getgenv().ShikaiWanted, tostring(game:GetService("ReplicatedStorage").Player_Datas[username]("Slot_"..tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value)).Shikai.Value)
         
         for i, v in pairs(getgenv().ShikaiWanted) do
 			print("got new shi and also removed from table: "..v)
@@ -41,7 +41,7 @@ while getgenv().ShikaiFarm == true and game.Players.LocalPlayer.Backpack:FindFir
                                 },
                                 {
                                     ["name"] = "Shikai",
-                                    ["value"] = "||"..tostring(game:GetService("ReplicatedStorage").Player_Datas[username]("Slot_"..game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value).Shikai.Value).."||",
+                                    ["value"] = "||"..tostring(game:GetService("ReplicatedStorage").Player_Datas[username]("Slot_"..tostring(game:GetService("ReplicatedStorage").Player_Datas[username].Current_Slot.Value)).Shikai.Value).."||",
                                     ["inline"] = false
                                 }
                             },
