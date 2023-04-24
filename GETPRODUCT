@@ -1,0 +1,46 @@
+local plr = game:GetService("Players").LocalPlayer
+local username = tostring(plr)
+local REMOTE = game:GetService("ReplicatedStorage")["Remotes"]["Server"]:WaitForChild("Initiate_Server")
+
+if getgenv().PRODUCTWANTED ~= nil then
+  for i, orb in pairs(plr.Backpack:GetChildren()) do
+      if orb:IsA("Tool") and orb.Name == "The Legendary Orb" then
+        for i, fic in pairs(plr.Character:GetChildren()) do
+          if fic:IsA("Tool") then
+             fic:Destroy()
+          end
+        end
+        if not plr.Character:FindFirstChildOfClass("Tool") then
+          orb.Parent = plr.Character
+          
+          if getgenv().PRODUCTWANTED == "Boosts" then
+          
+            local boosts = {
+             1262805661,
+             1262805660,
+             1262805657,
+             1262805658
+            }
+            
+            for i=1, #boosts do
+              REMOTE:FireServer("The Legendary Orb",nil,boosts[i],'GOOFY ANTICHEAT')
+            end
+            
+           elseif getgenv().PRODUCTWANTED == "Crown" then
+           
+              REMOTE:FireServer("The Legendary Orb",nil,1337293187,'GOOFY ANTICHEAT')
+           
+           elseif getgenv().PRODUCTWANTED == "Easterhat" then
+                
+              REMOTE:FireServer("The Legendary Orb",nil,1519766202,'GOOFY ANTICHEAT')
+           
+           end
+           
+          end
+          
+          orb.Parent = plr.Backpack
+        end
+      end
+  end
+end
+
