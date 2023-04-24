@@ -10,6 +10,7 @@ if getgenv().PRODUCTWANTED ~= nil then
              fic:Destroy()
           end
         end
+      end
       if not plr.Character:FindFirstChildOfClass("Tool") then
           orb.Parent = plr.Character
           
